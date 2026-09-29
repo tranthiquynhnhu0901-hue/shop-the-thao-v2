@@ -401,3 +401,771 @@
     text-align:
         center;
 }
+.health-plan-page .health-plan-loading strong {
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--ink);
+
+    font-size:
+        18px;
+
+    font-weight:
+        850;
+}
+
+
+.health-plan-page .health-plan-loading p {
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   7. EMPTY / INVALID STATE
+========================================================= */
+
+.health-plan-page .health-plan-state {
+    padding:
+        38px
+        30px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0
+        12px
+        34px
+        rgba(6,16,22,.045);
+
+    text-align:
+        center;
+}
+
+
+.health-plan-page .health-plan-state h2 {
+    margin:
+        8px
+        0
+        12px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        32px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.15;
+}
+
+
+.health-plan-page .health-plan-state p {
+    max-width:
+        680px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   8. CTA
+========================================================= */
+
+.health-plan-page .health-plan-cta {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        46px;
+
+    margin-top:
+        20px;
+
+    padding:
+        12px
+        18px;
+
+    background:
+        var(--ink);
+
+    border:
+        1px solid var(--ink);
+
+    border-radius:
+        9px;
+
+    color:
+        var(--white);
+
+    font-size:
+        13px;
+
+    font-weight:
+        850;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.health-plan-page .health-plan-cta:hover {
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        var(--ink);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   9. SUMMARY
+========================================================= */
+
+.health-plan-page .health-plan-summary {
+    padding:
+        28px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0
+        10px
+        30px
+        rgba(6,16,22,.035);
+}
+
+
+.health-plan-page .health-plan-summary-head {
+    margin-bottom:
+        22px;
+}
+
+
+.health-plan-page .health-plan-summary-head h2 {
+    margin:
+        7px
+        0
+        0;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        30px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.2;
+}
+
+
+/* =========================================================
+   10. STAT GRID
+========================================================= */
+
+.health-plan-page .health-plan-stat-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:
+        14px;
+}
+
+
+.health-plan-page .health-plan-stat {
+    min-width:
+        0;
+
+    padding:
+        19px;
+
+    background:
+        #f7f9fa;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        13px;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+
+.health-plan-page .health-plan-stat:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--lime2);
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(6,16,22,.07);
+}
+
+
+.health-plan-page .health-plan-stat span {
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.4;
+
+    letter-spacing:
+        .05em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.health-plan-page .health-plan-stat strong {
+    display:
+        block;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        var(--ink);
+
+    font-size:
+        22px;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.25;
+}
+
+
+.health-plan-page .health-plan-stat small {
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.55;
+}
+
+
+/* =========================================================
+   11. HEALTH SECTIONS
+========================================================= */
+
+.health-plan-page .health-plan-section {
+    margin-top:
+        22px;
+
+    padding:
+        28px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0
+        10px
+        30px
+        rgba(6,16,22,.035);
+}
+
+
+.health-plan-page .health-plan-section h2 {
+    margin:
+        7px
+        0
+        20px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        29px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.2;
+}
+
+
+.health-plan-page .health-plan-section p {
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+}
+
+
+.health-plan-page .health-plan-section p + p {
+    margin-top:
+        12px;
+}
+
+
+/* =========================================================
+   12. SAFETY NOTICE
+========================================================= */
+
+.health-plan-page .health-plan-notice {
+    margin-top:
+        20px;
+
+    padding:
+        20px
+        22px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-left:
+        4px solid var(--ink);
+
+    border-radius:
+        12px;
+}
+
+
+.health-plan-page .health-plan-notice h2,
+.health-plan-page .health-plan-notice h3 {
+    margin:
+        0
+        0
+        8px;
+
+    color:
+        var(--ink);
+
+    font-size:
+        18px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.35;
+}
+
+
+.health-plan-page .health-plan-notice p,
+.health-plan-page .health-plan-notice li {
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+
+.health-plan-page .health-plan-notice ul {
+    margin:
+        12px
+        0
+        0
+        20px;
+}
+
+
+.health-plan-page .health-plan-notice li {
+    margin-bottom:
+        6px;
+}
+
+
+.health-plan-page .health-plan-notice.safe {
+    border-left-color:
+        var(--lime2);
+
+    background:
+        #f7fbe9;
+}
+
+
+.health-plan-page .health-plan-notice.caution {
+    border-left-color:
+        var(--amber);
+
+    background:
+        #fffaf1;
+}
+
+
+.health-plan-page .health-plan-notice.stop {
+    border-left-color:
+        var(--red);
+
+    background:
+        #fff4f4;
+}
+
+
+/* =========================================================
+   13. RECOVERY
+========================================================= */
+
+.health-plan-page .health-recovery-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:
+        14px;
+}
+
+
+.health-plan-page .health-recovery-card {
+    min-width:
+        0;
+
+    padding:
+        19px;
+
+    background:
+        #f7f9fa;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        13px;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+
+.health-plan-page .health-recovery-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--lime2);
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(6,16,22,.07);
+}
+
+
+.health-plan-page .health-recovery-card span {
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .05em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.health-plan-page .health-recovery-card strong {
+    display:
+        block;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        var(--ink);
+
+    font-size:
+        22px;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.25;
+}
+
+
+/* =========================================================
+   14. LINKS TO OTHER PLANS
+========================================================= */
+
+.health-plan-page .health-plan-links {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        18px;
+
+    margin-top:
+        28px;
+}
+
+
+.health-plan-page .health-plan-link-card {
+    padding:
+        26px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        16px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.health-plan-page .health-plan-link-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--lime2);
+
+    box-shadow:
+        0
+        16px
+        36px
+        rgba(6,16,22,.07);
+}
+
+
+.health-plan-page .health-plan-link-card h2 {
+    margin:
+        7px
+        0
+        10px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        26px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.2;
+}
+
+
+.health-plan-page .health-plan-link-card p {
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+}
+
+
+.health-plan-page .health-plan-link-card a {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        43px;
+
+    margin-top:
+        18px;
+
+    padding:
+        10px
+        15px;
+
+    background:
+        var(--ink);
+
+    border:
+        1px solid var(--ink);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--white);
+
+    font-size:
+        12px;
+
+    font-weight:
+        850;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.health-plan-page .health-plan-link-card a:hover {
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        var(--ink);
+
+    transform:
+        translateY(-2px);
+}
