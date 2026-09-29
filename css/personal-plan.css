@@ -1169,3 +1169,2129 @@
     transform:
         translateY(-2px);
 }
+/* =========================================================
+   15. STATIC GUIDE
+========================================================= */
+
+.health-plan-page .health-plan-guide {
+    padding:
+        0
+        0
+        80px;
+
+    background:
+        var(--paper);
+}
+
+
+.health-plan-page .health-plan-guide-inner {
+    padding:
+        34px;
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(200,255,0,.09),
+            transparent 30%
+        ),
+        var(--ink);
+
+    border-radius:
+        20px;
+
+    color:
+        var(--white);
+}
+
+
+.health-plan-page .health-plan-guide .eyebrow {
+    color:
+        var(--lime);
+}
+
+
+.health-plan-page .health-plan-guide h2 {
+    margin:
+        8px
+        0
+        20px;
+
+    color:
+        var(--white);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        31px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.2;
+}
+
+
+.health-plan-page .health-plan-guide-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:
+        14px;
+}
+
+
+.health-plan-page .health-plan-guide-card {
+    padding:
+        21px;
+
+    background:
+        var(--ink2);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        13px;
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease;
+}
+
+
+.health-plan-page .health-plan-guide-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(200,255,0,.4);
+}
+
+
+.health-plan-page .health-plan-guide-card h3 {
+    margin:
+        0
+        0
+        9px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        16px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.4;
+}
+
+
+.health-plan-page .health-plan-guide-card p {
+    color:
+        #aebbc1;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   16. GUIDE NOTICE
+========================================================= */
+
+.health-plan-page
+.health-plan-guide
+.health-plan-notice {
+    margin-top:
+        20px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border-color:
+        rgba(255,255,255,.12);
+
+    border-left-color:
+        var(--lime);
+}
+
+
+.health-plan-page
+.health-plan-guide
+.health-plan-notice h3 {
+    color:
+        var(--white);
+}
+
+
+.health-plan-page
+.health-plan-guide
+.health-plan-notice p {
+    color:
+        #bdc8cd;
+}
+
+
+/* =========================================================
+   17. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width:1050px) {
+
+    .health-plan-page .health-plan-stat-grid,
+    .health-plan-page .health-recovery-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   18. RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width:800px) {
+
+    /*
+       style.css v1 có rule nav { display:none; }.
+
+       Rule này bảo đảm nav kế hoạch cá nhân của v2
+       vẫn hiển thị trên mobile.
+    */
+
+    .health-plan-page .personal-plan-tabs {
+        display:
+            flex;
+    }
+
+
+    .health-plan-page .health-plan-guide-grid,
+    .health-plan-page .health-plan-links {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   19. RESPONSIVE - MOBILE SMALL
+========================================================= */
+
+@media (max-width:650px) {
+
+    .health-plan-page .health-plan-hero {
+        padding:
+            58px
+            0
+            46px;
+    }
+
+
+    .health-plan-page .health-plan-hero h1 {
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                58px
+            );
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .health-plan-page .health-plan-main {
+        padding:
+            45px
+            0
+            65px;
+    }
+
+
+    .health-plan-page .health-plan-summary,
+    .health-plan-page .health-plan-section,
+    .health-plan-page .health-plan-link-card,
+    .health-plan-page .health-plan-state {
+        padding:
+            20px;
+    }
+
+
+    .health-plan-page .health-plan-guide-inner {
+        padding:
+            24px;
+    }
+
+
+    .health-plan-page .health-plan-stat-grid,
+    .health-plan-page .health-recovery-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .health-plan-page .health-plan-stat strong,
+    .health-plan-page .health-recovery-card strong {
+        font-size:
+            20px;
+    }
+
+}
+
+
+/* =========================================================
+   SPORTHUB V2
+   WORKOUT PLAN UI
+
+   Dùng cho:
+   - ke-hoach-tap-luyen.html
+   - nội dung động từ workout-plan.js
+
+   Design system:
+   - Kế thừa SportHub v1
+   - Be Vietnam Pro
+   - Lime / Ink / Paper
+
+   Lưu ý:
+   - Scope bằng .workout-plan-page
+   - Không ghi đè Health Plan
+   - Không sửa style.css v1
+========================================================= */
+
+
+/* =========================================================
+   1. WORKOUT PLAN PAGE
+========================================================= */
+
+.workout-plan-page {
+    min-height: 100vh;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--ink);
+}
+
+
+/* =========================================================
+   2. HERO
+========================================================= */
+
+.workout-plan-page .workout-plan-hero {
+    min-height:
+        430px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    color:
+        var(--white);
+
+    background:
+        radial-gradient(
+            circle at 80% 28%,
+            rgba(200,255,0,.16),
+            transparent 26%
+        ),
+        linear-gradient(
+            120deg,
+            var(--ink) 0%,
+            #10252d 60%,
+            #07141a 100%
+        );
+}
+
+
+.workout-plan-page .workout-plan-hero::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        540px;
+
+    height:
+        540px;
+
+    right:
+        -190px;
+
+    top:
+        -150px;
+
+    border:
+        60px solid rgba(200,255,0,.06);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+
+.workout-plan-page .workout-plan-hero-content {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        850px;
+
+    padding:
+        78px 0;
+}
+
+
+.workout-plan-page .workout-plan-hero .eyebrow {
+    color:
+        var(--lime);
+}
+
+
+.workout-plan-page .workout-plan-hero h1 {
+    margin:
+        13px
+        0
+        20px;
+
+    color:
+        var(--white);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            84px
+        );
+
+    line-height:
+        .98;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -3px;
+}
+
+
+.workout-plan-page .workout-plan-hero h1 span {
+    color:
+        var(--lime);
+}
+
+
+.workout-plan-page .workout-plan-hero p {
+    max-width:
+        720px;
+
+    color:
+        #bdc8cd;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.8;
+}/* =========================================================
+   3. PERSONAL PLAN NAVIGATION
+========================================================= */
+
+.workout-plan-page .personal-plan-tabs-wrap {
+    position:
+        sticky;
+
+    top:
+        74px;
+
+    z-index:
+        900;
+
+    background:
+        rgba(6,16,22,.97);
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.workout-plan-page .personal-plan-tabs {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        13px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        thin;
+}
+
+
+.workout-plan-page .personal-plan-tab {
+    flex:
+        0 0 auto;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        42px;
+
+    padding:
+        10px
+        17px;
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        #bdc8cd;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .04em;
+
+    white-space:
+        nowrap;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.workout-plan-page .personal-plan-tab::before {
+    content:
+        none;
+}
+
+
+.workout-plan-page .personal-plan-tab:hover {
+    color:
+        var(--lime);
+
+    border-color:
+        rgba(200,255,0,.50);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.workout-plan-page .personal-plan-tab.active {
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        var(--ink);
+}
+
+
+/* =========================================================
+   4. MAIN
+========================================================= */
+
+.workout-plan-page .workout-plan-main {
+    padding:
+        68px
+        0
+        85px;
+
+    background:
+        var(--paper);
+}
+
+
+/* =========================================================
+   5. STATIC SUMMARY
+========================================================= */
+
+.workout-plan-page .workout-plan-summary {
+    margin-bottom:
+        40px;
+}
+
+
+.workout-plan-page .workout-plan-summary-head {
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    margin-bottom:
+        22px;
+}
+
+
+.workout-plan-page .workout-plan-summary-head .eyebrow {
+    color:
+        var(--lime2);
+}
+
+
+.workout-plan-page .workout-plan-summary-head h2 {
+    margin-top:
+        7px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            45px
+        );
+
+    font-weight:
+        850;
+
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -1.3px;
+}
+
+
+.workout-plan-page .workout-plan-summary-head p {
+    max-width:
+        600px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   6. WORKOUT APP ROOT
+========================================================= */
+
+.workout-plan-page #workoutPlanApp {
+    min-height:
+        250px;
+}
+
+
+/* =========================================================
+   7. LOADING / EMPTY / ERROR
+========================================================= */
+
+.workout-plan-page .workout-plan-state {
+    max-width:
+        760px;
+
+    margin:
+        30px auto;
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0
+        12px
+        36px
+        rgba(6,16,22,.05);
+}
+
+
+.workout-plan-page .workout-plan-state-icon {
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius:
+        50%;
+
+    background:
+        #eff5dc;
+
+    color:
+        var(--ink);
+
+    font-size:
+        27px;
+}
+
+
+.workout-plan-page .workout-plan-state h2 {
+    margin-bottom:
+        10px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        28px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.25;
+}
+
+
+.workout-plan-page .workout-plan-state p {
+    color:
+        var(--muted);
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   8. DYNAMIC SUMMARY GRID
+========================================================= */
+
+.workout-plan-page .workout-plan-summary-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:
+        14px;
+
+    margin-bottom:
+        34px;
+}
+
+
+.workout-plan-page .workout-summary-card {
+    min-width:
+        0;
+
+    padding:
+        22px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        15px;
+
+    background:
+        var(--white);
+
+    box-shadow:
+        0
+        8px
+        24px
+        rgba(6,16,22,.035);
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+}
+
+
+.workout-plan-page .workout-summary-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--lime2);
+
+    box-shadow:
+        0
+        14px
+        32px
+        rgba(6,16,22,.07);
+}
+
+
+.workout-plan-page .workout-summary-card span {
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .06em;
+}
+
+
+.workout-plan-page .workout-summary-card strong {
+    display:
+        block;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        var(--ink);
+
+    font-size:
+        20px;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.35;
+}
+
+
+.workout-plan-page .workout-summary-card.highlight {
+    border-color:
+        var(--ink);
+
+    background:
+        var(--ink);
+}
+
+
+.workout-plan-page .workout-summary-card.highlight span {
+    color:
+        #91a0a7;
+}
+
+
+.workout-plan-page .workout-summary-card.highlight strong {
+    color:
+        var(--lime);
+}
+/* =========================================================
+   9. NOTICE
+========================================================= */
+
+.workout-plan-page .workout-plan-notice {
+    margin-bottom:
+        30px;
+
+    padding:
+        20px
+        22px;
+
+    border:
+        1px solid var(--line);
+
+    border-left:
+        4px solid var(--lime2);
+
+    border-radius:
+        12px;
+
+    background:
+        var(--white);
+}
+
+
+.workout-plan-page .workout-plan-notice h3 {
+    margin-bottom:
+        7px;
+
+    color:
+        var(--ink);
+
+    font-size:
+        17px;
+
+    font-weight:
+        850;
+}
+
+
+.workout-plan-page .workout-plan-notice p {
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+
+.workout-plan-page .workout-plan-notice.caution {
+    border-left-color:
+        var(--amber);
+
+    background:
+        #fffaf0;
+}
+
+
+.workout-plan-page .workout-plan-notice.stop {
+    border-left-color:
+        var(--red);
+
+    background:
+        #fff4f4;
+}
+
+
+/* =========================================================
+   10. WEEK HEADING
+========================================================= */
+
+.workout-plan-page .workout-week-head {
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    margin:
+        40px
+        0
+        22px;
+}
+
+
+.workout-plan-page .workout-week-head .eyebrow {
+    color:
+        var(--lime2);
+}
+
+
+.workout-plan-page .workout-week-head h2 {
+    margin-top:
+        7px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            43px
+        );
+
+    font-weight:
+        850;
+
+    line-height:
+        1.15;
+}
+
+
+.workout-plan-page .workout-week-head p {
+    max-width:
+        620px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================================
+   11. 7 DAY GRID
+========================================================= */
+
+.workout-plan-page .workout-plan-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        18px;
+}
+
+
+/* =========================================================
+   12. DAY CARD
+========================================================= */
+
+.workout-plan-page .workout-plan-day {
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--white);
+
+    box-shadow:
+        0
+        10px
+        30px
+        rgba(6,16,22,.04);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+
+.workout-plan-page .workout-plan-day:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--lime2);
+
+    box-shadow:
+        0
+        18px
+        42px
+        rgba(6,16,22,.07);
+}
+
+
+.workout-plan-page .workout-plan-day.is-today {
+    border:
+        2px solid var(--lime2);
+
+    box-shadow:
+        0
+        0
+        0
+        3px
+        rgba(200,255,0,.10);
+}
+
+
+.workout-plan-page .workout-plan-day.is-recovery {
+    background:
+        #f8faf5;
+}
+
+
+/* =========================================================
+   13. DAY HEADER
+========================================================= */
+
+.workout-plan-page .workout-plan-day-head {
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    padding:
+        22px;
+
+    border-bottom:
+        1px solid #edf0f1;
+}
+
+
+.workout-plan-page .workout-plan-day-label {
+    display:
+        inline-block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        #668600;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.workout-plan-page .workout-plan-day-head h3 {
+    margin:
+        0;
+
+    color:
+        var(--ink);
+
+    font-size:
+        22px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.3;
+}
+
+
+.workout-plan-page .workout-plan-day-type {
+    flex:
+        0 0 auto;
+
+    padding:
+        7px
+        10px;
+
+    border-radius:
+        999px;
+
+    background:
+        #eef2f3;
+
+    color:
+        #536168;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+.workout-plan-page
+.workout-plan-day.is-today
+.workout-plan-day-type {
+    background:
+        #eff5dc;
+
+    color:
+        #587400;
+}
+
+
+/* =========================================================
+   14. DAY INFO
+========================================================= */
+
+.workout-plan-page .workout-plan-day-info {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        10px;
+
+    padding:
+        18px
+        22px
+        0;
+}
+
+
+.workout-plan-page .workout-plan-day-info div {
+    padding:
+        11px
+        12px;
+
+    border:
+        1px solid #edf0f1;
+
+    border-radius:
+        10px;
+
+    background:
+        #f7f9fa;
+}
+
+
+.workout-plan-page .workout-plan-day-info span {
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+    text-transform:
+        uppercase;
+}
+
+
+.workout-plan-page .workout-plan-day-info strong {
+    color:
+        var(--ink);
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+}
+/* =========================================================
+   15. EXERCISE LIST
+========================================================= */
+
+.workout-plan-page .workout-plan-exercises {
+    padding:
+        18px
+        22px
+        22px;
+}
+
+
+.workout-plan-page .workout-plan-exercises-title {
+    margin-bottom:
+        12px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .07em;
+}
+
+
+.workout-plan-page .workout-plan-exercise {
+    display:
+        grid;
+
+    grid-template-columns:
+        48px
+        minmax(0,1fr)
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        13px
+        0;
+
+    border-bottom:
+        1px solid #edf0f1;
+}
+
+
+.workout-plan-page .workout-plan-exercise:last-child {
+    border-bottom:
+        0;
+}
+
+
+.workout-plan-page .workout-plan-exercise-number {
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--lime);
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+}
+
+
+.workout-plan-page .workout-plan-exercise-info {
+    min-width:
+        0;
+}
+
+
+.workout-plan-page .workout-plan-exercise-info strong {
+    display:
+        block;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        var(--ink);
+
+    font-size:
+        14px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1.4;
+}
+
+
+.workout-plan-page .workout-plan-exercise-info span {
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+}
+
+
+.workout-plan-page .workout-plan-exercise-video {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        62px;
+
+    padding:
+        7px
+        9px;
+
+    border-radius:
+        8px;
+
+    background:
+        #eff5dc;
+
+    color:
+        #587400;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   16. WORKOUT ACTIONS
+========================================================= */
+
+.workout-plan-page .workout-plan-actions {
+    padding:
+        0
+        22px
+        22px;
+}
+
+
+.workout-plan-page .workout-start-btn {
+    width:
+        100%;
+
+    min-height:
+        52px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        13px
+        18px;
+
+    border:
+        0;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--lime);
+
+    color:
+        var(--ink);
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .02em;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.workout-plan-page .workout-start-btn:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        #d6ff42;
+
+    box-shadow:
+        0
+        10px
+        25px
+        rgba(6,16,22,.14);
+}
+
+
+.workout-plan-page .workout-start-btn:active {
+    transform:
+        translateY(0);
+}
+
+
+.workout-plan-page .workout-start-btn:disabled {
+    cursor:
+        not-allowed;
+
+    opacity:
+        .45;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   17. RECOVERY DAY
+========================================================= */
+
+.workout-plan-page .workout-recovery-content {
+    padding:
+        20px
+        22px
+        24px;
+}
+
+
+.workout-plan-page .workout-recovery-content p {
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+}
+
+
+.workout-plan-page .workout-recovery-content ul {
+    margin:
+        14px
+        0
+        0
+        20px;
+}
+
+
+.workout-plan-page .workout-recovery-content li {
+    margin-bottom:
+        8px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.6;
+}
+
+
+/* =========================================================
+   18. WORKOUT STRATEGY
+========================================================= */
+
+.workout-plan-page .workout-strategy {
+    margin-top:
+        55px;
+
+    padding:
+        32px;
+
+    border-radius:
+        20px;
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(200,255,0,.09),
+            transparent 30%
+        ),
+        var(--ink);
+
+    color:
+        var(--white);
+}
+
+
+.workout-plan-page .workout-strategy .eyebrow {
+    color:
+        var(--lime);
+}
+
+
+.workout-plan-page .workout-strategy h2 {
+    margin:
+        8px
+        0
+        18px;
+
+    color:
+        var(--white);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            29px,
+            4vw,
+            40px
+        );
+
+    font-weight:
+        850;
+
+    line-height:
+        1.2;
+}
+
+
+.workout-plan-page .workout-strategy > p {
+    max-width:
+        850px;
+
+    color:
+        #b8c4c9;
+
+    line-height:
+        1.8;
+}
+
+
+.workout-plan-page .workout-strategy-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        12px;
+
+    margin-top:
+        22px;
+}
+
+
+.workout-plan-page .workout-strategy-card {
+    padding:
+        19px;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        12px;
+
+    background:
+        var(--ink2);
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease;
+}
+
+
+.workout-plan-page .workout-strategy-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(200,255,0,.40);
+}
+
+
+.workout-plan-page .workout-strategy-card strong {
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        14px;
+
+    font-weight:
+        850;
+}
+
+
+.workout-plan-page .workout-strategy-card p {
+    color:
+        #aebbc1;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}
+/* =========================================================
+   19. CTA
+========================================================= */
+
+.workout-plan-page .workout-plan-cta {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-top:
+        20px;
+
+    padding:
+        13px
+        20px;
+
+    border:
+        1px solid var(--ink);
+
+    border-radius:
+        9px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--white);
+
+    font-weight:
+        900;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.workout-plan-page .workout-plan-cta:hover {
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        var(--ink);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   20. ACCESSIBILITY
+========================================================= */
+
+.workout-plan-page .personal-plan-tab:focus-visible,
+.workout-plan-page .workout-start-btn:focus-visible,
+.workout-plan-page .workout-plan-cta:focus-visible {
+    outline:
+        3px solid rgba(151,197,0,.30);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   21. TABLET
+========================================================= */
+
+@media (max-width:1050px) {
+
+    .workout-plan-page .workout-plan-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   22. MOBILE
+========================================================= */
+
+@media (max-width:800px) {
+
+    /*
+       style.css v1 có nav { display:none; }.
+
+       Rule này giữ Personal Plan tabs
+       hiển thị trên mobile.
+    */
+
+    .workout-plan-page .personal-plan-tabs {
+        display:
+            flex;
+    }
+
+
+    .workout-plan-page .workout-plan-hero {
+        min-height:
+            360px;
+    }
+
+
+    .workout-plan-page .workout-plan-hero-content {
+        padding:
+            58px
+            0;
+    }
+
+
+    .workout-plan-page .workout-plan-main {
+        padding:
+            45px
+            0
+            65px;
+    }
+
+
+    .workout-plan-page .workout-plan-summary-head,
+    .workout-plan-page .workout-week-head {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .workout-plan-page .workout-plan-grid,
+    .workout-plan-page .workout-strategy-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   23. MOBILE SMALL
+========================================================= */
+
+@media (max-width:560px) {
+
+    .workout-plan-page .workout-plan-hero h1 {
+        font-size:
+            45px;
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .workout-plan-page .workout-plan-summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .workout-plan-page .workout-summary-card {
+        padding:
+            18px;
+    }
+
+
+    .workout-plan-page .workout-plan-day-head {
+        padding:
+            18px;
+    }
+
+
+    .workout-plan-page .workout-plan-day-info {
+        grid-template-columns:
+            1fr;
+
+        padding:
+            16px
+            18px
+            0;
+    }
+
+
+    .workout-plan-page .workout-plan-exercises {
+        padding:
+            15px
+            18px
+            18px;
+    }
+
+
+    .workout-plan-page .workout-plan-actions {
+        padding:
+            0
+            18px
+            18px;
+    }
+
+
+    .workout-plan-page .workout-plan-exercise {
+        grid-template-columns:
+            42px
+            minmax(0,1fr);
+    }
+
+
+    .workout-plan-page .workout-plan-exercise-video {
+        grid-column:
+            2;
+
+        justify-self:
+            start;
+    }
+
+
+    .workout-plan-page .workout-strategy {
+        padding:
+            24px;
+    }
+
+
+    .workout-plan-page .workout-plan-state {
+        padding:
+            28px
+            20px;
+    }
+
+}
+/* =========================================================
+   WORKOUT PLAN - SEMANTIC UI SUPPORT
+   Các class được workout-plan.js sử dụng
+========================================================= */
+
+
+/* Tổng số lượt bài trong tuần */
+
+.workout-plan-page .workout-plan-summary-note {
+    margin:
+        -12px
+        0
+        30px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}
+
+
+.workout-plan-page .workout-plan-summary-note strong {
+    color:
+        var(--ink);
+
+    font-weight:
+        900;
+}
+
+
+/* Nội dung bổ sung trong notice */
+
+.workout-plan-page .workout-plan-notice-followup {
+    margin-top:
+        10px;
+
+    font-size:
+        13px;
+}
+
+
+/* Buổi tập đang dang dở */
+
+.workout-plan-page .workout-plan-notice.resume {
+    border-left-color:
+        var(--lime2);
+
+    background:
+        #f8faef;
+}
+
+
+.workout-plan-page .workout-resume-btn {
+    margin-top:
+        16px;
+}
+
+
+/* Bài tập chưa có video */
+
+.workout-plan-page .workout-plan-exercise-video.is-missing {
+    background:
+        #eef2f3;
+
+    color:
+        var(--muted);
+}
+
+
+/* Buổi tập chưa có danh sách bài */
+
+.workout-plan-page .workout-plan-empty-exercises {
+    margin:
+        0;
+
+    padding:
+        15px
+        16px;
+
+    border:
+        1px dashed var(--line);
+
+    border-radius:
+        10px;
+
+    background:
+        #f7f9fa;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}

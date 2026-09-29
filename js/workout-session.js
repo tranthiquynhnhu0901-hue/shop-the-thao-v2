@@ -4543,6 +4543,22 @@ window.SportHubWorkoutSession = (() => {
         inputSession,
         options = {}
     ) {
+        if (
+            state.status ===
+            "active"
+
+            ||
+
+            hasSavedSession()
+        ) {
+
+            message(
+                "Bạn đang có một buổi tập dang dở. Hãy tiếp tục hoặc dừng buổi tập đó trước khi bắt đầu buổi mới."
+            );
+
+            return false;
+
+        }
 
         if (
             !inputSession
@@ -5193,8 +5209,6 @@ window.SportHubWorkoutSession = (() => {
         if (
             isSafetyBlocked()
         ) {
-
-            clearSaved();
 
 
             message(
