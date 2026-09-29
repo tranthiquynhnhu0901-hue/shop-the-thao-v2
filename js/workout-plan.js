@@ -1,6 +1,6 @@
 /* =========================================================
    SPORTHUB WORKOUT PLAN PAGE
-   Version 1.2
+   Version 1.3
 
    Dùng cho:
    - ke-hoach-tap-luyen.html
@@ -3094,168 +3094,145 @@ bằng viền lime.
        43. START DAY
     ====================================================== */
 
-    function startDay(
-        dayIndex
+function startDay(
+    dayIndex
+) {
+
+    const workout =
+        getWorkout();
+
+    const health =
+        getHealth();
+
+
+    if (
+        isSafetyBlocked(
+            health,
+            workout
+        )
     ) {
 
-        const workout =
-
-            getWorkout();
-
-
-        const health =
-
-            getHealth();
-
-
-        if (
-            isSafetyBlocked(
-                health,
-                workout
-            )
-        ) {
-
-            notify(
-
-                "Safety Gate hiện chưa cho phép bắt đầu Workout Session."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        const sessionAPI =
-
-            window
-                .SportHubWorkoutSession;
-
-
-        if (!sessionAPI) {
-
-            notify(
-
-                "Không tìm thấy workout-session.js."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        if (
-
-            typeof sessionAPI
-                .startDay
-
-            !==
-
-            "function"
-
-        ) {
-
-            notify(
-
-                "Workout Session chưa sẵn sàng."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        const index =
-
-            Number(
-                dayIndex
-            );
-
-
-        if (
-
-            !Number.isInteger(
-                index
-            )
-
-            ||
-
-            index < 0
-
-            ||
-
-            index > 6
-
-        ) {
-
-            notify(
-
-                "Ngày tập không hợp lệ."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        const day =
-
-            normalizeWeek(
-                workout
-            )[
-                index
-            ];
-
-
-        if (
-
-            !day
-
-            ||
-
-            day.type ===
-            "Recovery"
-
-            ||
-
-            !Array.isArray(
-                day.exercises
-            )
-
-            ||
-
-            day.exercises.length ===
-            0
-
-        ) {
-
-            notify(
-
-                "Ngày này không có buổi tập để bắt đầu."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        return sessionAPI
-            .startDay(
-                index
-            );
+        notify(
+            "Safety Gate hiện chưa cho phép bắt đầu Workout Session."
+        );
+
+        return false;
 
     }
 
 
+    const sessionAPI =
+        window
+            .SportHubWorkoutSession;
+
+
+    if (!sessionAPI) {
+
+        notify(
+            "Không tìm thấy workout-session.js."
+        );
+
+        return false;
+
+    }
+
+
+    if (
+        typeof sessionAPI
+            .startDay
+        !==
+        "function"
+    ) {
+
+        notify(
+            "Workout Session chưa sẵn sàng."
+        );
+
+        return false;
+
+    }
+
+
+    const index =
+        Number(
+            dayIndex
+        );
+
+
+    if (
+        !Number.isInteger(
+            index
+        )
+        ||
+        index < 0
+        ||
+        index > 6
+    ) {
+
+        notify(
+            "Ngày tập không hợp lệ."
+        );
+
+        return false;
+
+    }
+
+
+    const day =
+        normalizeWeek(
+            workout
+        )[
+            index
+        ];
+
+
+    if (
+        !day
+        ||
+        day.type ===
+        "Recovery"
+        ||
+        !Array.isArray(
+            day.exercises
+        )
+        ||
+        day.exercises.length ===
+        0
+    ) {
+
+        notify(
+            "Ngày này không có buổi tập để bắt đầu."
+        );
+
+        return false;
+
+    }
+
+
+    if (
+        hasSavedSession()
+    ) {
+
+        const confirmed =
+            window.confirm(
+                "Bạn đang có một buổi tập chưa hoàn thành. Nếu bắt đầu buổi tập mới, tiến độ buổi tập cũ có thể bị thay thế. Bạn vẫn muốn bắt đầu buổi tập mới?"
+            );
+
+        if (!confirmed) {
+
+            return false;
+
+        }
+
+    }
+
+
+    return sessionAPI
+        .startDay(
+            index
+        );
+
+}
     /* =====================================================
        44. RESUME
     ====================================================== */
@@ -3415,42 +3392,72 @@ function resumeSaved() {
     /* =====================================================
        46. SESSION EVENTS
     ====================================================== */
+function bindSessionEvents() {
 
-    function bindSessionEvents() {
+    if (
+        eventsBound
+    ) {
 
-        if (
-            eventsBound
-        ) {
-
-            return;
-
-        }
-
-
-        eventsBound =
-            true;
-
-
-        window.addEventListener(
-
-            "sporthub:workout-complete",
-
-            render
-
-        );
-
-
-        window.addEventListener(
-
-            "sporthub:workout-stop",
-
-            render
-
-        );
+        return;
 
     }
 
 
+    eventsBound =
+        true;
+
+
+    window.addEventListener(
+        "sporthub:workout-complete",
+        render
+    );
+
+
+    window.addEventListener(
+        "sporthub:workout-stop",
+        render
+    );
+
+
+    window.addEventListener(
+        "sporthub:personal-plan-update",
+        render
+    );
+
+
+    window.addEventListener(
+        "storage",
+        event => {
+
+            const watchedKeys = [
+
+                STORAGE.profile,
+
+                STORAGE.health,
+
+                STORAGE.workout,
+
+                STORAGE.activeSession
+
+            ];
+
+
+            if (
+                event.key
+                &&
+                watchedKeys.includes(
+                    event.key
+                )
+            ) {
+
+                render();
+
+            }
+
+        }
+    );
+
+}
     /* =====================================================
        47. INIT
     ====================================================== */
