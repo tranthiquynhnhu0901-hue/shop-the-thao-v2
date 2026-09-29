@@ -1,0 +1,403 @@
+/* =========================================================
+   SPORTHUB V2
+   PERSONAL PLAN UI
+
+   Trang hiện hỗ trợ:
+   - Kế hoạch sức khỏe
+
+   Design system:
+   - Kế thừa SportHub v1
+   - Be Vietnam Pro
+   - Lime / Ink / Paper
+   - Không ghi đè style.css
+========================================================= */
+
+
+/* =========================================================
+   1. HEALTH PLAN PAGE
+========================================================= */
+
+.health-plan-page {
+    min-height: 100vh;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--ink);
+}
+
+
+/* =========================================================
+   2. HERO
+========================================================= */
+
+.health-plan-page .health-plan-hero {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        88px
+        0
+        70px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(200,255,0,.16),
+            transparent 28%
+        ),
+        linear-gradient(
+            120deg,
+            var(--ink) 0%,
+            #10252d 60%,
+            #07141a 100%
+        );
+
+    color:
+        var(--white);
+}
+
+
+.health-plan-page .health-plan-hero::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        520px;
+
+    height:
+        520px;
+
+    right:
+        -180px;
+
+    top:
+        -150px;
+
+    border:
+        60px solid rgba(200,255,0,.06);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+
+.health-plan-page .health-plan-hero-inner {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        880px;
+}
+
+
+.health-plan-page .health-plan-hero .eyebrow {
+    color:
+        var(--lime);
+}
+
+
+.health-plan-page .health-plan-hero h1 {
+    max-width:
+        900px;
+
+    margin:
+        16px
+        0
+        20px;
+
+    color:
+        var(--white);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            86px
+        );
+
+    font-weight:
+        900;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -3px;
+}
+
+
+.health-plan-page .health-plan-hero p {
+    max-width:
+        720px;
+
+    color:
+        #bdc8cd;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   3. PERSONAL PLAN NAVIGATION
+========================================================= */
+
+.health-plan-page .personal-plan-tabs-wrap {
+    position:
+        sticky;
+
+    top:
+        74px;
+
+    z-index:
+        900;
+
+    background:
+        rgba(6,16,22,.97);
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.health-plan-page .personal-plan-tabs {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        13px
+        0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        thin;
+}
+
+
+.health-plan-page .personal-plan-tab {
+    flex:
+        0 0 auto;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        42px;
+
+    padding:
+        10px
+        17px;
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        #bdc8cd;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .04em;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.health-plan-page .personal-plan-tab:hover {
+    color:
+        var(--lime);
+
+    border-color:
+        rgba(200,255,0,.5);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.health-plan-page .personal-plan-tab.active {
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        var(--ink);
+}
+
+
+/* =========================================================
+   4. MAIN
+========================================================= */
+
+.health-plan-page .health-plan-main {
+    padding:
+        68px
+        0
+        82px;
+
+    background:
+        var(--paper);
+}
+
+
+.health-plan-page .health-plan-intro {
+    max-width:
+        860px;
+
+    margin-bottom:
+        32px;
+}
+
+
+.health-plan-page .health-plan-intro .eyebrow,
+.health-plan-page .health-plan-summary-head .eyebrow,
+.health-plan-page .health-plan-section .eyebrow,
+.health-plan-page .health-plan-link-card .eyebrow,
+.health-plan-page .health-plan-state .eyebrow {
+    color:
+        var(--lime2);
+}
+
+
+.health-plan-page .health-plan-intro h2 {
+    margin:
+        8px
+        0
+        10px;
+
+    color:
+        var(--ink);
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            46px
+        );
+
+    font-weight:
+        850;
+
+    line-height:
+        1.12;
+
+    letter-spacing:
+        -1.4px;
+}
+
+
+.health-plan-page .health-plan-intro p {
+    max-width:
+        760px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   5. HEALTH APP ROOT
+========================================================= */
+
+.health-plan-page #healthPlanApp {
+    min-height:
+        220px;
+}
+
+
+/* =========================================================
+   6. LOADING
+========================================================= */
+
+.health-plan-page .health-plan-loading {
+    padding:
+        38px
+        30px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0
+        12px
+        34px
+        rgba(6,16,22,.045);
+
+    text-align:
+        center;
+}
