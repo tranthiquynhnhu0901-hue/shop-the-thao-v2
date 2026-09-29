@@ -1553,25 +1553,15 @@ function getWorkout() {
                 </div>
 
 
-                <p
-                    style="
-                        margin-top:14px;
-                        color:#77777e;
-                        font-size:13px;
-                    "
-                >
+<p class="workout-plan-summary-note">
 
-                    Tổng số lượt bài trong tuần:
+    Tổng số lượt bài trong tuần:
 
-                    <strong
-                        style="
-                            color:#151518;
-                        "
-                    >
-                        ${exerciseCount}
-                    </strong>
+    <strong>
+        ${exerciseCount}
+    </strong>
 
-                </p>
+</p>
 
             </section>
 
@@ -1624,16 +1614,12 @@ function getWorkout() {
                         ${escapeHTML(reason)}
                     </p>
 
-                    <p
-                        style="
-                            margin-top:10px;
-                        "
-                    >
+<p class="workout-plan-notice-followup">
 
-                        Hãy xem lại kết quả Fitness Check
-                        trước khi bắt đầu buổi tập.
+    Hãy xem lại kết quả Fitness Check
+    trước khi bắt đầu buổi tập.
 
-                    </p>
+</p>
 
                 </div>
 
@@ -1829,60 +1815,48 @@ function getWorkout() {
        32. RESUME SESSION
     ====================================================== */
 
-    function buildResumeHTML() {
+function buildResumeHTML() {
 
-        if (
-            !hasSavedSession()
-        ) {
+    if (
+        !hasSavedSession()
+    ) {
 
-            return "";
-
-        }
-
-
-        return `
-
-            <div
-                class="workout-plan-notice"
-                style="
-                    border-left-color:#e10600;
-                "
-            >
-
-                <h3>
-                    Bạn có một buổi tập đang dang dở
-                </h3>
-
-                <p>
-
-                    Tiến độ buổi tập trước đã được lưu
-                    trên trình duyệt này.
-
-                    Bạn có thể tiếp tục
-                    từ vị trí đã dừng.
-
-                </p>
-
-
-                <button
-                    type="button"
-                    class="workout-start-btn"
-                    data-workout-action="resume"
-                    style="
-                        max-width:360px;
-                        margin-top:15px;
-                    "
-                >
-                    ▶ TIẾP TỤC BUỔI TẬP
-                </button>
-
-            </div>
-
-        `;
+        return "";
 
     }
 
 
+    return `
+
+        <div class="workout-plan-notice resume">
+
+            <h3>
+                Bạn có một buổi tập đang dang dở
+            </h3>
+
+            <p>
+
+                Tiến độ buổi tập trước đã được lưu
+                trên trình duyệt này.
+
+                Bạn có thể tiếp tục
+                từ vị trí đã dừng.
+
+            </p>
+
+            <button
+                type="button"
+                class="workout-start-btn workout-resume-btn"
+                data-workout-action="resume"
+            >
+                ▶ TIẾP TỤC BUỔI TẬP
+            </button>
+
+        </div>
+
+    `;
+
+}
     /* =====================================================
        33. EXERCISE ROW
     ====================================================== */
@@ -1998,16 +1972,12 @@ function getWorkout() {
 
                         : `
 
-                            <span
-                                class="workout-plan-exercise-video"
-                                style="
-                                    background:#f2f2f3;
-                                    color:#77777e;
-                                "
-                                title="Chưa có video tương ứng"
-                            >
-                                Hướng dẫn
-                            </span>
+<span
+    class="workout-plan-exercise-video is-missing"
+    title="Chưa có video tương ứng"
+>
+    Hướng dẫn
+</span>
 
                         `
 
@@ -2376,17 +2346,12 @@ function getWorkout() {
 
                             : `
 
-                                <p
-                                    style="
-                                        color:#77777e;
-                                        line-height:1.7;
-                                    "
-                                >
+<p class="workout-plan-empty-exercises">
 
-                                    Buổi tập này chưa có
-                                    danh sách bài tập.
+    Buổi tập này chưa có
+    danh sách bài tập.
 
-                                </p>
+</p>
 
                             `
 
@@ -2559,7 +2524,7 @@ function getWorkout() {
                         để bắt đầu Workout Session.
 
                         Hôm nay được đánh dấu
-                        bằng viền đỏ.
+bằng viền lime.
 
                     </p>
 
@@ -3295,74 +3260,80 @@ function getWorkout() {
        44. RESUME
     ====================================================== */
 
-    function resumeSaved() {
+function resumeSaved() {
 
-        const sessionAPI =
-
-            window
-                .SportHubWorkoutSession;
-
-
-        if (!sessionAPI) {
-
-            notify(
-
-                "Không tìm thấy workout-session.js."
-
-            );
+    const sessionAPI =
+        window
+            .SportHubWorkoutSession;
 
 
-            return false;
+    if (!sessionAPI) {
 
-        }
+        notify(
+            "Không tìm thấy workout-session.js."
+        );
 
-
-        if (
-
-            typeof sessionAPI
-                .resumeSaved
-
-            !==
-
-            "function"
-
-        ) {
-
-            notify(
-
-                "Không thể khôi phục buổi tập đã lưu."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        const success =
-
-            sessionAPI
-                .resumeSaved();
-
-
-        if (!success) {
-
-            notify(
-
-                "Không tìm thấy buổi tập đang dang dở."
-
-            );
-
-
-            render();
-
-        }
-
-
-        return success;
+        return false;
 
     }
+
+
+    if (
+        typeof sessionAPI
+            .resumeSaved
+
+        !==
+
+        "function"
+    ) {
+
+        notify(
+            "Không thể khôi phục buổi tập đã lưu."
+        );
+
+        return false;
+
+    }
+
+
+    if (
+        !hasSavedSession()
+    ) {
+
+        notify(
+            "Không tìm thấy buổi tập đang dang dở."
+        );
+
+        render();
+
+        return false;
+
+    }
+
+
+    const success =
+        sessionAPI
+            .resumeSaved();
+
+
+    if (!success) {
+
+        /*
+            workout-session.js đã tự thông báo
+            lý do Resume thất bại, ví dụ Safety Gate.
+
+            Không hiển thị thêm thông báo
+            "Không tìm thấy buổi tập" sai ngữ cảnh.
+        */
+
+        render();
+
+    }
+
+
+    return success;
+
+}
 
 
     /* =====================================================
