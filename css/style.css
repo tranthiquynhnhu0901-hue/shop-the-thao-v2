@@ -1,0 +1,9150 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0} :root{--lime:#c8ff00;--lime2:#97c500;--ink:#061016;--ink2:#0d1b22;--paper:#f4f6f7;--white:#fff;--muted:#68767d;--line:#dfe5e8;--red:#ef4444;--amber:#f59e0b} html{scroll-behavior:smooth} body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--paper);color:#10161a;line-height:1.55} a{text-decoration:none;color:inherit} img{max-width:100%;display:block} button,input,select,textarea{font:inherit} button{cursor:pointer}.container{width:min(1380px,calc(100% - 40px));margin:auto}.header{position:sticky;top:0;z-index:1000;background:rgba(6,16,22,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:28px}.logo{font-size:27px;font-weight:950;color:#fff;letter-spacing:-1.5px}.logo span{color:var(--lime)}nav{display:flex;gap:26px;align-items:center}nav a{color:#bdc8cd;font-size:14px}nav a:hover,nav a.active{color:var(--lime)}.cart-link{background:var(--lime);padding:10px 14px;border-radius:9px;font-weight:850}.cart-count{display:inline-grid;place-items:center;width:23px;height:23px;background:var(--ink);color:#fff;border-radius:50%;font-size:12px}.hero{min-height:680px;background:radial-gradient(circle at 78% 30%,rgba(200,255,0,.18),transparent 23%),linear-gradient(120deg,#061016 0%,#0e2027 58%,#07141a 100%);color:#fff;display:flex;align-items:center;overflow:hidden;position:relative}.hero:after{content:'';position:absolute;right:-120px;top:80px;width:620px;height:620px;border:55px solid rgba(200,255,0,.08);border-radius:50%}.hero-content{padding:90px 0;position:relative;z-index:1}.eyebrow,.hero-label{font-size:12px;font-weight:900;letter-spacing:1.6px;color:var(--lime2)}.hero-label{display:inline-block;color:var(--lime);padding:9px 14px;border:1px solid rgba(200,255,0,.32);border-radius:99px;background:rgba(200,255,0,.07)}.hero h1{font-size:clamp(58px,8vw,110px);line-height:.91;letter-spacing:-5px;max-width:850px;margin:24px 0}.hero h1 span{color:var(--lime)}.hero p{max-width:690px;color:#bdc8cd;font-size:18px;line-height:1.8}.hero-actions{display:flex;gap:12px;margin-top:30px}.btn-primary,.btn-secondary,.btn-dark{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:14px 22px;font-weight:900;border:0}.btn-primary{background:var(--lime);color:var(--ink)}.btn-primary:hover{background:#d6ff42}.btn-secondary{color:#fff;border:1px solid rgba(255,255,255,.28)}.btn-dark{background:var(--ink);color:#fff}.section{padding:80px 0}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}.section-heading h2{font-size:38px;line-height:1.1;margin:6px 0}.section-heading p{color:var(--muted)}.advantage-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:16px;margin-top:-34px;position:relative;z-index:2;overflow:hidden}.advantage{padding:24px;display:flex;gap:13px;border-right:1px solid var(--line)}.advantage:last-child{border-right:0}.advantage-icon{width:44px;height:44px;display:grid;place-items:center;background:var(--lime);border-radius:10px;font-weight:900}.advantage span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.product-grid,.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product-card,.blog-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}.product-card:hover,.blog-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,.08)}.product-image{height:260px;position:relative;background:#0b1920;overflow:hidden}.product-image img,.blog-card img{width:100%;height:100%;object-fit:cover}.product-badge{position:absolute;left:14px;top:14px;background:var(--lime);padding:6px 9px;border-radius:6px;font-size:11px;font-weight:900}.product-info,.blog-content{padding:19px}.product-category,.blog-category{font-size:11px;font-weight:900;color:#668600;text-transform:uppercase}.product-info h3,.blog-content h3,.blog-content h2{font-size:18px;line-height:1.4;margin:8px 0}.product-info p,.blog-content p{color:var(--muted);font-size:13px;line-height:1.65}.rating{color:var(--amber);font-size:13px;margin:8px 0}.rating span{color:#87939a}.price{display:flex;align-items:center;gap:9px;margin:15px 0}.price strong{font-size:20px;color:var(--red)}.price del{font-size:13px;color:#9ba4a9}.product-btn,.read-more{display:block;text-align:center;background:var(--ink);color:#fff;padding:11px;border-radius:8px;font-size:13px;font-weight:800}.read-more{display:inline-block;padding:10px 14px}.product-btn:hover,.read-more:hover{background:var(--lime);color:var(--ink)}.page-hero{padding:95px 0;background:linear-gradient(135deg,#061016,#10252d);color:#fff}.page-hero h1{font-size:58px;margin:8px 0}.page-hero p{color:#afbdc3;max-width:700px}.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:26px}.toolbar input,.toolbar select,.field input,.field select,.field textarea,.detail-info select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:9px;background:#fff;outline:none}.detail-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:50px}.detail-media img{width:100%;height:610px;object-fit:cover;border-radius:20px}.detail-info h1{font-size:44px;line-height:1.08;margin:12px 0}.detail-price{font-size:30px;font-weight:900;color:var(--red);margin:18px 0}.detail-price del{font-size:15px;color:#98a2a7;margin-left:8px}.detail-desc{white-space:pre-line;color:var(--muted);line-height:1.8}.qty{display:flex;align-items:center;gap:12px;margin:16px 0}.qty button{width:38px;height:38px;border:0;border-radius:7px;background:#e7ecee}.policy{margin-top:25px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:11px}.policy div{padding:6px 0}.cart-layout,.checkout-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:30px}.cart-item{display:grid;grid-template-columns:95px 1fr auto auto 36px;align-items:center;gap:16px;background:#fff;border-bottom:1px solid var(--line);padding:18px}.cart-item img{width:95px;height:75px;object-fit:cover;border-radius:9px}.cart-summary,.checkout-summary,.checkout-form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;height:max-content}.summary-row,.summary-total{display:flex;justify-content:space-between;padding:10px 0}.summary-total{border-top:1px solid var(--line);font-size:20px;font-weight:900;margin-top:8px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:14px}.field label{display:block;font-weight:800;font-size:13px;margin-bottom:6px}.payment-option{display:flex;gap:10px;padding:14px;border:1px solid var(--line);border-radius:9px;margin:10px 0}.checkout-item{display:grid;grid-template-columns:58px 1fr;gap:10px;margin-bottom:12px}.checkout-item img{width:58px;height:48px;object-fit:cover;border-radius:7px}.success-modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:4000}.success-modal.active{display:flex}.success-card{width:min(520px,calc(100% - 30px));background:#fff;border-radius:20px;padding:38px;text-align:center}.success-icon{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:var(--lime);font-size:38px;margin:0 auto 18px}.blog-card img{height:220px;background:#0b1920}.article-header{background:linear-gradient(135deg,#061016,#10252d);color:#fff;padding:90px 20px}.article-heading{max-width:950px;margin:auto}.article-heading h1{font-size:56px;line-height:1.08;margin:15px 0}.article-heading p{font-size:18px;line-height:1.75;color:#b7c3c8}.article-main{max-width:1080px;margin:auto;padding:55px 20px}.article-cover{width:100%;max-height:610px;object-fit:cover;border-radius:20px;margin-bottom:45px}.article-content{max-width:800px;margin:auto}.article-section{margin-bottom:34px}.article-section h2{font-size:28px;line-height:1.25;margin-bottom:12px}.article-section p,.article-section li{font-size:16.5px;line-height:1.9;color:#45545b}.article-section p{margin:10px 0}.article-section ul{padding-left:22px;margin-top:10px}.article-callout{background:#eef6d8;border-left:4px solid var(--lime2);padding:18px;border-radius:8px;margin-top:17px}.article-callout p{margin-bottom:0}.fitness-layout{display:grid;grid-template-columns:1.4fr .6fr;gap:28px}.fitness-card,.fitness-aside{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}.fitness-aside{position:sticky;top:96px;height:max-content}.progress-track{height:7px;background:#e5eaec;border-radius:10px;overflow:hidden;margin:10px 0 30px}.progress-bar{height:100%;width:20%;background:var(--lime);transition:.3s}.fitness-step{display:none}.fitness-step.active{display:block}.fitness-step h2{font-size:32px;margin:8px 0}.step-copy{color:var(--muted);margin-bottom:24px}.health-q{padding:16px;background:#f6f8f9;border-radius:10px;margin:10px 0}.health-q p{font-weight:800;margin-bottom:10px}.health-q label{margin-right:20px}.goal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.goal-card{border:2px solid var(--line);border-radius:12px;padding:18px;cursor:pointer}.goal-card input{margin-right:8px}.goal-card:has(input:checked){border-color:var(--lime2);background:#f5fadd}.equipment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.equipment-grid label{background:#f5f7f8;padding:11px;border-radius:8px}.fitness-controls{display:flex;justify-content:space-between;margin-top:28px}.fitness-result{display:none;background:#061016;color:#fff;padding:80px 0}.fitness-result.active{display:block}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.result-stat,.workout-day,.guide-card,.safety-box,.bmi-box{background:#102028;border-radius:12px;padding:20px}.result-stat span{display:block;color:#91a0a7;font-size:12px}.result-stat strong{display:block;color:var(--lime);font-size:20px;margin-top:6px}.safety-box{margin:18px 0}.safety-box.safe{background:#183522}.safety-box.caution{background:#493a13}.safety-box.stop{background:#4a1d1d}.workout-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}.workout-day{background:#fff;color:#111}.workout-day h3{margin-bottom:12px}.exercise{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.exercise span{color:var(--muted);font-size:13px}.guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.guide-card p{color:#a5b1b6;font-size:13px}.chat-toggle{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border:0;border-radius:50%;background:var(--lime);font-size:25px;z-index:3000}.chatbox{position:fixed;right:22px;bottom:92px;width:370px;max-width:calc(100% - 28px);height:500px;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden;display:none;flex-direction:column;z-index:3000}.chatbox.active{display:flex}.chat-head{padding:16px;background:var(--ink);color:#fff;display:flex;justify-content:space-between}.chat-messages{flex:1;overflow:auto;padding:14px;background:#eef2f3}.msg{max-width:85%;padding:10px 12px;border-radius:11px;margin:8px 0;font-size:14px}.msg.bot{background:#fff}.msg.user{background:var(--lime);margin-left:auto}.chat-input{display:flex;gap:7px;padding:11px}.chat-input input{flex:1;padding:10px;border:1px solid var(--line);border-radius:8px}.chat-input button{width:42px;border:0;border-radius:8px;background:var(--lime)}.toast{position:fixed;left:50%;bottom:-70px;transform:translateX(-50%);background:#061016;color:#fff;padding:12px 18px;border-radius:8px;z-index:6000;transition:.25s}.toast.show{bottom:22px}.empty{text-align:center;padding:55px 20px;grid-column:1/-1}footer{background:#040b0f;color:#fff;padding:55px 0;margin-top:50px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.footer-grid a,.footer-grid p{color:#8f9da3;font-size:13px;margin:5px 0;display:block}
+@media(max-width:1050px){.product-grid,.blog-grid{grid-template-columns:repeat(3,1fr)}.advantage-grid{grid-template-columns:repeat(2,1fr)}.fitness-layout{grid-template-columns:1fr}.fitness-aside{position:static}.guide-grid,.result-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){nav{display:none}.product-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}.toolbar,.detail-layout,.cart-layout,.checkout-layout{grid-template-columns:1fr}.detail-media img{height:450px}.footer-grid{grid-template-columns:1fr 1fr}.article-heading h1{font-size:40px}.workout-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.container{width:min(100% - 24px,1380px)}.product-grid,.blog-grid,.advantage-grid,.form-grid,.goal-grid,.equipment-grid,.result-grid,.guide-grid,.footer-grid{grid-template-columns:1fr}.hero h1{font-size:52px;letter-spacing:-3px}.hero-actions{flex-direction:column}.page-hero h1{font-size:42px}.cart-item{grid-template-columns:80px 1fr}.cart-item> :nth-child(n+3){grid-column:2}.article-heading h1{font-size:34px}.fitness-card{padding:20px}}
+/* =========================================================
+   ẢNH BANNER THẬT - SPORTHUB
+========================================================= */
+
+
+/* Banner chính trang chủ */
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 14, 18, 0.97) 0%,
+            rgba(5, 14, 18, 0.85) 45%,
+            rgba(5, 14, 18, 0.25) 100%
+        ),
+        url("../images/banners/bn01-hero-home.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* Banner Fitness Check */
+.fitness-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 14, 18, 0.95),
+            rgba(5, 14, 18, 0.60)
+        ),
+        url("../images/banners/bn02-fitness-check.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* Banner quảng cáo */
+.promo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 16, 21, 0.97) 0%,
+            rgba(7, 16, 21, 0.80) 50%,
+            rgba(7, 16, 21, 0.18) 100%
+        ),
+        url("../images/banners/bn03-promotion.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+/* HIEN RO ANH BANNER */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 14, 18, 0.78) 0%,
+            rgba(5, 14, 18, 0.50) 50%,
+            rgba(5, 14, 18, 0.12) 100%
+        ),
+        url("../images/banners/bn01-hero-home.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.fitness-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 14, 18, 0.72) 0%,
+            rgba(5, 14, 18, 0.35) 100%
+        ),
+        url("../images/banners/bn02-fitness-check.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.promo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 16, 21, 0.76) 0%,
+            rgba(7, 16, 21, 0.42) 52%,
+            rgba(7, 16, 21, 0.08) 100%
+        ),
+        url("../images/banners/bn03-promotion.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+/* FONT TIENG VIET - SPORTHUB */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Be Vietnam Pro", Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo,
+.hero h1,
+.page-hero h1,
+.article-heading h1,
+.section-heading h2,
+.product-info h3,
+.blog-content h3 {
+    font-family: "Be Vietnam Pro", Arial, sans-serif !important;
+}
+
+h1,
+.hero h1,
+.page-hero h1,
+.article-heading h1,
+.logo {
+    font-weight: 900;
+}
+
+h2,
+h3,
+.product-info h3,
+.blog-content h3 {
+    font-weight: 800;
+}
+
+nav a {
+    font-weight: 600;
+}
+
+button,
+.btn-primary,
+.btn-secondary,
+.btn-dark,
+.product-btn,
+.read-more {
+    font-weight: 800;
+}
+/* =========================================================
+   SPORTHUB - ABOUT & CONTACT PAGES
+========================================================= */
+
+
+/* =========================================================
+   INFO HERO
+========================================================= */
+
+.info-hero,
+.contact-hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(200,255,0,.15),
+            transparent 25%
+        ),
+        linear-gradient(
+            120deg,
+            #061016,
+            #10252d
+        );
+    overflow: hidden;
+    position: relative;
+}
+
+
+.info-hero::after,
+.contact-hero::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: -220px;
+    top: -100px;
+    border: 70px solid rgba(200,255,0,.07);
+    border-radius: 50%;
+}
+
+
+.info-hero-content,
+.contact-hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    padding: 90px 0;
+}
+
+
+.info-hero h1,
+.contact-hero h1 {
+    font-size: clamp(55px, 8vw, 96px);
+    line-height: .95;
+    letter-spacing: -4px;
+    margin: 22px 0;
+}
+
+
+.info-hero h1 span,
+.contact-hero h1 span {
+    color: var(--lime);
+}
+
+
+.info-hero p,
+.contact-hero p {
+    color: #c3ced3;
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-split {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+
+.about-split h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+
+.about-copy p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+
+.info-dark {
+    background: var(--ink);
+    color: #fff;
+}
+
+
+.info-dark .section-heading p {
+    color: #94a4ab;
+}
+
+
+.about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+
+.about-feature-card {
+    border: 1px solid rgba(255,255,255,.1);
+    background: #0d1b22;
+    border-radius: 16px;
+    padding: 25px;
+    transition: .28s;
+}
+
+
+.about-feature-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(200,255,0,.5);
+}
+
+
+.about-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: var(--lime);
+    color: var(--ink);
+    font-weight: 900;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.about-feature-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.about-feature-card p {
+    color: #9eacb2;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 100px;
+}
+
+
+.about-feature-card a {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--lime);
+    font-weight: 800;
+    font-size: 13px;
+}
+
+
+.principle-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+
+.principle-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+
+.principle-card strong {
+    color: var(--lime2);
+    font-size: 30px;
+}
+
+
+.principle-card h3 {
+    margin: 10px 0;
+}
+
+
+.principle-card p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 14px;
+}
+
+
+.about-audience {
+    background: #edf1f2;
+}
+
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+
+.audience-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    font-weight: 750;
+}
+
+
+.about-cta {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 22px;
+    padding: 55px;
+}
+
+
+.about-cta h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+
+.about-cta p {
+    color: #aebcc2;
+    max-width: 650px;
+}
+
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+
+
+.contact-info-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 24px;
+    transition: .28s;
+}
+
+
+.contact-info-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.09);
+    border-color: var(--lime2);
+}
+
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    background: #eff5dc;
+    border-radius: 12px;
+    font-size: 22px;
+    transition: .25s;
+}
+
+
+.contact-info-card:hover .contact-icon {
+    transform: scale(1.08);
+    background: var(--lime);
+}
+
+
+.contact-info-card > span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+
+.contact-info-card h3 {
+    font-size: 17px;
+    margin: 5px 0 15px;
+    overflow-wrap: anywhere;
+}
+
+
+.mini-action {
+    color: #5e7e00;
+    font-size: 13px;
+    font-weight: 850;
+}
+
+
+
+/* =========================================================
+   SUPPORT CARDS
+========================================================= */
+
+.contact-support-section {
+    background: #081116;
+    color: #fff;
+}
+
+
+.contact-support-section .section-heading p {
+    color: #94a4ab;
+}
+
+
+.support-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+
+.support-card {
+    background: #102028;
+    border: 1px solid rgba(255,255,255,.08);
+    padding: 25px;
+    border-radius: 15px;
+    transition: .28s;
+}
+
+
+.support-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(200,255,0,.5);
+}
+
+
+.support-number {
+    color: var(--lime);
+    font-weight: 900;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+
+.support-card h3 {
+    font-size: 20px;
+}
+
+
+.support-card p {
+    color: #a5b3b9;
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 10px 0 20px;
+}
+
+
+.support-card button {
+    border: 0;
+    background: transparent;
+    color: var(--lime);
+    font-weight: 850;
+    font-size: 12px;
+}
+
+
+
+/* =========================================================
+   BULK
+========================================================= */
+
+.bulk-order {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+
+.bulk-order h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 10px 0 15px;
+}
+
+
+.bulk-order p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+.bulk-requirements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.bulk-requirements div {
+    border: 1px solid var(--line);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+
+.bulk-requirements strong {
+    display: block;
+    color: var(--lime2);
+    margin-bottom: 6px;
+}
+
+
+.bulk-requirements span {
+    font-size: 13px;
+    font-weight: 750;
+}
+
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form-section {
+    background: #e9edef;
+}
+
+
+.contact-form-layout {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 50px;
+}
+
+
+.contact-form-intro h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+
+.contact-form-intro > p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+.contact-side-note {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--ink);
+    color: #fff;
+}
+
+
+.contact-side-note strong,
+.contact-side-note a {
+    display: block;
+}
+
+
+.contact-side-note a {
+    color: var(--lime);
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+
+.contact-form-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+
+.float-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.float-field input,
+.float-field textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 14px 9px;
+    background: #fff;
+    outline: none;
+    transition: .2s;
+}
+
+
+.float-field textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+.float-field label {
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    color: #7a878d;
+    pointer-events: none;
+    transition: .18s;
+    background: #fff;
+}
+
+
+.float-field input:focus,
+.float-field textarea:focus {
+    border-color: var(--lime2);
+    box-shadow: 0 0 0 3px rgba(151,197,0,.10);
+}
+
+
+.float-field input:focus + label,
+.float-field input:not(:placeholder-shown) + label,
+.float-field textarea:focus + label,
+.float-field textarea:not(:placeholder-shown) + label {
+    top: 4px;
+    font-size: 10px;
+    color: #668600;
+}
+
+
+.contact-select-field select {
+    margin-top: 4px;
+}
+
+
+.field-error {
+    display: block;
+    color: #d63232;
+    margin-top: 5px;
+    min-height: 17px;
+    font-size: 11px;
+}
+
+
+.input-error {
+    border-color: #ef4444 !important;
+}
+
+
+.input-success {
+    border-color: #4d9c56 !important;
+}
+
+
+.dynamic-fields {
+    display: none;
+    padding: 18px;
+    margin: 12px 0 20px;
+    border: 1px solid var(--line);
+    background: #f7f9fa;
+    border-radius: 12px;
+}
+
+
+.dynamic-fields.active {
+    display: block;
+    animation: dynamicOpen .25s ease;
+}
+
+
+.dynamic-fields h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+
+@keyframes dynamicOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.form-honey {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+
+.form-privacy {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+
+.contact-submit {
+    width: 100%;
+    gap: 10px;
+    transition: .18s;
+}
+
+
+.contact-submit:hover {
+    transform: translateY(-2px);
+}
+
+
+.contact-submit:hover span:last-child {
+    transform: translateX(4px);
+}
+
+
+.contact-submit span:last-child {
+    transition: .2s;
+}
+
+
+.contact-submit:active {
+    transform: scale(.98);
+}
+
+
+.contact-submit:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+
+.contact-submit.success {
+    background: #56c271;
+}
+
+
+.form-status {
+    display: none;
+    margin-top: 18px;
+    border-radius: 11px;
+    padding: 16px;
+}
+
+
+.form-status.success {
+    display: block;
+    background: #e8f7eb;
+    color: #1c5f2a;
+}
+
+
+.form-status.error {
+    display: block;
+    background: #fff0f0;
+    color: #9c2929;
+}
+
+
+.form-status p {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+
+.form-status a {
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-card {
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+
+.map-card iframe {
+    display: block;
+}
+
+
+.map-action {
+    margin-top: 16px;
+}
+
+
+
+/* =========================================================
+   QUICK SUPPORT
+========================================================= */
+
+.quick-support-section {
+    padding-top: 20px;
+}
+
+
+.quick-support {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+}
+
+
+.quick-support h2 {
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+
+.quick-support p {
+    color: #9babb1;
+}
+
+
+.quick-support-actions {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+
+.quick-support-actions a {
+    background: #102028;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 11px;
+    padding: 16px;
+    transition: .2s;
+}
+
+
+.quick-support-actions a:hover {
+    border-color: var(--lime);
+    transform: translateY(-3px);
+}
+
+
+.quick-support-actions span {
+    display: block;
+    color: #87989f;
+    font-size: 11px;
+}
+
+
+.quick-support-actions strong {
+    display: block;
+    margin-top: 5px;
+    color: var(--lime);
+    font-size: 13px;
+}
+
+
+
+/* =========================================================
+   FLOAT CONTACT
+========================================================= */
+
+.floating-contact {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 3500;
+}
+
+
+.floating-main {
+    background: var(--lime);
+    color: var(--ink);
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 22px;
+    font-weight: 900;
+    box-shadow: 0 14px 35px rgba(0,0,0,.18);
+}
+
+
+.floating-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 62px;
+    width: 210px;
+    padding: 8px;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 20px 55px rgba(0,0,0,.2);
+}
+
+
+.floating-menu.active {
+    display: block;
+    animation: floatingOpen .2s ease;
+}
+
+
+.floating-menu a {
+    display: block;
+    padding: 11px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+
+.floating-menu a:hover {
+    background: #eff5dc;
+}
+
+
+@keyframes floatingOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+}
+
+
+.reveal.slide-left {
+    transform: translateX(-30px);
+}
+
+
+.reveal.slide-right {
+    transform: translateX(30px);
+}
+
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.contact-animate {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: contactFadeUp .65s forwards;
+}
+
+
+.contact-delay-1 {
+    animation-delay: .1s;
+}
+
+
+.contact-delay-2 {
+    animation-delay: .2s;
+}
+
+
+.contact-delay-3 {
+    animation-delay: .32s;
+}
+
+
+.contact-delay-4 {
+    animation-delay: .44s;
+}
+
+
+@keyframes contactFadeUp {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .about-feature-grid,
+    .principle-grid,
+    .contact-info-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .contact-form-layout,
+    .bulk-order,
+    .quick-support,
+    .about-split {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media(max-width:800px) {
+
+    .support-card-grid,
+    .audience-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .quick-support-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .info-hero,
+    .contact-hero {
+        min-height: 500px;
+    }
+
+}
+
+
+@media(max-width:560px) {
+
+    .about-feature-grid,
+    .principle-grid,
+    .contact-info-grid,
+    .support-card-grid,
+    .audience-grid,
+    .bulk-requirements {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-cta,
+    .bulk-order,
+    .quick-support,
+    .contact-form-card {
+        padding: 24px;
+    }
+
+
+    .info-hero h1,
+    .contact-hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .floating-contact {
+        right: 12px;
+        bottom: 12px;
+    }
+
+
+    .floating-main {
+        padding: 12px 17px;
+    }
+
+}
+/* =========================================================
+   SPORTHUB - SHOP CATEGORY GRID
+========================================================= */
+
+
+/* =========================================================
+   1. KHỐI DANH MỤC
+========================================================= */
+
+.shop-categories {
+    margin-bottom: 64px;
+}
+
+.shop-categories .section-heading {
+    margin-bottom: 26px;
+}
+
+
+/* =========================================================
+   2. CATEGORY GRID
+========================================================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+/* =========================================================
+   3. CATEGORY CARD
+========================================================= */
+
+.category-card {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 100%;
+
+    padding: 10px 10px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    color: var(--ink);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* =========================================================
+   4. ẢNH CATEGORY
+========================================================= */
+
+.category-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: #f2f5f6;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* =========================================================
+   5. TÊN CATEGORY
+========================================================= */
+
+.category-card span {
+    display: block;
+
+    margin-top: 12px;
+
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 850;
+
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   6. HOVER
+========================================================= */
+
+.category-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--lime2);
+
+    box-shadow:
+        0 14px 34px rgba(6, 16, 22, 0.10);
+}
+
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+
+.category-card:hover span {
+    color: #668600;
+}
+
+
+/* =========================================================
+   7. CATEGORY ĐANG ĐƯỢC CHỌN
+========================================================= */
+
+.category-card.active {
+    background: #f6ffdb;
+
+    border-color: var(--lime2);
+
+    box-shadow:
+        0 0 0 2px rgba(200, 255, 0, 0.18);
+}
+
+
+.category-card.active span {
+    color: #587400;
+}
+
+
+/* =========================================================
+   8. KEYBOARD / ACCESSIBILITY
+========================================================= */
+
+.category-card:focus-visible {
+    outline: 3px solid rgba(151, 197, 0, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   9. KHU VỰC SEARCH + FILTER
+========================================================= */
+
+.shop-filter-area {
+    padding-top: 45px;
+
+    margin-top: 10px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.shop-filter-area .section-heading {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   10. TOOLBAR SHOP
+========================================================= */
+
+.shop-filter-area .toolbar {
+    padding: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px rgba(6, 16, 22, 0.04);
+}
+
+
+.shop-filter-area .toolbar input,
+.shop-filter-area .toolbar select {
+    min-height: 50px;
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.shop-filter-area .toolbar input:focus,
+.shop-filter-area .toolbar select:focus {
+    border-color: var(--lime2);
+
+    box-shadow:
+        0 0 0 3px rgba(151, 197, 0, 0.12);
+}
+
+
+/* =========================================================
+   11. PRODUCT RESULT
+========================================================= */
+
+.shop-result-head {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin: 28px 0 20px;
+}
+
+
+.shop-result-head p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+.shop-result-head strong {
+    color: var(--ink);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .category-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .shop-categories {
+        margin-bottom: 48px;
+    }
+
+
+    .category-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .category-card {
+        padding: 7px 7px 11px;
+
+        border-radius: 13px;
+    }
+
+
+    .category-card img {
+        border-radius: 9px;
+    }
+
+
+    .category-card span {
+        margin-top: 9px;
+
+        min-height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .shop-filter-area {
+        padding-top: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   14. MOBILE NHỎ
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .category-card span {
+        font-size: 12.5px;
+    }
+
+}
+/* =========================================================
+   SPORTHUB - PRODUCT DETAIL V2
+========================================================= */
+
+
+/* =========================================================
+   1. BREADCRUMB
+========================================================= */
+
+.product-breadcrumb-wrap {
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+}
+
+.product-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    min-height: 52px;
+
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.product-breadcrumb a {
+    color: #536168;
+    transition: color 0.2s ease;
+}
+
+.product-breadcrumb a:hover {
+    color: #668600;
+}
+
+.product-breadcrumb > span:last-child {
+    color: var(--ink);
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   2. PRODUCT PAGE
+========================================================= */
+
+.product-detail-page {
+    background: var(--paper);
+}
+
+
+/* =========================================================
+   3. MAIN PRODUCT LAYOUT
+========================================================= */
+
+.product-detail-page .detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+
+    gap: 56px;
+}
+
+
+/* =========================================================
+   4. PRODUCT IMAGE
+========================================================= */
+
+.detail-image-wrap {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 50px rgba(6, 16, 22, 0.07);
+}
+
+.product-detail-page .detail-media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    transition: transform 0.45s ease;
+}
+
+.detail-image-wrap:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   5. DETAIL DISCOUNT
+========================================================= */
+
+.detail-discount {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 60px;
+    min-height: 38px;
+
+    padding: 8px 12px;
+
+    background: var(--red);
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 950;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   6. PRODUCT INFORMATION
+========================================================= */
+
+.product-detail-page .detail-info {
+    min-width: 0;
+
+    padding: 8px 0;
+}
+
+
+/* =========================================================
+   7. PRODUCT META
+========================================================= */
+
+.detail-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.detail-meta .product-code {
+    padding: 7px 10px;
+
+    background: #e9edef;
+
+    border-radius: 7px;
+
+    color: #45535a;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   8. PRODUCT TITLE
+========================================================= */
+
+.product-detail-page .detail-info h1 {
+    max-width: 760px;
+
+    margin: 10px 0 12px;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.07;
+
+    letter-spacing: -1.6px;
+
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   9. RATING
+========================================================= */
+
+.product-detail-page .detail-info .rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin: 11px 0;
+
+    font-size: 14px;
+}
+
+.product-detail-page .detail-info .rating strong {
+    color: var(--ink);
+}
+
+.product-detail-page .detail-info .rating span {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   10. LEAD DESCRIPTION
+========================================================= */
+
+.detail-lead {
+    max-width: 680px;
+
+    margin: 17px 0;
+
+    color: #526168;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   11. PRICE
+========================================================= */
+
+.product-detail-page .detail-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 22px 0 13px;
+
+    color: var(--red);
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 950;
+}
+
+.product-detail-page .detail-price del {
+    color: #98a2a7;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   12. STOCK
+========================================================= */
+
+.detail-stock {
+    margin: 15px 0 22px;
+}
+
+.stock-in,
+.stock-out {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 11px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 850;
+}
+
+.stock-in {
+    background: #eff9e6;
+    color: #507400;
+}
+
+.stock-out {
+    background: #fff0f0;
+    color: #b42318;
+}
+
+
+/* =========================================================
+   13. PRODUCT OPTION
+========================================================= */
+
+.detail-option {
+    margin: 19px 0;
+}
+
+.detail-option > strong,
+.detail-option label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--ink);
+
+    font-size: 13px;
+}
+
+.product-detail-page .detail-info select {
+    min-height: 50px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-detail-page .detail-info select:focus {
+    border-color: var(--lime2);
+
+    box-shadow:
+        0 0 0 3px rgba(151, 197, 0, 0.12);
+}
+
+
+/* =========================================================
+   14. QUANTITY
+========================================================= */
+
+.product-detail-page .qty {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 4px;
+
+    margin: 0;
+
+    padding: 4px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+}
+
+.product-detail-page .qty button {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: #eef2f3;
+
+    color: var(--ink);
+
+    font-size: 20px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.product-detail-page .qty button:hover {
+    background: var(--lime);
+    color: var(--ink);
+}
+
+.product-detail-page .qty strong {
+    min-width: 43px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   15. ADD TO CART
+========================================================= */
+
+.detail-add-cart {
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    letter-spacing: 0.3px;
+}
+
+.detail-add-cart:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   16. POLICY
+========================================================= */
+
+.product-detail-page .policy {
+    display: grid;
+
+    gap: 0;
+
+    margin-top: 24px;
+
+    padding: 9px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 13px;
+}
+
+.product-detail-page .policy div {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf0f1;
+
+    color: #536168;
+
+    font-size: 13px;
+}
+
+.product-detail-page .policy div:last-child {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   17. PRODUCT INFORMATION SECTION
+========================================================= */
+
+.product-information-section {
+    padding: 80px 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   18. DETAIL CONTENT GRID
+========================================================= */
+
+.product-detail-sections {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   19. DETAIL SECTION CARD
+========================================================= */
+
+.product-detail-section {
+    padding: 26px;
+
+    background: #f7f9f9;
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+}
+
+.product-detail-section h2 {
+    margin-bottom: 15px;
+
+    color: var(--ink);
+
+    font-size: 21px;
+
+    line-height: 1.25;
+}
+
+.product-detail-section p {
+    color: #536168;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   20. DESCRIPTION FULL WIDTH
+========================================================= */
+
+.product-description-section {
+    grid-column: 1 / -1;
+
+    padding: 32px;
+}
+
+.product-description-section p {
+    max-width: 1050px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   21. DETAIL LIST
+========================================================= */
+
+.product-detail-list {
+    display: grid;
+
+    gap: 11px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.product-detail-list li {
+    position: relative;
+
+    padding-left: 24px;
+
+    color: #536168;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.product-detail-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    color: #668600;
+
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   22. SPECIFICATION TABLE
+========================================================= */
+
+.product-spec-table {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 11px;
+}
+
+.product-spec-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(130px, 0.8fr)
+        minmax(0, 1.2fr);
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.product-spec-row:last-child {
+    border-bottom: 0;
+}
+
+.product-spec-row span {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.product-spec-row strong {
+    color: var(--ink);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   23. RELATED PRODUCTS
+========================================================= */
+
+.related-products-section {
+    background: var(--paper);
+}
+
+
+/* =========================================================
+   24. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .product-detail-page .detail-layout {
+        gap: 36px;
+    }
+
+
+    .product-detail-page .detail-info h1 {
+        font-size: 40px;
+    }
+
+
+    .product-detail-sections {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   25. MOBILE / TABLET NHỎ
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .product-detail-page .detail-layout {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .detail-image-wrap {
+        max-width: 680px;
+
+        margin: auto;
+    }
+
+
+    .product-detail-page .detail-info {
+        padding-top: 0;
+    }
+
+
+    .product-detail-page .detail-info h1 {
+        font-size: 36px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .product-detail-sections {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-description-section {
+        grid-column: auto;
+    }
+
+
+    .product-information-section {
+        padding: 60px 0;
+    }
+
+}
+
+
+/* =========================================================
+   26. MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+    .product-breadcrumb {
+        min-height: 46px;
+
+        font-size: 11px;
+    }
+
+
+    .product-detail-page > .section {
+        padding-top: 38px;
+        padding-bottom: 50px;
+    }
+
+
+    .detail-image-wrap {
+        border-radius: 15px;
+    }
+
+
+    .detail-discount {
+        top: 12px;
+        right: 12px;
+
+        min-width: 52px;
+        min-height: 32px;
+
+        font-size: 12px;
+    }
+
+
+    .product-detail-page .detail-info h1 {
+        font-size: 31px;
+    }
+
+
+    .detail-lead {
+        font-size: 14px;
+    }
+
+
+    .product-detail-page .detail-price {
+        font-size: 28px;
+    }
+
+
+    .product-detail-section,
+    .product-description-section {
+        padding: 20px;
+    }
+
+
+    .product-detail-section h2 {
+        font-size: 19px;
+    }
+
+
+    .product-description-section p {
+        font-size: 14px;
+    }
+
+
+    .product-spec-row {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+}
+/* =========================================================
+   SPORTHUB - SHOP FILTER SYSTEM V2
+   Search + Advanced Filter + Responsive
+========================================================= */
+
+
+/* =========================================================
+   1. SHOP FILTER WRAPPER
+========================================================= */
+
+.shop-filter-area {
+    margin-top: 64px;
+    padding: 32px;
+    border: 1px solid var(--line, #dfe5e8);
+    border-radius: 24px;
+    background: var(--white, #ffffff);
+    box-shadow:
+        0 12px 35px rgba(6, 16, 22, 0.06);
+}
+
+
+/* =========================================================
+   2. SEARCH BOX
+========================================================= */
+
+.shop-search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+
+.shop-search-box label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--ink, #061016);
+}
+
+
+.shop-search-box input {
+    width: 100%;
+    min-height: 54px;
+
+    padding:
+        0 18px;
+
+    border:
+        1px solid
+        var(--line, #dfe5e8);
+
+    border-radius:
+        14px;
+
+    background:
+        var(--paper, #f4f6f7);
+
+    color:
+        var(--ink, #061016);
+
+    font: inherit;
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.shop-search-box input::placeholder {
+    color:
+        var(--muted, #68767d);
+}
+
+
+.shop-search-box input:hover {
+    border-color:
+        #c6d0d5;
+}
+
+
+.shop-search-box input:focus {
+    border-color:
+        var(--lime2, #97c500);
+
+    background:
+        var(--white, #ffffff);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(200, 255, 0, 0.14);
+}
+
+
+/* =========================================================
+   3. FILTER GRID
+========================================================= */
+
+.shop-filter-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   4. FILTER FIELD
+========================================================= */
+
+.shop-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.shop-filter-field label {
+    font-size: 12px;
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.04em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--muted, #68767d);
+}
+
+
+.shop-filter-field select {
+    width: 100%;
+    min-height: 50px;
+
+    padding:
+        0 42px 0 14px;
+
+    border:
+        1px solid
+        var(--line, #dfe5e8);
+
+    border-radius:
+        12px;
+
+    background-color:
+        var(--paper, #f4f6f7);
+
+    color:
+        var(--ink, #061016);
+
+    font:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    outline:
+        none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.shop-filter-field select:hover {
+    border-color:
+        #c6d0d5;
+}
+
+
+.shop-filter-field select:focus {
+    border-color:
+        var(--lime2, #97c500);
+
+    background:
+        var(--white, #ffffff);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(200, 255, 0, 0.14);
+}
+
+
+/* =========================================================
+   5. FILTER ACTION
+========================================================= */
+
+.shop-filter-actions {
+    display: flex;
+
+    justify-content:
+        flex-end;
+
+    align-items:
+        center;
+
+    gap: 12px;
+
+    margin-top:
+        22px;
+
+    padding-top:
+        20px;
+
+    border-top:
+        1px solid
+        var(--line, #dfe5e8);
+}
+
+
+.shop-filter-actions .btn-secondary {
+    min-height:
+        46px;
+
+    padding:
+        0 20px;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.04em;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.shop-filter-actions .btn-secondary:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--ink, #061016);
+}
+
+
+/* =========================================================
+   6. PRODUCT RESULT HEAD
+========================================================= */
+
+.shop-result-head {
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin:
+        34px 0 20px;
+
+    padding:
+        16px 20px;
+
+    border:
+        1px solid
+        var(--line, #dfe5e8);
+
+    border-radius:
+        14px;
+
+    background:
+        var(--paper, #f4f6f7);
+}
+
+
+.shop-result-head p {
+    margin:
+        0;
+
+    color:
+        var(--muted, #68767d);
+
+    font-size:
+        14px;
+}
+
+
+.shop-result-head strong {
+    color:
+        var(--ink, #061016);
+
+    font-size:
+        17px;
+}
+
+
+/* =========================================================
+   7. CATEGORY ACTIVE STATE
+========================================================= */
+
+.category-card {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.category-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 26px
+        rgba(6, 16, 22, 0.08);
+}
+
+
+.category-card.active {
+    border-color:
+        var(--lime2, #97c500);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(200, 255, 0, 0.18),
+        0 12px 30px
+        rgba(6, 16, 22, 0.08);
+
+    transform:
+        translateY(-3px);
+}
+
+
+.category-card.active::after {
+    content:
+        "✓";
+
+    position:
+        absolute;
+
+    top:
+        10px;
+
+    right:
+        10px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--lime, #c8ff00);
+
+    color:
+        var(--ink, #061016);
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 4px 12px
+        rgba(6, 16, 22, 0.16);
+}
+
+
+/* =========================================================
+   8. EMPTY RESULT
+========================================================= */
+
+.shop-empty,
+#shopGrid > .empty {
+    grid-column:
+        1 / -1;
+
+    width:
+        100%;
+
+    padding:
+        70px 28px;
+
+    border:
+        1px dashed
+        #c7d0d5;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--paper, #f4f6f7);
+
+    text-align:
+        center;
+}
+
+
+.shop-empty h3,
+#shopGrid > .empty h2,
+#shopGrid > .empty h3 {
+    margin:
+        0 0 10px;
+
+    color:
+        var(--ink, #061016);
+}
+
+
+.shop-empty p,
+#shopGrid > .empty p {
+    max-width:
+        520px;
+
+    margin:
+        0 auto 20px;
+
+    color:
+        var(--muted, #68767d);
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================================
+   9. FILTER VISUAL GROUPING
+========================================================= */
+
+.shop-filter-field:nth-child(1),
+.shop-filter-field:nth-child(2),
+.shop-filter-field:nth-child(3) {
+    position:
+        relative;
+}
+
+
+.shop-filter-field select:not(:disabled) {
+    appearance:
+        auto;
+}
+
+
+/* =========================================================
+   10. CATEGORY SECTION SPACING
+========================================================= */
+
+.shop-categories {
+    margin-bottom:
+        20px;
+}
+
+
+.shop-categories .category-grid {
+    margin-top:
+        24px;
+}
+
+
+/* =========================================================
+   11. ACCESSIBILITY
+========================================================= */
+
+.category-card:focus-visible,
+.shop-filter-actions button:focus-visible {
+    outline:
+        3px solid
+        var(--lime, #c8ff00);
+
+    outline-offset:
+        3px;
+}
+
+
+.shop-search-box input:focus-visible,
+.shop-filter-field select:focus-visible {
+    outline:
+        none;
+}
+
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .shop-filter-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .shop-filter-area {
+        padding:
+            26px;
+    }
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .shop-filter-area {
+        margin-top:
+            44px;
+
+        padding:
+            20px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .shop-filter-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+    }
+
+
+    .shop-search-box input {
+        min-height:
+            52px;
+
+        font-size:
+            16px;
+    }
+
+
+    .shop-filter-field select {
+        min-height:
+            50px;
+
+        font-size:
+            16px;
+    }
+
+
+    .shop-filter-actions {
+        justify-content:
+            stretch;
+    }
+
+
+    .shop-filter-actions .btn-secondary {
+        width:
+            100%;
+    }
+
+
+    .shop-result-head {
+        margin-top:
+            26px;
+
+        padding:
+            14px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   14. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .shop-filter-area {
+        padding:
+            16px;
+    }
+
+
+    .shop-search-box {
+        margin-bottom:
+            18px;
+    }
+
+
+    .shop-result-head {
+        border-radius:
+            12px;
+    }
+
+
+    .shop-empty,
+    #shopGrid > .empty {
+        padding:
+            50px 18px;
+    }
+
+}
+/* =========================================================
+   SPORTHUB - SHOP MARKETPLACE UI V3
+   Compact Category + Filter + Product Grid
+   Desktop / Tablet / Mobile
+========================================================= */
+
+
+/* =========================================================
+   1. SHOP PAGE
+========================================================= */
+
+.shop-page {
+    width: 100%;
+    overflow-x: hidden;
+    background: #f4f6f7;
+}
+
+
+/* =========================================================
+   2. CĂN ĐỀU CONTAINER RIÊNG CHO SHOP
+========================================================= */
+
+.shop-page > section > .container,
+.shop-page .shop-intro-inner {
+    width: min(1320px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   3. SHOP INTRO
+   Nhỏ gọn hơn hero cũ
+========================================================= */
+
+.shop-intro {
+    padding: 34px 0 30px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(200, 255, 0, 0.12),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #061016,
+            #10252d
+        );
+
+    color: #ffffff;
+}
+
+
+.shop-intro-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 110px;
+}
+
+
+.shop-intro-label {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: var(--lime);
+
+    font-size: 11px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+}
+
+
+.shop-intro h1 {
+    margin: 0;
+
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.08;
+
+    font-weight: 950;
+
+    letter-spacing: -1.2px;
+}
+
+
+.shop-intro p {
+    max-width: 620px;
+
+    margin-top: 9px;
+
+    color: #b7c4ca;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   4. CATEGORY SECTION
+========================================================= */
+
+.shop-category-section {
+    padding: 22px 0 0;
+}
+
+
+/* =========================================================
+   5. TITLE BAR
+========================================================= */
+
+.shop-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 50px;
+
+    padding: 0 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+    border-bottom: 0;
+
+    border-radius: 12px 12px 0 0;
+}
+
+
+.shop-section-title h2 {
+    margin: 0;
+
+    color: #445159;
+
+    font-size: 14px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 0.7px;
+}
+
+
+.shop-view-all {
+    padding: 6px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #668600;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.shop-view-all:hover {
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   6. CATEGORY GRID
+   DESKTOP = 8 CỘT × 2 HÀNG
+========================================================= */
+
+.shop-page .shop-category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            8,
+            minmax(0, 1fr)
+        );
+
+    gap: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+
+    border-radius: 0 0 12px 12px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   7. CATEGORY CARD
+========================================================= */
+
+.shop-page .category-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-width: 0;
+    min-height: 118px;
+
+    padding: 10px 6px;
+
+    border: 0;
+
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    border-radius: 0;
+
+    background: #ffffff;
+
+    color: var(--ink);
+
+    text-align: center;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.shop-page .category-card:hover {
+    z-index: 2;
+
+    background: #f8fbe9;
+
+    color: #668600;
+}
+
+
+.shop-page .category-card.active {
+    background: #f1f9d5;
+
+    color: #668600;
+
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(151, 197, 0, 0.5);
+}
+
+
+/* =========================================================
+   8. CATEGORY IMAGE
+========================================================= */
+
+.shop-page .category-image {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: #f4f6f7;
+}
+
+
+.shop-page .category-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.shop-page .category-card:hover
+.category-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   9. CATEGORY TEXT
+========================================================= */
+
+.shop-page .category-card > span {
+    display: -webkit-box;
+
+    overflow: hidden;
+
+    max-width: 100%;
+
+    color: inherit;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* =========================================================
+   10. FILTER SECTION
+========================================================= */
+
+.shop-filter-section {
+    padding: 18px 0 0;
+}
+
+
+/* =========================================================
+   11. FILTER WRAPPER
+========================================================= */
+
+.shop-filter-section .container {
+    padding: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   12. SEARCH + SORT
+========================================================= */
+
+.shop-filter-top {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        230px;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   13. SEARCH
+========================================================= */
+
+.shop-page .shop-search-box {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.shop-search-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 14px;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+
+.shop-page .shop-search-box input {
+    width: 100%;
+    height: 44px;
+
+    padding:
+        0
+        15px
+        0
+        43px;
+
+    border: 1px solid #dce2e5;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--ink);
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.shop-page .shop-search-box input:focus {
+    border-color: #97c500;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(151, 197, 0, 0.12);
+}
+
+
+/* =========================================================
+   14. SORT
+========================================================= */
+
+.shop-filter-top > select {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dce2e5;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #334149;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   15. ADVANCED FILTER GRID
+========================================================= */
+
+.shop-page .shop-filter-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   16. FILTER FIELD
+========================================================= */
+
+.shop-page .shop-filter-field {
+    min-width: 0;
+}
+
+
+.shop-page .shop-filter-field label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #68767d;
+
+    font-size: 10px;
+    line-height: 1;
+
+    font-weight: 850;
+
+    letter-spacing: 0.3px;
+
+    text-transform: uppercase;
+}
+
+
+.shop-page .shop-filter-field select {
+    width: 100%;
+    height: 39px;
+
+    padding: 0 10px;
+
+    border: 1px solid #dfe5e8;
+
+    border-radius: 7px;
+
+    background: #f9fafb;
+
+    color: #263238;
+
+    font-size: 11.5px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.shop-page .shop-filter-field select:focus {
+    border-color: #97c500;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   17. RESET FILTER
+========================================================= */
+
+.shop-filter-reset {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.shop-filter-reset button {
+    width: 100%;
+    height: 39px;
+
+    padding: 0 12px;
+
+    border: 1px solid #182329;
+
+    border-radius: 7px;
+
+    background: #182329;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 850;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.shop-filter-reset button:hover {
+    border-color: var(--lime);
+
+    background: var(--lime);
+
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   18. PRODUCT SECTION
+========================================================= */
+
+.shop-products-section {
+    padding: 24px 0 60px;
+}
+
+
+/* =========================================================
+   19. PRODUCT HEADING
+========================================================= */
+
+.shop-product-heading {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 15px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 2px solid #e6eaec;
+}
+
+
+.shop-product-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #668600;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.9px;
+}
+
+
+.shop-product-heading h2 {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: 23px;
+    line-height: 1.15;
+
+    font-weight: 950;
+}
+
+
+.shop-result-count {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+
+.shop-result-count strong {
+    color: #668600;
+
+    font-size: 20px;
+
+    font-weight: 950;
+}
+
+
+.shop-result-count span {
+    color: #7b878d;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   20. PRODUCT GRID
+   DESKTOP = 5 CARD / HÀNG
+========================================================= */
+
+.shop-page .shop-product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0, 1fr)
+        );
+
+    gap: 14px;
+
+    align-items: stretch;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   21. PRODUCT CARD SHOP
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e7e9;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.shop-page
+.shop-product-grid
+.product-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(
+            151,
+            197,
+            0,
+            0.65
+        );
+
+    box-shadow:
+        0 10px 26px
+        rgba(
+            6,
+            16,
+            22,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   22. PRODUCT IMAGE
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-image {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #f4f6f7;
+}
+
+
+.shop-page
+.shop-product-grid
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   23. PRODUCT BADGES
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-badge {
+    top: 8px;
+    left: 8px;
+
+    padding: 5px 7px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+}
+
+
+.shop-page
+.shop-product-grid
+.product-discount {
+    top: 8px;
+    right: 8px;
+
+    min-width: 40px;
+    min-height: 23px;
+
+    padding: 4px 6px;
+
+    border-radius: 5px;
+
+    font-size: 9.5px;
+}
+
+
+/* =========================================================
+   24. PRODUCT INFO
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-info {
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    padding: 12px;
+}
+
+
+/* =========================================================
+   25. PRODUCT META
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-meta {
+    gap: 5px;
+
+    margin-bottom: 6px;
+}
+
+
+.shop-page
+.shop-product-grid
+.product-code {
+    padding: 4px 6px;
+
+    border-radius: 4px;
+
+    font-size: 8.5px;
+}
+
+
+.shop-page
+.shop-product-grid
+.product-sport {
+    font-size: 8.5px;
+}
+
+
+/* =========================================================
+   26. PRODUCT NAME
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-info h3 {
+    display: -webkit-box;
+
+    overflow: hidden;
+
+    min-height: 40px;
+
+    margin: 0 0 6px;
+
+    color: #162126;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* =========================================================
+   27. RATING
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.rating {
+    gap: 3px;
+
+    margin: 2px 0 7px;
+
+    font-size: 10px;
+}
+
+
+.shop-page
+.shop-product-grid
+.rating-star {
+    font-size: 12px;
+}
+
+
+.shop-page
+.shop-product-grid
+.rating strong {
+    font-size: 10px;
+}
+
+
+.shop-page
+.shop-product-grid
+.rating span:last-child {
+    font-size: 9.5px;
+}
+
+
+/* =========================================================
+   28. DESCRIPTION
+   Card nhỏ nên chỉ hiện 2 dòng
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-short-description {
+    display: -webkit-box;
+
+    overflow: hidden;
+
+    min-height: 35px;
+
+    margin-bottom: 8px;
+
+    color: #77848a;
+
+    font-size: 10.5px;
+    line-height: 1.5;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* =========================================================
+   29. PRICE
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.price {
+    gap: 6px;
+
+    margin-top: auto;
+    margin-bottom: 9px;
+
+    padding-top: 2px;
+}
+
+
+.shop-page
+.shop-product-grid
+.price strong {
+    color: var(--red);
+
+    font-size: 16px;
+    line-height: 1;
+
+    font-weight: 950;
+}
+
+
+.shop-page
+.shop-product-grid
+.price del {
+    font-size: 9.5px;
+}
+
+
+/* =========================================================
+   30. PRODUCT BUTTON
+========================================================= */
+
+.shop-page
+.shop-product-grid
+.product-btn {
+    min-height: 36px;
+
+    padding: 8px 10px;
+
+    border-radius: 6px;
+
+    font-size: 10.5px;
+}
+
+
+/* =========================================================
+   31. EMPTY STATE
+========================================================= */
+
+.shop-page .shop-empty {
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+
+    border: 1px dashed #ccd4d8;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+.shop-page .shop-empty h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+}
+
+
+.shop-page .shop-empty p {
+    margin-bottom: 16px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   32. DESKTOP NHỎ
+   1100 - 1250px
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .shop-page
+    .shop-category-grid {
+        grid-template-columns:
+            repeat(
+                8,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .shop-page
+    .shop-product-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .shop-page
+    .shop-filter-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   33. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .shop-page > section > .container,
+    .shop-page .shop-intro-inner {
+        width:
+            calc(
+                100% - 28px
+            );
+    }
+
+
+    .shop-intro {
+        padding: 28px 0;
+    }
+
+
+    .shop-page
+    .shop-category-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .shop-page
+    .category-card {
+        min-height: 108px;
+    }
+
+
+    .shop-page
+    .category-image {
+        width: 56px;
+        height: 56px;
+    }
+
+
+    .shop-filter-top {
+        grid-template-columns:
+            minmax(0, 1fr)
+            190px;
+    }
+
+
+    .shop-page
+    .shop-filter-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .shop-page
+    .shop-product-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   34. MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .shop-page > section > .container,
+    .shop-page .shop-intro-inner {
+        width:
+            calc(
+                100% - 24px
+            );
+
+        margin-inline: auto;
+    }
+
+
+    /* ---------------------------------------------
+       INTRO
+    --------------------------------------------- */
+
+    .shop-intro {
+        padding: 22px 0;
+    }
+
+
+    .shop-intro-inner {
+        min-height: 86px;
+    }
+
+
+    .shop-intro h1 {
+        font-size: 25px;
+    }
+
+
+    .shop-intro p {
+        margin-top: 6px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------------------------------------------
+       CATEGORY
+    --------------------------------------------- */
+
+    .shop-category-section {
+        padding-top: 14px;
+    }
+
+
+    .shop-section-title {
+        min-height: 44px;
+
+        padding-inline: 12px;
+    }
+
+
+    .shop-section-title h2 {
+        font-size: 12px;
+    }
+
+
+    .shop-view-all {
+        font-size: 10.5px;
+    }
+
+
+    .shop-page
+    .shop-category-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .shop-page
+    .category-card {
+        min-height: 94px;
+
+        gap: 5px;
+
+        padding: 8px 3px;
+    }
+
+
+    .shop-page
+    .category-image {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .shop-page
+    .category-card > span {
+        font-size: 9.5px;
+        line-height: 1.25;
+    }
+
+
+    /* ---------------------------------------------
+       FILTER
+    --------------------------------------------- */
+
+    .shop-filter-section {
+        padding-top: 12px;
+    }
+
+
+    .shop-filter-section
+    .container {
+        padding: 12px;
+    }
+
+
+    .shop-filter-top {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+
+    .shop-page
+    .shop-search-box input,
+    .shop-filter-top > select {
+        height: 41px;
+    }
+
+
+    .shop-page
+    .shop-filter-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 8px;
+
+        margin-top: 9px;
+    }
+
+
+    .shop-page
+    .shop-filter-field label {
+        font-size: 9px;
+    }
+
+
+    .shop-page
+    .shop-filter-field select,
+    .shop-filter-reset button {
+        height: 37px;
+
+        padding-inline: 8px;
+
+        font-size: 10px;
+    }
+
+
+    /* ---------------------------------------------
+       PRODUCT HEADING
+    --------------------------------------------- */
+
+    .shop-products-section {
+        padding-top: 18px;
+    }
+
+
+    .shop-product-heading {
+        align-items: center;
+
+        margin-bottom: 12px;
+    }
+
+
+    .shop-product-label {
+        font-size: 8.5px;
+    }
+
+
+    .shop-product-heading h2 {
+        font-size: 18px;
+    }
+
+
+    .shop-result-count strong {
+        font-size: 16px;
+    }
+
+
+    .shop-result-count span {
+        font-size: 10px;
+    }
+
+
+    /* ---------------------------------------------
+       PRODUCTS
+       MOBILE = 2 CARD / HÀNG
+    --------------------------------------------- */
+
+    .shop-page
+    .shop-product-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 9px;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .product-info {
+        padding: 9px;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .product-info h3 {
+        min-height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .product-short-description {
+        display: none;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .rating span:last-child {
+        display: none;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .price strong {
+        font-size: 14px;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .price del {
+        display: none;
+    }
+
+
+    .shop-page
+    .shop-product-grid
+    .product-btn {
+        min-height: 34px;
+
+        padding: 7px 5px;
+
+        font-size: 9.5px;
+    }
+
+}
+
+
+/* =========================================================
+   35. MOBILE RẤT NHỎ
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .shop-page > section > .container,
+    .shop-page .shop-intro-inner {
+        width:
+            calc(
+                100% - 20px
+            );
+    }
+
+
+    .shop-page
+    .category-card {
+        min-height: 88px;
+    }
+
+
+    .shop-page
+    .category-image {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .shop-page
+    .category-card > span {
+        font-size: 9px;
+    }
+
+
+    .shop-page
+    .shop-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .shop-filter-reset {
+        grid-column: 1 / -1;
+    }
+
+
+    .shop-page
+    .shop-product-grid {
+        gap: 7px;
+    }
+
+}
+/* =========================================================
+   SPORTHUB UI SYSTEM V4
+   RED / WHITE / BLACK
+   SPORT E-COMMERCE UX/UI
+========================================================= */
+
+
+/* =========================================================
+   01. DESIGN TOKENS
+========================================================= */
+
+:root {
+
+    --red: #e10600;
+    --red-dark: #b80500;
+    --red-soft: #fff0ef;
+
+    --black: #09090b;
+    --black-2: #111114;
+    --black-3: #1b1b1f;
+
+    --white: #ffffff;
+
+    --paper: #f6f6f7;
+    --paper-2: #eeeeef;
+
+    --text: #151518;
+    --muted: #737378;
+
+    --line: #e3e3e5;
+
+    --shadow-sm:
+        0 6px 20px rgba(0,0,0,.06);
+
+    --shadow-md:
+        0 18px 45px rgba(0,0,0,.10);
+
+    --shadow-red:
+        0 12px 30px rgba(225,6,0,.24);
+
+    /* Override màu cũ */
+    --lime: var(--red);
+    --lime2: var(--red-dark);
+    --ink: var(--black);
+    --ink2: var(--black-2);
+}
+
+
+/* =========================================================
+   02. GLOBAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--text);
+
+    line-height:
+        1.65;
+
+    letter-spacing:
+        -0.1px;
+
+}
+
+
+/* Nội dung phụ dễ đọc */
+
+p,
+li,
+input,
+select,
+textarea {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+}
+
+
+/* =========================================================
+   03. HEADLINE FONT
+========================================================= */
+
+h1,
+h2,
+.hero h1,
+.page-hero h1,
+.info-hero h1,
+.contact-hero h1,
+.article-heading h1,
+.section-heading h2,
+.shop-intro h1,
+.shop-product-heading h2 {
+
+    font-family:
+        "Oswald",
+        "Be Vietnam Pro",
+        sans-serif !important;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        -0.7px;
+
+}
+
+
+h3,
+h4,
+.product-info h3,
+.blog-content h3 {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   04. BODY BACKGROUND
+========================================================= */
+
+body,
+.shop-page {
+
+    background:
+        #f5f5f6 !important;
+
+}
+
+
+/* =========================================================
+   05. HEADER
+========================================================= */
+
+.header {
+
+    background:
+        rgba(9,9,11,.96) !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.10);
+
+}
+
+
+.nav {
+
+    min-height:
+        76px;
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    font-family:
+        "Oswald",
+        sans-serif !important;
+
+    font-size:
+        28px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .2px;
+
+    color:
+        #fff;
+
+}
+
+
+.logo span {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+/* NAV */
+
+nav a {
+
+    color:
+        #c7c7cb;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    transition:
+        color .2s ease;
+
+}
+
+
+nav a:hover,
+nav a.active {
+
+    color:
+        #ffffff !important;
+
+}
+
+
+nav a.active {
+
+    position:
+        relative;
+
+}
+
+
+nav a.active::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        -10px;
+
+    height:
+        3px;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--red);
+
+}
+
+
+/* =========================================================
+   06. CART HEADER
+========================================================= */
+
+.cart-link {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+    border-radius:
+        9px;
+
+    box-shadow:
+        0 8px 20px rgba(225,6,0,.22);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.cart-link:hover {
+
+    background:
+        var(--red-dark) !important;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.cart-count {
+
+    background:
+        #fff !important;
+
+    color:
+        var(--black) !important;
+
+}
+
+
+/* =========================================================
+   07. HOME HERO
+========================================================= */
+
+.hero {
+
+    min-height:
+        650px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.94) 0%,
+            rgba(5,5,6,.78) 44%,
+            rgba(5,5,6,.30) 100%
+        ),
+        url("../images/banners/bn01-hero-home.webp") !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center !important;
+
+}
+
+
+.hero::after {
+
+    border-color:
+        rgba(225,6,0,.14) !important;
+
+}
+
+
+.hero-label {
+
+    background:
+        rgba(225,6,0,.12) !important;
+
+    color:
+        #fff !important;
+
+    border:
+        1px solid rgba(225,6,0,.55) !important;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+}
+
+
+.hero h1 {
+
+    color:
+        #fff;
+
+    line-height:
+        .90;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+.hero p {
+
+    color:
+        #d0d0d3;
+
+    max-width:
+        650px;
+
+    font-size:
+        17px;
+
+}
+
+
+/* =========================================================
+   08. EYEBROW / SMALL LABEL
+========================================================= */
+
+.eyebrow,
+.shop-product-label,
+.shop-intro-label {
+
+    color:
+        var(--red) !important;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.4px;
+
+}
+
+
+/* =========================================================
+   09. PRIMARY BUTTON
+========================================================= */
+
+.btn-primary {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+    border:
+        1px solid var(--red);
+
+    box-shadow:
+        var(--shadow-red);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+.btn-primary:hover {
+
+    background:
+        var(--red-dark) !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 34px rgba(225,6,0,.30);
+
+}
+
+
+/* =========================================================
+   10. SECONDARY BUTTON
+========================================================= */
+
+.btn-secondary {
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:
+        #fff;
+
+    border:
+        1px solid rgba(255,255,255,.38);
+
+    transition:
+        .2s ease;
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        #fff;
+
+    color:
+        var(--black);
+
+}
+
+
+/* =========================================================
+   11. SECTION
+========================================================= */
+
+.section {
+
+    padding:
+        76px 0;
+
+}
+
+
+.section-heading {
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.section-heading h2 {
+
+    color:
+        var(--black);
+
+    font-size:
+        clamp(30px,3.3vw,43px);
+
+}
+
+
+.section-heading p {
+
+    color:
+        var(--muted);
+
+    max-width:
+        630px;
+
+}
+
+
+/* Xem tất cả */
+
+.section-heading > a {
+
+    color:
+        var(--red);
+
+    font-size:
+        13px;
+
+    transition:
+        .2s;
+
+}
+
+
+.section-heading > a:hover {
+
+    color:
+        var(--black);
+
+}
+
+
+/* =========================================================
+   12. PRODUCT GRID
+========================================================= */
+
+.product-grid {
+
+    gap:
+        18px;
+
+}
+
+
+/* =========================================================
+   13. PRODUCT CARD
+========================================================= */
+
+.product-card {
+
+    background:
+        #fff !important;
+
+    border:
+        1px solid #e5e5e7 !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.025);
+
+    transition:
+        transform .24s ease,
+        box-shadow .24s ease,
+        border-color .24s ease;
+
+}
+
+
+.product-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(225,6,0,.28) !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.11);
+
+}
+
+
+/* =========================================================
+   14. PRODUCT IMAGE
+========================================================= */
+
+.product-image {
+
+    background:
+        #f1f1f2 !important;
+
+    overflow:
+        hidden;
+
+}
+
+
+.product-image img {
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.product-card:hover
+.product-image img {
+
+    transform:
+        scale(1.035);
+
+}
+
+
+/* =========================================================
+   15. PRODUCT BADGE
+========================================================= */
+
+.product-badge {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+    border-radius:
+        5px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 4px 12px rgba(225,6,0,.20);
+
+}
+
+
+.product-discount {
+
+    background:
+        var(--black) !important;
+
+    color:
+        #fff !important;
+
+}
+
+
+/* =========================================================
+   16. PRODUCT INFORMATION
+========================================================= */
+
+.product-info {
+
+    padding:
+        17px !important;
+
+}
+
+
+.product-meta {
+
+    color:
+        #88888d;
+
+    font-size:
+        10px;
+
+}
+
+
+.product-code {
+
+    color:
+        #747479;
+
+}
+
+
+.product-sport {
+
+    color:
+        var(--red) !important;
+
+    font-weight:
+        800;
+
+}
+
+
+.product-info h3 {
+
+    font-size:
+        16px;
+
+    line-height:
+        1.4;
+
+    color:
+        var(--black);
+
+}
+
+
+.product-info h3 a:hover {
+
+    color:
+        var(--red);
+
+}
+
+
+/* =========================================================
+   17. PRODUCT DESCRIPTION
+========================================================= */
+
+.product-short-description {
+
+    color:
+        #76767b !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.6 !important;
+
+}
+
+
+/* =========================================================
+   18. RATING
+========================================================= */
+
+.rating {
+
+    color:
+        #f5a000;
+
+}
+
+
+.rating strong {
+
+    color:
+        #303034;
+
+}
+
+
+.rating span {
+
+    color:
+        #949499;
+
+}
+
+
+/* =========================================================
+   19. PRODUCT PRICE
+========================================================= */
+
+.price {
+
+    margin:
+        12px 0 14px;
+
+}
+
+
+.price strong {
+
+    color:
+        var(--red) !important;
+
+    font-size:
+        21px;
+
+    font-weight:
+        900;
+
+}
+
+
+.price del {
+
+    color:
+        #a2a2a6;
+
+}
+
+
+/* =========================================================
+   20. XEM CHI TIẾT
+========================================================= */
+
+.product-btn {
+
+    display:
+        flex !important;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        42px;
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+    border:
+        1px solid var(--red);
+
+    border-radius:
+        8px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .4px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.product-btn:hover {
+
+    background:
+        var(--black) !important;
+
+    border-color:
+        var(--black);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(0,0,0,.16);
+
+}
+
+
+/* =========================================================
+   21. SHOP HERO
+========================================================= */
+
+.shop-intro {
+
+    background:
+        linear-gradient(
+            110deg,
+            #08080a 0%,
+            #161619 75%,
+            #250604 100%
+        ) !important;
+
+}
+
+
+.shop-intro h1 {
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   22. SHOP CATEGORY
+========================================================= */
+
+.shop-section-title {
+
+    border-color:
+        #e6e6e8 !important;
+
+}
+
+
+.shop-section-title h2 {
+
+    color:
+        #29292d !important;
+
+}
+
+
+.shop-view-all {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+.shop-page .category-card {
+
+    background:
+        #fff !important;
+
+    color:
+        #252529 !important;
+
+}
+
+
+.shop-page .category-card:hover {
+
+    background:
+        #fff5f4 !important;
+
+    color:
+        var(--red) !important;
+
+}
+
+
+.shop-page .category-card.active {
+
+    background:
+        var(--red-soft) !important;
+
+    color:
+        var(--red) !important;
+
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(225,6,0,.45) !important;
+
+}
+
+
+/* =========================================================
+   23. SEARCH
+========================================================= */
+
+.shop-filter-section .container {
+
+    border:
+        1px solid #e2e2e4 !important;
+
+    box-shadow:
+        0 8px 26px rgba(0,0,0,.04);
+
+}
+
+
+.shop-page .shop-search-box input {
+
+    border:
+        1px solid #dadadd !important;
+
+    background:
+        #fff;
+
+}
+
+
+.shop-page .shop-search-box input:focus {
+
+    border-color:
+        var(--red) !important;
+
+    box-shadow:
+        0 0 0 4px rgba(225,6,0,.10) !important;
+
+}
+
+
+/* =========================================================
+   24. PRODUCT DETAIL PAGE
+========================================================= */
+
+.detail-media img {
+
+    background:
+        #f2f2f3;
+
+    border-radius:
+        16px;
+
+}
+
+
+.detail-info h1 {
+
+    font-family:
+        "Oswald",
+        "Be Vietnam Pro",
+        sans-serif !important;
+
+    color:
+        var(--black);
+
+}
+
+
+.detail-price {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+.detail-option strong {
+
+    color:
+        #26262a;
+
+}
+
+
+/* =========================================================
+   25. ADD TO CART
+========================================================= */
+
+.detail-add-cart {
+
+    width:
+        100%;
+
+    min-height:
+        55px;
+
+    margin-top:
+        8px;
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+    border:
+        1px solid var(--red) !important;
+
+    border-radius:
+        9px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .5px;
+
+    box-shadow:
+        0 10px 28px rgba(225,6,0,.28);
+
+    animation:
+        sporthubCartPulse 2.4s ease-in-out infinite;
+
+}
+
+
+.detail-add-cart:hover {
+
+    background:
+        var(--black) !important;
+
+    border-color:
+        var(--black) !important;
+
+    animation:
+        none;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* Pulse nhẹ thay vì chớp gắt */
+
+@keyframes sporthubCartPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 8px 22px rgba(225,6,0,.20);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 8px 22px rgba(225,6,0,.25),
+            0 0 0 7px rgba(225,6,0,.09);
+
+    }
+
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .detail-add-cart {
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   26. QUANTITY
+========================================================= */
+
+.qty button {
+
+    background:
+        #ededee !important;
+
+    color:
+        var(--black);
+
+    font-weight:
+        900;
+
+}
+
+
+.qty button:hover {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   27. POLICY
+========================================================= */
+
+.policy {
+
+    background:
+        #fafafa !important;
+
+    border:
+        1px solid #e1e1e3 !important;
+
+    color:
+        #4e4e52;
+
+}
+
+
+/* =========================================================
+   28. BLOG CARD
+========================================================= */
+
+.blog-card {
+
+    background:
+        #fff;
+
+    border:
+        1px solid #e4e4e6;
+
+}
+
+
+.blog-category {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+.blog-content h3:hover,
+.blog-content h2:hover {
+
+    color:
+        var(--red);
+
+}
+
+
+.read-more {
+
+    background:
+        transparent !important;
+
+    color:
+        var(--red) !important;
+
+    border:
+        1px solid var(--red);
+
+}
+
+
+.read-more:hover {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+}
+
+
+/* =========================================================
+   29. PROMO
+========================================================= */
+
+.promo {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,8,10,.95) 0%,
+            rgba(8,8,10,.76) 48%,
+            rgba(110,0,0,.27) 100%
+        ),
+        url("../images/banners/bn03-promotion.webp") !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center !important;
+
+}
+
+
+/* =========================================================
+   30. FITNESS
+========================================================= */
+
+.progress-bar {
+
+    background:
+        var(--red) !important;
+
+}
+
+
+.goal-card:has(input:checked) {
+
+    border-color:
+        var(--red) !important;
+
+    background:
+        var(--red-soft) !important;
+
+}
+
+
+.result-stat strong {
+
+    color:
+        #ff4c46 !important;
+
+}
+
+
+/* =========================================================
+   31. ABOUT
+========================================================= */
+
+.info-dark {
+
+    background:
+        var(--black) !important;
+
+}
+
+
+.about-icon {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+
+}
+
+
+.about-feature-card:hover {
+
+    border-color:
+        rgba(225,6,0,.65) !important;
+
+}
+
+
+.about-feature-card a {
+
+    color:
+        #ff4b45 !important;
+
+}
+
+
+.principle-card strong {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+/* =========================================================
+   32. CONTACT
+========================================================= */
+
+.contact-info-card:hover {
+
+    border-color:
+        var(--red) !important;
+
+}
+
+
+.contact-icon {
+
+    background:
+        #fff0ef !important;
+
+}
+
+
+.contact-info-card:hover
+.contact-icon {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff;
+
+}
+
+
+.mini-action {
+
+    color:
+        var(--red) !important;
+
+}
+
+
+/* =========================================================
+   33. CHAT
+========================================================= */
+
+.chat-toggle {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff;
+
+    box-shadow:
+        0 12px 30px rgba(225,6,0,.30);
+
+}
+
+
+.chat-head {
+
+    background:
+        var(--black) !important;
+
+    border-bottom:
+        3px solid var(--red);
+
+}
+
+
+.msg.user {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff;
+
+}
+
+
+.chat-input button {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   34. FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        #070708 !important;
+
+    border-top:
+        3px solid var(--red);
+
+}
+
+
+.footer-grid a {
+
+    transition:
+        color .2s ease;
+
+}
+
+
+.footer-grid a:hover {
+
+    color:
+        #fff !important;
+
+}
+
+
+/* =========================================================
+   35. FORM FOCUS
+========================================================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color:
+        var(--red) !important;
+
+    outline:
+        none;
+
+    box-shadow:
+        0 0 0 3px rgba(225,6,0,.08);
+
+}
+
+
+/* =========================================================
+   36. TEXT SELECTION
+========================================================= */
+
+::selection {
+
+    background:
+        var(--red);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   37. SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        10px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #ececee;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #aaa;
+
+    border-radius:
+        20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--red);
+
+}
+
+
+/* =========================================================
+   38. MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+
+        padding:
+            55px 0;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            570px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            53px !important;
+
+        letter-spacing:
+            -1px;
+
+    }
+
+
+    .hero p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .product-card {
+
+        border-radius:
+            11px !important;
+
+    }
+
+
+    .product-info {
+
+        padding:
+            12px !important;
+
+    }
+
+
+    .product-info h3 {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .price strong {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .product-btn {
+
+        min-height:
+            40px;
+
+        font-size:
+            11px;
+
+    }
+
+}
+/* =========================================================
+   SPORTHUB - PRODUCT CARD ACTIONS V5
+   XEM CHI TIẾT + THÊM VÀO GIỎ
+========================================================= */
+
+
+/* =========================================================
+   1. CARD CÓ CHIỀU CAO ĐỒNG ĐỀU
+========================================================= */
+
+.product-card {
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+}
+
+
+.product-card > a {
+
+    display: block;
+
+}
+
+
+.product-info {
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+}
+
+
+/* =========================================================
+   2. ẢNH SẢN PHẨM
+========================================================= */
+
+.product-image {
+
+    position: relative;
+
+    height: 250px;
+
+    background:
+        #f2f2f3 !important;
+
+}
+
+
+.product-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* Nếu ảnh thật bị lỗi */
+
+.product-image-fallback {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111113,
+            #2a0807
+        ) !important;
+
+}
+
+
+/* =========================================================
+   3. BADGE HẾT HÀNG
+========================================================= */
+
+.product-stock-badge {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 5;
+
+    padding:
+        9px 13px;
+
+    border-radius:
+        6px;
+
+    background:
+        rgba(9,9,11,.88);
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .6px;
+
+}
+
+
+/* =========================================================
+   4. TÊN SẢN PHẨM
+========================================================= */
+
+.product-info h3 {
+
+    min-height:
+        45px;
+
+    margin:
+        8px 0 6px;
+
+}
+
+
+.product-info h3 a {
+
+    display:
+        -webkit-box;
+
+    overflow:
+        hidden;
+
+    -webkit-line-clamp:
+        2;
+
+    -webkit-box-orient:
+        vertical;
+
+}
+
+
+/* =========================================================
+   5. MÔ TẢ NGẮN
+========================================================= */
+
+.product-short-description {
+
+    display:
+        -webkit-box;
+
+    overflow:
+        hidden;
+
+    min-height:
+        38px;
+
+    -webkit-line-clamp:
+        2;
+
+    -webkit-box-orient:
+        vertical;
+
+}
+
+
+/* =========================================================
+   6. GIÁ
+========================================================= */
+
+.price {
+
+    margin-top:
+        auto;
+
+    padding-top:
+        10px;
+
+}
+
+
+/* =========================================================
+   7. KHU VỰC 2 NÚT
+========================================================= */
+
+.product-card-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        8px;
+
+    margin-top:
+        8px;
+
+}
+
+
+/* =========================================================
+   8. NÚT XEM CHI TIẾT
+========================================================= */
+
+.product-detail-btn {
+
+    min-height:
+        42px;
+
+    display:
+        flex !important;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #ffffff !important;
+
+    color:
+        var(--red) !important;
+
+    border:
+        1.5px solid var(--red) !important;
+
+    border-radius:
+        8px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .45px;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.product-detail-btn:hover {
+
+    background:
+        var(--red) !important;
+
+    color:
+        #ffffff !important;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   9. NÚT THÊM VÀO GIỎ
+========================================================= */
+
+.product-add-btn {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    width:
+        100%;
+
+    min-height:
+        44px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid var(--red) !important;
+
+    border-radius:
+        8px;
+
+    background:
+        var(--red) !important;
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .4px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(225,6,0,.20);
+
+    animation:
+        sporthubProductPulse
+        2.8s ease-in-out infinite;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* ánh sáng chạy nhẹ */
+
+.product-add-btn::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -75%;
+
+    width:
+        45%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+        sporthubShine
+        4.5s ease-in-out infinite;
+
+}
+
+
+.product-add-btn:hover {
+
+    background:
+        #09090b !important;
+
+    border-color:
+        #09090b !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(0,0,0,.20);
+
+    animation:
+        none;
+
+}
+
+
+/* =========================================================
+   10. BUTTON DISABLED
+========================================================= */
+
+.product-add-btn:disabled {
+
+    background:
+        #b7b7ba !important;
+
+    border-color:
+        #b7b7ba !important;
+
+    color:
+        #ffffff !important;
+
+    cursor:
+        not-allowed;
+
+    box-shadow:
+        none;
+
+    animation:
+        none;
+
+}
+
+
+.product-add-btn:disabled::after {
+
+    display:
+        none;
+
+}
+
+
+/* =========================================================
+   11. ANIMATION
+========================================================= */
+
+@keyframes sporthubProductPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 8px 18px
+            rgba(225,6,0,.17);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 8px 20px
+            rgba(225,6,0,.26),
+
+            0 0 0 5px
+            rgba(225,6,0,.07);
+
+    }
+
+}
+
+
+@keyframes sporthubShine {
+
+    0%,
+    65% {
+
+        left:
+            -75%;
+
+    }
+
+    85% {
+
+        left:
+            130%;
+
+    }
+
+    100% {
+
+        left:
+            130%;
+
+    }
+
+}
+
+
+/* Người dùng tắt animation */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-add-btn,
+    .product-add-btn::after {
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   12. SHOP - 5 CARD DESKTOP
+========================================================= */
+
+.shop-page .shop-product-grid {
+
+    align-items:
+        stretch;
+
+}
+
+
+.shop-page
+.shop-product-grid
+.product-card {
+
+    min-width:
+        0;
+
+}
+
+
+/* =========================================================
+   13. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .product-image {
+
+        height:
+            225px;
+
+    }
+
+}
+
+
+/* =========================================================
+   14. MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .product-image {
+
+        height:
+            180px;
+
+    }
+
+
+    .product-info {
+
+        padding:
+            11px !important;
+
+    }
+
+
+    .product-info h3 {
+
+        min-height:
+            40px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .product-short-description {
+
+        display:
+            none !important;
+
+    }
+
+
+    .product-meta {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .rating {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .rating span {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .price {
+
+        margin:
+            9px 0;
+
+    }
+
+
+    .price strong {
+
+        font-size:
+            16px !important;
+
+    }
+
+
+    .price del {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .product-card-actions {
+
+        gap:
+            6px;
+
+    }
+
+
+    .product-detail-btn,
+    .product-add-btn {
+
+        min-height:
+            38px;
+
+        padding:
+            7px 5px;
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            0;
+
+    }
+
+}
+/* =========================================================
+   SPORTHUB FINAL UI PATCH V6.1
+   RED / WHITE / BLACK
+========================================================= */
+
+:root {
+    --red: #e10600;
+    --red-dark: #b70702;
+    --red-soft: #fff1f0;
+
+    --black: #08080a;
+    --black-2: #121214;
+
+    --white: #ffffff;
+
+    --paper: #f5f5f6;
+    --line: #e2e2e5;
+    --muted: #737378;
+
+    /* Ghi đè hệ màu xanh cũ */
+    --lime: #e10600 !important;
+    --lime2: #b70702 !important;
+    --ink: #08080a !important;
+    --ink2: #121214 !important;
+}
+
+
+/* =========================================================
+   GLOBAL FONT
+========================================================= */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+}
+
+
+h1,
+h2,
+.hero h1,
+.page-hero h1,
+.shop-intro h1,
+.info-hero h1,
+.contact-hero h1,
+.article-heading h1,
+.section-heading h2,
+.shop-product-heading h2 {
+    font-family:
+        "Oswald",
+        "Be Vietnam Pro",
+        sans-serif !important;
+
+    font-weight: 700 !important;
+}
+
+
+h3,
+h4,
+.product-info h3,
+.blog-content h3 {
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+body,
+.shop-page {
+    background: #f5f5f6 !important;
+    color: #151518;
+}
+
+
+::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    background: rgba(8,8,10,.97) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+
+.logo {
+    font-family: "Oswald", sans-serif !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+
+.logo span {
+    color: var(--red) !important;
+}
+
+
+nav a {
+    color: #c5c5c9 !important;
+}
+
+
+nav a:hover {
+    color: #fff !important;
+}
+
+
+nav a.active {
+    position: relative;
+    color: #fff !important;
+}
+
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -11px;
+
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: var(--red);
+}
+
+
+/* =========================================================
+   HEADER CART
+========================================================= */
+
+.cart-link {
+    background: var(--red) !important;
+    color: #fff !important;
+
+    box-shadow:
+        0 8px 22px rgba(225,6,0,.25);
+}
+
+
+.cart-count {
+    background: #fff !important;
+    color: #08080a !important;
+}
+
+
+/* =========================================================
+   HOME HERO
+   bn01
+========================================================= */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.94) 0%,
+            rgba(5,5,6,.77) 45%,
+            rgba(5,5,6,.25) 100%
+        ),
+        url("../images/banners/bn01-home-hero.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.hero::after {
+    border-color:
+        rgba(225,6,0,.14) !important;
+}
+
+
+.hero-label {
+    color: #fff !important;
+
+    border:
+        1px solid rgba(225,6,0,.65) !important;
+
+    background:
+        rgba(225,6,0,.13) !important;
+}
+
+
+.hero h1 {
+    color: #fff !important;
+}
+
+
+.hero h1 span {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   SHOP HERO
+   bn02
+========================================================= */
+
+.shop-intro,
+.shop-hero {
+    min-height: 390px !important;
+
+    display: flex;
+    align-items: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.94) 0%,
+            rgba(5,5,6,.72) 48%,
+            rgba(5,5,6,.20) 100%
+        ),
+        url("../images/banners/bn02-shop-hero.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.shop-intro-inner {
+    min-height: 300px !important;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.shop-intro h1 {
+    color: #fff !important;
+}
+
+
+.shop-intro h1 span {
+    color: var(--red) !important;
+}
+
+
+.shop-intro p {
+    color: #d5d5d8 !important;
+}
+
+
+/* =========================================================
+   FITNESS HERO
+   bn03
+========================================================= */
+
+.fitness-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.94),
+            rgba(5,5,6,.56)
+        ),
+        url("../images/banners/bn03-fitness-check.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* =========================================================
+   TRAINING HERO
+   bn04
+   Sẵn sàng dùng khi có trang Training
+========================================================= */
+
+.training-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.92),
+            rgba(5,5,6,.45)
+        ),
+        url("../images/banners/bn04-training-hero.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+
+/* =========================================================
+   BLOG HERO
+   bn05
+========================================================= */
+
+.blog-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.93),
+            rgba(5,5,6,.47)
+        ),
+        url("../images/banners/bn05-blog-hero.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+   bn06
+========================================================= */
+
+.info-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.94),
+            rgba(5,5,6,.52)
+        ),
+        url("../images/banners/bn06-about-hero.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.info-hero::after {
+    border-color:
+        rgba(225,6,0,.13) !important;
+}
+
+
+.info-hero h1 span {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   PROMOTION
+   bn07
+========================================================= */
+
+.promo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,6,.95) 0%,
+            rgba(5,5,6,.75) 48%,
+            rgba(100,0,0,.18) 100%
+        ),
+        url("../images/banners/bn07-promotion.webp") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* =========================================================
+   CONTACT HERO
+========================================================= */
+
+.contact-hero {
+    background:
+        linear-gradient(
+            120deg,
+            #08080a,
+            #1b0808,
+            #08080a
+        ) !important;
+}
+
+
+.contact-hero::after {
+    border-color:
+        rgba(225,6,0,.10) !important;
+}
+
+
+.contact-hero h1 span {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.eyebrow,
+.shop-intro-label,
+.shop-product-label {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary {
+    background: var(--red) !important;
+    color: #fff !important;
+
+    border:
+        1px solid var(--red) !important;
+
+    box-shadow:
+        0 10px 28px rgba(225,6,0,.24);
+
+    transition:
+        .22s ease;
+}
+
+
+.btn-primary:hover {
+    background: var(--red-dark) !important;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.btn-secondary {
+    color: #fff !important;
+
+    border:
+        1px solid rgba(255,255,255,.42) !important;
+
+    background:
+        rgba(255,255,255,.04) !important;
+}
+
+
+.btn-secondary:hover {
+    color: #08080a !important;
+    background: #fff !important;
+}
+
+
+/* =========================================================
+   SHOP - CHỈ GIỮ SEARCH
+========================================================= */
+
+/* Ẩn SORT */
+
+.shop-filter-top > select {
+    display: none !important;
+}
+
+
+/* Search chiếm toàn chiều ngang */
+
+.shop-filter-top {
+    display: block !important;
+}
+
+
+.shop-filter-top .shop-search-box {
+    width: 100% !important;
+}
+
+
+/* Ẩn tất cả bộ lọc cũ */
+
+.shop-filter-grid {
+    display: none !important;
+}
+
+
+/* Nếu shop mới dùng class shop-search-only */
+
+.shop-search-only {
+    display: block !important;
+
+    padding: 15px !important;
+
+    background: #fff !important;
+
+    border:
+        1px solid var(--line) !important;
+
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.035);
+}
+
+
+.shop-search-box {
+    width: 100%;
+}
+
+
+.shop-search-box input {
+    width: 100% !important;
+
+    height: 52px !important;
+
+    padding:
+        0 18px 0 48px !important;
+
+    border:
+        1px solid #d8d8dc !important;
+
+    border-radius:
+        9px !important;
+
+    background:
+        #fff !important;
+
+    font-size:
+        13px !important;
+}
+
+
+.shop-search-box input:focus {
+    border-color:
+        var(--red) !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(225,6,0,.09) !important;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.shop-section-title h2 {
+    color: #202024 !important;
+}
+
+
+.shop-view-all {
+    color: var(--red) !important;
+}
+
+
+.shop-page .category-card:hover {
+    color: var(--red) !important;
+
+    background:
+        #fff5f4 !important;
+}
+
+
+.shop-page .category-card.active {
+    color: var(--red) !important;
+
+    background:
+        #fff0ef !important;
+
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(225,6,0,.40) !important;
+}
+
+
+/* =========================================================
+   SHOP PRODUCT COUNT
+========================================================= */
+
+.shop-product-label,
+.shop-result-count strong {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-card {
+    background: #fff !important;
+
+    border:
+        1px solid #e4e4e7 !important;
+}
+
+
+.product-card:hover {
+    border-color:
+        rgba(225,6,0,.30) !important;
+
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.10) !important;
+}
+
+
+/* =========================================================
+   PRODUCT BADGES
+========================================================= */
+
+.product-badge {
+    background: var(--red) !important;
+    color: #fff !important;
+}
+
+
+.product-discount {
+    background: #08080a !important;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   PRODUCT META
+========================================================= */
+
+.product-sport,
+.product-category {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price strong,
+.detail-price {
+    color: var(--red) !important;
+}
+
+
+/* =========================================================
+   XEM CHI TIẾT
+========================================================= */
+
+.product-detail-btn,
+.product-btn {
+    background: #fff !important;
+
+    color: var(--red) !important;
+
+    border:
+        1.5px solid var(--red) !important;
+
+    font-weight: 900 !important;
+}
+
+
+.product-detail-btn:hover,
+.product-btn:hover {
+    background: var(--red) !important;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+.product-add-btn,
+.detail-add-cart {
+    background: var(--red) !important;
+    color: #fff !important;
+
+    border:
+        1px solid var(--red) !important;
+
+    box-shadow:
+        0 9px 24px rgba(225,6,0,.25);
+
+    animation:
+        sporthubFinalPulse
+        2.7s ease-in-out infinite;
+}
+
+
+.product-add-btn:hover,
+.detail-add-cart:hover {
+    background: #08080a !important;
+    border-color: #08080a !important;
+
+    animation: none;
+}
+
+
+@keyframes sporthubFinalPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 8px 20px
+            rgba(225,6,0,.18);
+    }
+
+    50% {
+        box-shadow:
+            0 9px 24px
+            rgba(225,6,0,.28),
+
+            0 0 0 6px
+            rgba(225,6,0,.07);
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-add-btn,
+    .detail-add-cart {
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.blog-category,
+.read-more {
+    color: var(--red) !important;
+}
+
+
+.read-more {
+    border:
+        1px solid var(--red) !important;
+
+    background:
+        transparent !important;
+}
+
+
+.read-more:hover {
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+}
+
+
+/* =========================================================
+   FITNESS
+========================================================= */
+
+.progress-bar {
+    background: var(--red) !important;
+}
+
+
+.goal-card:has(input:checked) {
+    border-color:
+        var(--red) !important;
+
+    background:
+        var(--red-soft) !important;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-icon {
+    background:
+        var(--red) !important;
+
+    color: #fff !important;
+}
+
+
+.about-feature-card:hover {
+    border-color:
+        rgba(225,6,0,.55) !important;
+}
+
+
+.about-feature-card a,
+.principle-card strong {
+    color:
+        var(--red) !important;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info-card:hover {
+    border-color:
+        var(--red) !important;
+}
+
+
+.contact-info-card:hover
+.contact-icon {
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+}
+
+
+.mini-action {
+    color:
+        var(--red) !important;
+}
+
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+.chat-toggle,
+.chat-input button {
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+}
+
+
+.chat-head {
+    background:
+        #08080a !important;
+
+    border-bottom:
+        3px solid var(--red);
+}
+
+
+.msg.user {
+    background:
+        var(--red) !important;
+
+    color:
+        #fff !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background:
+        #070708 !important;
+
+    border-top:
+        3px solid var(--red);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:650px) {
+
+    .shop-intro,
+    .shop-hero {
+        min-height:
+            310px !important;
+    }
+
+
+    .shop-intro-inner {
+        min-height:
+            250px !important;
+    }
+
+
+    .shop-search-box input {
+        height:
+            48px !important;
+    }
+
+}
+/* =========================================================
+   SPORTHUB TYPOGRAPHY V7
+   PHÂN CẤP FONT RÕ RÀNG
+========================================================= */
+
+
+/* =========================================================
+   01. BODY / NỘI DUNG
+========================================================= */
+
+body,
+p,
+li,
+input,
+select,
+textarea {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+}
+
+
+body {
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        0;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* Nội dung mô tả */
+
+p,
+.product-info p,
+.blog-content p,
+.step-copy,
+.about-copy p,
+.section-heading p {
+
+    font-size:
+        14px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =========================================================
+   02. DISPLAY HEADLINE
+   H1 - HERO - PAGE TITLE
+========================================================= */
+
+h1,
+.hero h1,
+.page-hero h1,
+.shop-hero h1,
+.shop-intro h1,
+.fitness-hero h1,
+.blog-hero h1,
+.info-hero h1,
+.contact-hero h1,
+.article-heading h1 {
+
+    font-family:
+        "Oswald",
+        "Arial Narrow",
+        sans-serif !important;
+
+    font-weight:
+        700 !important;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        -1.5px !important;
+
+    line-height:
+        .98 !important;
+
+}
+
+
+/* =========================================================
+   03. SECTION TITLE
+========================================================= */
+
+h2,
+.section-heading h2,
+.shop-product-heading h2,
+.blog-page-heading h2,
+.about-cta h2,
+.contact-form-intro h2 {
+
+    font-family:
+        "Oswald",
+        "Arial Narrow",
+        sans-serif !important;
+
+    font-weight:
+        600 !important;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        -.6px;
+
+    line-height:
+        1.08;
+
+}
+
+
+/* =========================================================
+   04. CARD / PRODUCT TITLE
+========================================================= */
+
+h3,
+.product-info h3,
+.blog-content h3,
+.contact-info-card h3,
+.support-card h3,
+.about-feature-card h3,
+.principle-card h3 {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight:
+        800 !important;
+
+    letter-spacing:
+        -.35px;
+
+    line-height:
+        1.35;
+
+    text-transform:
+        none;
+
+}
+
+
+/* Product name */
+
+.product-info h3 {
+
+    font-size:
+        17px !important;
+
+}
+
+
+/* Blog title */
+
+.blog-content h3 {
+
+    font-size:
+        18px !important;
+
+}
+
+
+/* =========================================================
+   05. NAVIGATION
+========================================================= */
+
+nav a {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        12px !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .15px;
+
+}
+
+
+/* =========================================================
+   06. LOGO
+========================================================= */
+
+.logo {
+
+    font-family:
+        "Oswald",
+        "Arial Narrow",
+        sans-serif !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .5px !important;
+
+}
+
+
+/* =========================================================
+   07. EYEBROW / LABEL
+========================================================= */
+
+.eyebrow,
+.hero-label,
+.shop-intro-label,
+.shop-product-label,
+.blog-category,
+.product-category {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight:
+        900 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.4;
+
+    letter-spacing:
+        1.4px !important;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   08. BUTTONS
+========================================================= */
+
+button,
+.btn-primary,
+.btn-secondary,
+.btn-dark,
+.product-detail-btn,
+.product-add-btn,
+.product-btn,
+.read-more {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   09. PRICE
+========================================================= */
+
+.price strong,
+.detail-price {
+
+    font-family:
+        "Oswald",
+        "Arial Narrow",
+        sans-serif !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        -.4px;
+
+}
+
+
+/* =========================================================
+   10. FORM LABEL
+========================================================= */
+
+.field label,
+.float-field label,
+.contact-select-field label {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif !important;
+
+    font-weight:
+        700 !important;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   11. FITNESS STEP TITLE
+========================================================= */
+
+.fitness-step h2 {
+
+    font-family:
+        "Oswald",
+        "Arial Narrow",
+        sans-serif !important;
+
+    font-weight:
+        600 !important;
+
+    font-size:
+        34px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   12. MOBILE
+========================================================= */
+
+@media (max-width:650px) {
+
+    .hero h1,
+    .page-hero h1,
+    .shop-hero h1,
+    .fitness-hero h1,
+    .blog-hero h1,
+    .info-hero h1,
+    .contact-hero h1 {
+
+        letter-spacing:
+            -1px !important;
+
+    }
+
+
+    h2,
+    .section-heading h2 {
+
+        letter-spacing:
+            -.3px;
+
+    }
+
+}
+/* =========================================================
+   SPORTHUB - PERSONAL WORKOUT PLAN
+   Version 1.0
+
+   Dùng cho:
+   ke-hoach-tap-luyen.html
+   workout-plan.js
+
+   Không ghi đè layout cũ.
+========================================================= */
+
+
+/* =========================================================
+   1. PAGE
+========================================================= */
+
+.workout-plan-page {
+    min-height: 100vh;
+    background: #f4f4f5;
+}
+
+
+/* =========================================================
+   2. HERO
+========================================================= */
+
+.workout-plan-hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 5, 6, 0.96) 0%,
+            rgba(5, 5, 6, 0.78) 55%,
+            rgba(5, 5, 6, 0.32) 100%
+        ),
+        linear-gradient(
+            135deg,
+            #09090b,
+            #202024
+        );
+}
+
+
+.workout-plan-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 70px 0;
+}
+
+
+.workout-plan-hero .eyebrow {
+    color: #ff413a;
+}
+
+
+.workout-plan-hero h1 {
+    margin: 12px 0 18px;
+
+    color: #ffffff;
+
+    font-family:
+        "Oswald",
+        "Be Vietnam Pro",
+        sans-serif;
+
+    font-size:
+        clamp(46px, 7vw, 82px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: -2px;
+}
+
+
+.workout-plan-hero h1 span {
+    color: #e10600;
+}
+
+
+.workout-plan-hero p {
+    max-width: 700px;
+
+    color: #c8c8cd;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   3. PERSONAL PLAN TABS
+========================================================= */
+
+.personal-plan-tabs-wrap {
+    position: sticky;
+
+    top: 74px;
+
+    z-index: 900;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom:
+        1px solid #e2e2e4;
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.personal-plan-tabs {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 66px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+
+.personal-plan-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+
+.personal-plan-tab {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 10px 16px;
+
+    border:
+        1px solid #dadadd;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #343438;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.personal-plan-tab:hover {
+    border-color: #09090b;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.personal-plan-tab.active {
+    border-color: #09090b;
+
+    background: #09090b;
+
+    color: #ffffff;
+}
+
+
+.personal-plan-tab.active::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #e10600;
+}
+
+
+/* =========================================================
+   4. MAIN
+========================================================= */
+
+.workout-plan-main {
+    padding: 65px 0 85px;
+}
+
+
+/* =========================================================
+   5. EMPTY / LOADING / ERROR
+========================================================= */
+
+.workout-plan-state {
+    max-width: 760px;
+
+    margin: 30px auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dedee1;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 36px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.workout-plan-state-icon {
+    display: grid;
+
+    place-items: center;
+
+    width: 62px;
+    height: 62px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #f1f1f2;
+
+    font-size: 27px;
+}
+
+
+.workout-plan-state h2 {
+    margin-bottom: 10px;
+
+    color: #111114;
+
+    font-size: 28px;
+}
+
+
+.workout-plan-state p {
+    color: #6e6e75;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   6. SUMMARY
+========================================================= */
+
+.workout-plan-summary {
+    margin-bottom: 45px;
+}
+
+
+.workout-plan-summary-head {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+.workout-plan-summary-head h2 {
+    margin-top: 6px;
+
+    font-size:
+        clamp(28px, 4vw, 42px);
+
+    line-height: 1.15;
+}
+
+
+.workout-plan-summary-head p {
+    max-width: 600px;
+
+    color: #717178;
+
+    line-height: 1.7;
+}
+
+
+.workout-plan-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+.workout-summary-card {
+    min-width: 0;
+
+    padding: 22px;
+
+    border:
+        1px solid #dddddf;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.035);
+}
+
+
+.workout-summary-card span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #7a7a81;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.workout-summary-card strong {
+    display: block;
+
+    color: #111114;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+}
+
+
+.workout-summary-card.highlight {
+    border-color: #e10600;
+
+    background: #09090b;
+}
+
+
+.workout-summary-card.highlight span {
+    color: #a9a9af;
+}
+
+
+.workout-summary-card.highlight strong {
+    color: #ff413a;
+}
+
+
+/* =========================================================
+   7. SAFETY / RECOVERY NOTICE
+========================================================= */
+
+.workout-plan-notice {
+    margin-bottom: 34px;
+
+    padding: 20px 22px;
+
+    border:
+        1px solid #dedee1;
+
+    border-left:
+        4px solid #09090b;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+}
+
+
+.workout-plan-notice h3 {
+    margin-bottom: 7px;
+
+    font-size: 17px;
+}
+
+
+.workout-plan-notice p {
+    color: #66666d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.workout-plan-notice.caution {
+    border-left-color: #f59e0b;
+
+    background: #fffaf0;
+}
+
+
+.workout-plan-notice.stop {
+    border-left-color: #e10600;
+
+    background: #fff4f3;
+}
+
+
+/* =========================================================
+   8. WEEK HEADING
+========================================================= */
+
+.workout-week-head {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+.workout-week-head h2 {
+    margin-top: 7px;
+
+    font-size:
+        clamp(30px, 4vw, 42px);
+}
+
+
+.workout-week-head p {
+    max-width: 620px;
+
+    color: #74747b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   9. 7 DAY GRID
+========================================================= */
+
+.workout-plan-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   10. DAY CARD
+========================================================= */
+
+.workout-plan-day {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid #dedee1;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+
+.workout-plan-day:hover {
+    transform:
+        translateY(-3px);
+
+    border-color: #c7c7cb;
+
+    box-shadow:
+        0 18px 42px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.workout-plan-day.is-today {
+    border:
+        2px solid #e10600;
+}
+
+
+.workout-plan-day.is-recovery {
+    background: #f8f8f9;
+}
+
+
+/* =========================================================
+   11. DAY HEADER
+========================================================= */
+
+.workout-plan-day-head {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    border-bottom:
+        1px solid #eeeeef;
+}
+
+
+.workout-plan-day-label {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: #e10600;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+.workout-plan-day-head h3 {
+    margin: 0;
+
+    color: #101013;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+}
+
+
+.workout-plan-day-type {
+    flex: 0 0 auto;
+
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    background: #f0f0f1;
+
+    color: #55555b;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+.workout-plan-day.is-today
+.workout-plan-day-type {
+    background: #fff0ef;
+
+    color: #bd0803;
+}
+
+
+/* =========================================================
+   12. DAY INFO
+========================================================= */
+
+.workout-plan-day-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding:
+        18px 22px 0;
+}
+
+
+.workout-plan-day-info div {
+    padding: 11px 12px;
+
+    border-radius: 10px;
+
+    background: #f6f6f7;
+}
+
+
+.workout-plan-day-info span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #85858c;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.workout-plan-day-info strong {
+    color: #222226;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   13. EXERCISE LIST
+========================================================= */
+
+.workout-plan-exercises {
+    padding: 18px 22px 22px;
+}
+
+
+.workout-plan-exercises-title {
+    margin-bottom: 12px;
+
+    color: #6c6c72;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.workout-plan-exercise {
+    display: grid;
+
+    grid-template-columns:
+        48px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid #eeeeef;
+}
+
+
+.workout-plan-exercise:last-child {
+    border-bottom: 0;
+}
+
+
+.workout-plan-exercise-number {
+    display: grid;
+
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background: #09090b;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+
+.workout-plan-exercise-info {
+    min-width: 0;
+}
+
+
+.workout-plan-exercise-info strong {
+    display: block;
+
+    overflow-wrap: anywhere;
+
+    color: #141417;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+.workout-plan-exercise-info span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #797980;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.workout-plan-exercise-video {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 62px;
+
+    padding: 7px 9px;
+
+    border-radius: 8px;
+
+    background: #fff0ef;
+
+    color: #c10b06;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   14. START BUTTON
+========================================================= */
+
+.workout-plan-actions {
+    padding:
+        0 22px 22px;
+}
+
+
+.workout-start-btn {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 18px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: #e10600;
+
+    color: #ffffff;
+
+    font-weight: 900;
+
+    letter-spacing: 0.2px;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.workout-start-btn:hover {
+    transform:
+        translateY(-2px);
+
+    background: #09090b;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.workout-start-btn:active {
+    transform:
+        translateY(0);
+}
+
+
+.workout-start-btn:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.45;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   15. RECOVERY DAY
+========================================================= */
+
+.workout-recovery-content {
+    padding: 20px 22px 24px;
+}
+
+
+.workout-recovery-content p {
+    color: #6e6e75;
+
+    line-height: 1.7;
+}
+
+
+.workout-recovery-content ul {
+    margin:
+        14px 0 0 20px;
+}
+
+
+.workout-recovery-content li {
+    margin-bottom: 8px;
+
+    color: #67676e;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   16. STRATEGY SECTION
+========================================================= */
+
+.workout-strategy {
+    margin-top: 55px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #09090b;
+
+    color: #ffffff;
+}
+
+
+.workout-strategy h2 {
+    margin:
+        7px 0 18px;
+
+    font-size:
+        clamp(28px, 4vw, 40px);
+}
+
+
+.workout-strategy p {
+    color: #b8b8bf;
+
+    line-height: 1.8;
+}
+
+
+.workout-strategy .eyebrow {
+    color: #ff413a;
+}
+
+
+.workout-strategy-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.workout-strategy-card {
+    padding: 18px;
+
+    border:
+        1px solid #303036;
+
+    border-radius: 12px;
+
+    background: #151519;
+}
+
+
+.workout-strategy-card strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+}
+
+
+.workout-strategy-card p {
+    color: #aaaab1;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   17. NO DATA CTA
+========================================================= */
+
+.workout-plan-cta {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    background: #e10600;
+
+    color: #ffffff;
+
+    font-weight: 900;
+}
+
+
+.workout-plan-cta:hover {
+    background: #09090b;
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY
+========================================================= */
+
+.personal-plan-tab:focus-visible,
+.workout-start-btn:focus-visible,
+.workout-plan-cta:focus-visible {
+    outline:
+        3px solid
+        rgba(225, 6, 0, 0.28);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   19. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .workout-plan-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   20. MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .workout-plan-hero {
+        min-height: 360px;
+    }
+
+
+    .workout-plan-hero-content {
+        padding:
+            55px 0;
+    }
+
+
+    .personal-plan-tabs-wrap {
+        top: 74px;
+    }
+
+
+    .workout-plan-main {
+        padding:
+            45px 0 65px;
+    }
+
+
+    .workout-plan-summary-head,
+    .workout-week-head {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .workout-plan-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .workout-strategy-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   21. MOBILE NHỎ
+========================================================= */
+
+@media (max-width: 560px) {
+
+    .workout-plan-hero h1 {
+        font-size:
+            45px;
+
+        letter-spacing:
+            -1px;
+    }
+
+
+    .personal-plan-tabs {
+        min-height:
+            60px;
+    }
+
+
+    .personal-plan-tab {
+        padding:
+            9px 13px;
+
+        font-size:
+            12px;
+    }
+
+
+    .workout-plan-summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .workout-summary-card {
+        padding:
+            18px;
+    }
+
+
+    .workout-plan-day-head {
+        padding:
+            18px;
+    }
+
+
+    .workout-plan-day-info {
+        grid-template-columns:
+            1fr;
+
+        padding:
+            16px 18px 0;
+    }
+
+
+    .workout-plan-exercises {
+        padding:
+            15px 18px 18px;
+    }
+
+
+    .workout-plan-actions {
+        padding:
+            0 18px 18px;
+    }
+
+
+    .workout-plan-exercise {
+        grid-template-columns:
+            42px minmax(0, 1fr);
+    }
+
+
+    .workout-plan-exercise-video {
+        grid-column:
+            2;
+
+        justify-self:
+            start;
+    }
+
+
+    .workout-strategy {
+        padding:
+            22px;
+    }
+
+
+    .workout-plan-state {
+        padding:
+            28px 20px;
+    }
+
+}

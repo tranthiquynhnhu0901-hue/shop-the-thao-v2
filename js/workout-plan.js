@@ -433,24 +433,6 @@ function getWorkout() {
 }
 
 
-    function getHealth() {
-
-        return readStorage(
-            STORAGE.health
-        );
-
-    }
-
-
-    function getWorkout() {
-
-        return readStorage(
-            STORAGE.workout
-        );
-
-    }
-
-
     /* =====================================================
        13. TODAY INDEX
 
