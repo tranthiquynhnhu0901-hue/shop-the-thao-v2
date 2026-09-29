@@ -641,21 +641,59 @@ window.SportHubWorkoutSession = (() => {
     }
 
 
-    function isSafetyBlocked() {
+function isSafetyBlocked() {
 
-        return (
+    const health =
+        getStoredHealth();
 
-            getStoredHealth()
 
-                ?.safety
+    const workout =
+        getStoredPlan();
 
-                ?.allowFullAutomation
 
-            ===
+    return (
 
-            false
+        health
 
-        );
+            ?.safety
+
+            ?.allowFullAutomation
+
+        ===
+
+        false
+
+    )
+
+    ||
+
+    (
+
+        workout
+
+            ?.blocked
+
+        ===
+
+        true
+
+    )
+
+    ||
+
+    (
+
+        workout
+
+            ?.success
+
+        ===
+
+        false
+
+    );
+
+}
 
     }
 
@@ -4539,197 +4577,200 @@ window.SportHubWorkoutSession = (() => {
        32. START SESSION
     ====================================================== */
 
-    function startSession(
-        inputSession,
-        options = {}
+function startSession(
+    inputSession,
+    options = {}
+) {
+
+    if (
+        !inputSession
     ) {
-        if (
-            state.status ===
-            "active"
 
-            ||
+        message(
+            "Không tìm thấy buổi tập."
+        );
 
-            hasSavedSession()
-        ) {
 
-            message(
-                "Bạn đang có một buổi tập dang dở. Hãy tiếp tục hoặc dừng buổi tập đó trước khi bắt đầu buổi mới."
-            );
+        return false;
 
-            return false;
+    }
 
-        }
 
-        if (
-            !inputSession
-        ) {
+    if (
+        state.status ===
+        "active"
 
-            message(
-                "Không tìm thấy buổi tập."
-            );
+        ||
 
+        hasSavedSession()
+    ) {
 
-            return false;
+        message(
+            "Bạn đang có một buổi tập dang dở. Hãy tiếp tục hoặc dừng buổi tập đó trước khi bắt đầu buổi mới."
+        );
 
-        }
 
+        return false;
 
-        if (
-            isSafetyBlocked()
-        ) {
+    }
 
-            message(
 
-                "Safety Gate đang chặn tự động hóa buổi tập. Hãy xem lại kết quả Fitness Check trước khi bắt đầu."
+    if (
+        isSafetyBlocked()
+    ) {
 
-            );
+        message(
 
-
-            return false;
-
-        }
-
-
-        if (
-            inputSession.type ===
-            "Recovery"
-        ) {
-
-            message(
-
-                "Ngày này là ngày phục hồi, không có workout session để chạy."
-
-            );
-
-
-            return false;
-
-        }
-
-
-        if (
-
-            !Array.isArray(
-                inputSession.exercises
-            )
-
-            ||
-
-            !inputSession.exercises
-                .filter(
-                    Boolean
-                )
-                .length
-
-        ) {
-
-            message(
-                "Buổi tập chưa có bài tập để bắt đầu."
-            );
-
-
-            return false;
-
-        }
-
-
-        prepareAudio();
-
-
-        clearTimer();
-
-
-        /*
-            Clone session để UI không sửa
-            trực tiếp plan đang nằm trong localStorage.
-        */
-
-        session =
-            JSON.parse(
-
-                JSON.stringify(
-                    inputSession
-                )
-
-            );
-
-
-        state =
-            createInitialState();
-
-
-        state.status =
-            "active";
-
-
-        state.phase =
-            "exercise";
-
-
-        state.exerciseIndex =
-            0;
-
-
-        state.currentSet =
-            1;
-
-
-        state.startedAt =
-            Date.now();
-
-
-        state.dayIndex =
-
-            Number.isInteger(
-                options.dayIndex
-            )
-
-                ? options.dayIndex
-
-                : null;
-
-
-        state.sessionName =
-
-            inputSession.name
-
-            ||
-
-            "Buổi tập";
-
-
-        state.sessionType =
-
-            inputSession.type
-
-            ||
-
-            "Workout";
-
-
-        openUI();
-
-
-        startExercisePhase();
-
-
-        emit(
-
-            "sporthub:workout-start",
-
-            {
-
-                dayIndex:
-                    state.dayIndex
-
-            }
+            "Safety Gate đang chặn tự động hóa buổi tập. Hãy xem lại kết quả Fitness Check trước khi bắt đầu."
 
         );
 
 
-        return true;
+        return false;
 
     }
+
+
+    if (
+        inputSession.type ===
+        "Recovery"
+    ) {
+
+        message(
+
+            "Ngày này là ngày phục hồi, không có workout session để chạy."
+
+        );
+
+
+        return false;
+
+    }
+
+
+    if (
+
+        !Array.isArray(
+            inputSession.exercises
+        )
+
+        ||
+
+        !inputSession.exercises
+            .filter(
+                Boolean
+            )
+            .length
+
+    ) {
+
+        message(
+            "Buổi tập chưa có bài tập để bắt đầu."
+        );
+
+
+        return false;
+
+    }
+
+
+    prepareAudio();
+
+
+    clearTimer();
+
+
+    /*
+        Clone session để UI không sửa
+        trực tiếp plan đang nằm trong localStorage.
+    */
+
+    session =
+        JSON.parse(
+
+            JSON.stringify(
+                inputSession
+            )
+
+        );
+
+
+    state =
+        createInitialState();
+
+
+    state.status =
+        "active";
+
+
+    state.phase =
+        "exercise";
+
+
+    state.exerciseIndex =
+        0;
+
+
+    state.currentSet =
+        1;
+
+
+    state.startedAt =
+        Date.now();
+
+
+    state.dayIndex =
+
+        Number.isInteger(
+            options.dayIndex
+        )
+
+            ? options.dayIndex
+
+            : null;
+
+
+    state.sessionName =
+
+        inputSession.name
+
+        ||
+
+        "Buổi tập";
+
+
+    state.sessionType =
+
+        inputSession.type
+
+        ||
+
+        "Workout";
+
+
+    openUI();
+
+
+    startExercisePhase();
+
+
+    emit(
+
+        "sporthub:workout-start",
+
+        {
+
+            dayIndex:
+                state.dayIndex
+
+        }
+
+    );
+
+
+    return true;
+
+}
 
 
     /* =====================================================
