@@ -1,34 +1,51 @@
 /* =========================================================
+
    SPORTHUB NUTRITION PLAN PAGE
-   Version 1.1
+
+   Version 1.2
 
    Dùng cho:
+
    ke-hoach-dinh-duong.html
 
    Nhiệm vụ:
+
    - Đọc profile từ localStorage
+
    - Đọc Health Analysis từ localStorage
+
    - Đọc Nutrition Plan từ localStorage
+
    - Render chiến lược dinh dưỡng
+
    - Render macro
+
    - Render thực đơn 7 ngày
+
    - Render từng bữa ăn
+
    - Render cảnh báo dị ứng / hạn chế
+
    - Render hướng dẫn ăn ngoài
+
    - Render danh sách mua thực phẩm
 
    Không chạy lại:
+
    - Health Engine
+
    - Nutrition Engine
+
 ========================================================= */
 
 window.SportHubNutritionPlanPage = (() => {
 
     "use strict";
 
-
     /* =====================================================
+
        1. STORAGE
+
     ====================================================== */
 
     const STORAGE = {
@@ -44,17 +61,19 @@ window.SportHubNutritionPlanPage = (() => {
 
     };
 
-
     /* =====================================================
+
        2. DOM
+
     ====================================================== */
 
     let root =
         null;
 
-
     /* =====================================================
+
        3. SAFE JSON
+
     ====================================================== */
 
     function safeParse(
@@ -66,7 +85,6 @@ window.SportHubNutritionPlanPage = (() => {
             return null;
 
         }
-
 
         try {
 
@@ -109,9 +127,10 @@ window.SportHubNutritionPlanPage = (() => {
 
     }
 
-
     /* =====================================================
+
        4. ESCAPE HTML
+
     ====================================================== */
 
     function escapeHTML(
@@ -126,7 +145,6 @@ window.SportHubNutritionPlanPage = (() => {
             return "";
 
         }
-
 
         return String(
             value
@@ -159,9 +177,10 @@ window.SportHubNutritionPlanPage = (() => {
 
     }
 
-
     /* =====================================================
+
        5. HELPERS
+
     ====================================================== */
 
     function setBusy(
@@ -173,7 +192,6 @@ window.SportHubNutritionPlanPage = (() => {
             return;
 
         }
-
 
         root.setAttribute(
             "aria-busy",
@@ -236,7 +254,6 @@ window.SportHubNutritionPlanPage = (() => {
 
         }
 
-
         return escapeHTML(
             value
         );
@@ -250,6 +267,7 @@ window.SportHubNutritionPlanPage = (() => {
     ) {
 
         const amountText =
+
             amount === null ||
             amount === undefined ||
             amount === ""
@@ -262,6 +280,7 @@ window.SportHubNutritionPlanPage = (() => {
 
 
         const unitText =
+
             hasText(
                 unit
             )
@@ -286,83 +305,83 @@ window.SportHubNutritionPlanPage = (() => {
 
     }
 
+    /* =====================================================
 
-/* =====================================================
-   6. DATA GETTERS
+       6. DATA GETTERS
 
-   Ưu tiên dùng SportHubPersonalPlan.
-   Nếu personal-plan.js chưa load được
-   thì fallback về localStorage cũ.
-====================================================== */
+       Ưu tiên dùng SportHubPersonalPlan.
 
-function getProfile() {
+       Nếu personal-plan.js chưa load được
+       thì fallback về localStorage cũ.
 
-    if (
-        window
-            .SportHubPersonalPlan
-            ?.getProfile
-    ) {
+    ====================================================== */
 
-        return window
-            .SportHubPersonalPlan
-            .getProfile();
+    function getProfile() {
 
-    }
+        if (
+            window
+                .SportHubPersonalPlan
+                ?.getProfile
+        ) {
 
+            return window
+                .SportHubPersonalPlan
+                .getProfile();
 
-    return readStorage(
-        STORAGE.profile
-    );
+        }
 
-}
-
-
-function getHealth() {
-
-    if (
-        window
-            .SportHubPersonalPlan
-            ?.getHealth
-    ) {
-
-        return window
-            .SportHubPersonalPlan
-            .getHealth();
+        return readStorage(
+            STORAGE.profile
+        );
 
     }
 
 
-    return readStorage(
-        STORAGE.health
-    );
+    function getHealth() {
 
-}
+        if (
+            window
+                .SportHubPersonalPlan
+                ?.getHealth
+        ) {
 
+            return window
+                .SportHubPersonalPlan
+                .getHealth();
 
-function getNutrition() {
+        }
 
-    if (
-        window
-            .SportHubPersonalPlan
-            ?.getNutrition
-    ) {
-
-        return window
-            .SportHubPersonalPlan
-            .getNutrition();
+        return readStorage(
+            STORAGE.health
+        );
 
     }
 
 
-    return readStorage(
-        STORAGE.nutrition
-    );
+    function getNutrition() {
 
-}
+        if (
+            window
+                .SportHubPersonalPlan
+                ?.getNutrition
+        ) {
 
+            return window
+                .SportHubPersonalPlan
+                .getNutrition();
+
+        }
+
+        return readStorage(
+            STORAGE.nutrition
+        );
+
+    }
 
     /* =====================================================
+
        7. STRATEGY HELPERS
+
     ====================================================== */
 
     function getStrategy(
@@ -411,9 +430,10 @@ function getNutrition() {
 
     }
 
-
     /* =====================================================
+
        8. SAFETY
+
     ====================================================== */
 
     function buildSafetyHTML(
@@ -432,6 +452,7 @@ function getNutrition() {
         ) {
 
             return `
+
                 <section class="nutrition-plan-notice caution">
 
                     <h2>
@@ -449,6 +470,7 @@ function getNutrition() {
                     </p>
 
                 </section>
+
             `;
 
         }
@@ -467,6 +489,7 @@ function getNutrition() {
         ) {
 
             return `
+
                 <section class="nutrition-plan-notice caution">
 
                     <h2>
@@ -484,6 +507,7 @@ function getNutrition() {
                     </p>
 
                 </section>
+
             `;
 
         }
@@ -495,6 +519,7 @@ function getNutrition() {
         ) {
 
             return `
+
                 <section class="nutrition-plan-notice caution">
 
                     <h2>
@@ -512,6 +537,7 @@ function getNutrition() {
                     </p>
 
                 </section>
+
             `;
 
         }
@@ -521,9 +547,10 @@ function getNutrition() {
 
     }
 
-
     /* =====================================================
+
        9. ALLERGY / RESTRICTION
+
     ====================================================== */
 
     function buildRestrictionHTML(
@@ -572,13 +599,17 @@ function getNutrition() {
         if (allergies) {
 
             items.push(`
+
                 <p>
+
                     <strong>
                         Dị ứng / thực phẩm cần tránh:
                     </strong>
 
                     ${escapeHTML(allergies)}
+
                 </p>
+
             `);
 
         }
@@ -587,13 +618,17 @@ function getNutrition() {
         if (restriction) {
 
             items.push(`
+
                 <p>
+
                     <strong>
                         Hạn chế ăn uống:
                     </strong>
 
                     ${escapeHTML(restriction)}
+
                 </p>
+
             `);
 
         }
@@ -602,19 +637,24 @@ function getNutrition() {
         if (dislikes) {
 
             items.push(`
+
                 <p>
+
                     <strong>
                         Thực phẩm không thích:
                     </strong>
 
                     ${escapeHTML(dislikes)}
+
                 </p>
+
             `);
 
         }
 
 
         return `
+
             <section class="nutrition-plan-notice caution">
 
                 <h2>
@@ -630,13 +670,15 @@ function getNutrition() {
                 </p>
 
             </section>
+
         `;
 
     }
 
-
     /* =====================================================
+
        10. SUMMARY
+
     ====================================================== */
 
     function buildSummaryHTML(
@@ -650,6 +692,7 @@ function getNutrition() {
 
 
         return `
+
             <section
                 class="nutrition-summary"
                 aria-labelledby="nutritionSummaryTitle"
@@ -746,13 +789,14 @@ function getNutrition() {
                 </div>
 
             </section>
+
         `;
 
     }
-
-
     /* =====================================================
+
        11. STRATEGY
+
     ====================================================== */
 
     function buildStrategyHTML(
@@ -788,6 +832,7 @@ function getNutrition() {
 
 
         return `
+
             <section class="nutrition-strategy">
 
                 <span class="eyebrow">
@@ -823,13 +868,15 @@ function getNutrition() {
                 }
 
             </section>
+
         `;
 
     }
 
-
     /* =====================================================
+
        12. MEAL ITEM
+
     ====================================================== */
 
     function buildMealItemHTML(
@@ -852,6 +899,7 @@ function getNutrition() {
 
         const itemLabel =
             [
+
                 escapeHTML(
                     item.name
                     ||
@@ -859,6 +907,7 @@ function getNutrition() {
                 ),
 
                 amount
+
             ]
                 .filter(
                     Boolean
@@ -869,6 +918,7 @@ function getNutrition() {
 
 
         const kcal =
+
             item.kcal !== null &&
             item.kcal !== undefined
 
@@ -878,6 +928,7 @@ function getNutrition() {
 
 
         return `
+
             <div class="nutrition-meal-item">
 
                 <span>
@@ -889,13 +940,15 @@ function getNutrition() {
                 </span>
 
             </div>
+
         `;
 
     }
 
-
     /* =====================================================
+
        13. MEAL
+
     ====================================================== */
 
     function buildMealHTML(
@@ -933,6 +986,7 @@ function getNutrition() {
 
 
         return `
+
             <article class="nutrition-meal">
 
                 <h3>
@@ -971,25 +1025,33 @@ function getNutrition() {
 
                     ${
                         totals.kcal !== undefined
+
                             ? `${escapeHTML(totals.kcal)} kcal`
+
                             : "—"
                     }
 
                     ${
                         totals.protein !== undefined
+
                             ? ` · P ${escapeHTML(totals.protein)} g`
+
                             : ""
                     }
 
                     ${
                         totals.carbs !== undefined
+
                             ? ` · C ${escapeHTML(totals.carbs)} g`
+
                             : ""
                     }
 
                     ${
                         totals.fat !== undefined
+
                             ? ` · F ${escapeHTML(totals.fat)} g`
+
                             : ""
                     }
 
@@ -1035,13 +1097,15 @@ function getNutrition() {
 
 
             </article>
+
         `;
 
     }
 
-
     /* =====================================================
+
        14. DAY
+
     ====================================================== */
 
     function buildDayHTML(
@@ -1074,6 +1138,7 @@ function getNutrition() {
 
 
         const kcal =
+
             totals.kcal !== undefined
 
                 ? `${escapeHTML(totals.kcal)} kcal`
@@ -1082,6 +1147,7 @@ function getNutrition() {
 
 
         return `
+
             <details
                 class="nutrition-day"
                 ${index === 0 ? "open" : ""}
@@ -1174,13 +1240,15 @@ function getNutrition() {
                 </div>
 
             </details>
+
         `;
 
     }
 
-
     /* =====================================================
+
        15. WEEK
+
     ====================================================== */
 
     function buildWeekHTML(
@@ -1196,6 +1264,7 @@ function getNutrition() {
         if (!plan.length) {
 
             return `
+
                 <section class="nutrition-week">
 
                     <div class="nutrition-week-head">
@@ -1221,12 +1290,14 @@ function getNutrition() {
                     </div>
 
                 </section>
+
             `;
 
         }
 
 
         return `
+
             <section class="nutrition-week">
 
                 <div class="nutrition-week-head">
@@ -1260,13 +1331,15 @@ function getNutrition() {
                 </div>
 
             </section>
+
         `;
 
     }
 
-
     /* =====================================================
+
        16. EATING OUT
+
     ====================================================== */
 
     function buildEatingOutHTML(
@@ -1287,6 +1360,7 @@ function getNutrition() {
 
 
         return `
+
             <section class="nutrition-extra-card">
 
                 <span class="eyebrow">
@@ -1303,9 +1377,11 @@ function getNutrition() {
                         items
                             .map(
                                 item => `
+
                                     <li>
                                         ${escapeHTML(item)}
                                     </li>
+
                                 `
                             )
                             .join("")
@@ -1314,13 +1390,15 @@ function getNutrition() {
                 </ul>
 
             </section>
+
         `;
 
     }
 
-
     /* =====================================================
+
        17. PLAN GUIDANCE
+
     ====================================================== */
 
     function buildPlanGuideHTML(
@@ -1344,12 +1422,14 @@ function getNutrition() {
         ) {
 
             items.push(
+
                 `
                     <li>
                         Thực phẩm yêu thích đã khai báo:
                         ${escapeHTML(nutrition.foodLikes)}
                     </li>
                 `
+
             );
 
         }
@@ -1376,6 +1456,7 @@ function getNutrition() {
 
 
             items.push(
+
                 `
                     <li>
                         Ngân sách:
@@ -1390,6 +1471,7 @@ function getNutrition() {
                         }
                     </li>
                 `
+
             );
 
         }
@@ -1416,6 +1498,7 @@ function getNutrition() {
 
 
             items.push(
+
                 `
                     <li>
                         Khả năng nấu ăn:
@@ -1430,6 +1513,7 @@ function getNutrition() {
                         }
                     </li>
                 `
+
             );
 
         }
@@ -1456,6 +1540,7 @@ function getNutrition() {
 
 
             items.push(
+
                 `
                     <li>
                         Thời gian chuẩn bị:
@@ -1470,6 +1555,7 @@ function getNutrition() {
                         }
                     </li>
                 `
+
             );
 
         }
@@ -1483,6 +1569,7 @@ function getNutrition() {
 
 
         return `
+
             <section class="nutrition-extra-card">
 
                 <span class="eyebrow">
@@ -1498,13 +1585,15 @@ function getNutrition() {
                 </ul>
 
             </section>
+
         `;
 
     }
 
-
     /* =====================================================
+
        18. EXTRA GRID
+
     ====================================================== */
 
     function buildExtraHTML(
@@ -1535,6 +1624,7 @@ function getNutrition() {
 
 
         return `
+
             <div class="nutrition-extra-grid">
 
                 ${eatingOut}
@@ -1542,13 +1632,15 @@ function getNutrition() {
                 ${guide}
 
             </div>
+
         `;
 
     }
 
-
     /* =====================================================
+
        19. SHOPPING LIST
+
     ====================================================== */
 
     function buildShoppingHTML(
@@ -1569,6 +1661,7 @@ function getNutrition() {
 
 
         return `
+
             <section class="nutrition-shopping">
 
                 <span class="eyebrow">
@@ -1595,6 +1688,7 @@ function getNutrition() {
 
 
                                     return `
+
                                         <div class="nutrition-shopping-item">
 
                                             <strong>
@@ -1613,6 +1707,7 @@ function getNutrition() {
                                             </span>
 
                                         </div>
+
                                     `;
 
                                 }
@@ -1623,13 +1718,14 @@ function getNutrition() {
                 </div>
 
             </section>
+
         `;
 
     }
-
-
     /* =====================================================
+
        20. NO PLAN
+
     ====================================================== */
 
     function renderNoPlan() {
@@ -1642,6 +1738,7 @@ function getNutrition() {
 
 
         root.innerHTML = `
+
             <div class="nutrition-plan-state">
 
                 <span class="eyebrow">
@@ -1660,19 +1757,21 @@ function getNutrition() {
 
                 <a
                     class="nutrition-plan-cta"
-                    href="health-check.html"
+                    href="/shop-the-thao-v2/health-check.html"
                 >
                     Thực hiện Fitness Check
                 </a>
 
             </div>
+
         `;
 
     }
 
-
     /* =====================================================
+
        21. INVALID PLAN
+
     ====================================================== */
 
     function renderInvalidPlan(
@@ -1687,6 +1786,7 @@ function getNutrition() {
 
 
         root.innerHTML = `
+
             <div class="nutrition-plan-state">
 
                 <span class="eyebrow">
@@ -1710,19 +1810,21 @@ function getNutrition() {
 
                 <a
                     class="nutrition-plan-cta"
-                    href="health-check.html"
+                    href="/shop-the-thao-v2/health-check.html"
                 >
                     Tạo lại kế hoạch
                 </a>
 
             </div>
+
         `;
 
     }
 
-
     /* =====================================================
+
        22. BLOCKED PLAN
+
     ====================================================== */
 
     function renderBlockedPlan(
@@ -1737,6 +1839,7 @@ function getNutrition() {
 
 
         root.innerHTML = `
+
             <div class="nutrition-plan-state">
 
                 <span class="eyebrow">
@@ -1760,19 +1863,21 @@ function getNutrition() {
 
                 <a
                     class="nutrition-plan-cta"
-                    href="health-check.html"
+                    href="/shop-the-thao-v2/health-check.html"
                 >
                     Xem lại Fitness Check
                 </a>
 
             </div>
+
         `;
 
     }
 
-
     /* =====================================================
+
        23. MAIN RENDER
+
     ====================================================== */
 
     function render() {
@@ -1815,9 +1920,11 @@ function getNutrition() {
 
             renderNoPlan();
 
+
             setBusy(
                 false
             );
+
 
             return;
 
@@ -1842,9 +1949,11 @@ function getNutrition() {
                 nutrition
             );
 
+
             setBusy(
                 false
             );
+
 
             return;
 
@@ -1864,9 +1973,11 @@ function getNutrition() {
                 nutrition
             );
 
+
             setBusy(
                 false
             );
+
 
             return;
 
@@ -1911,9 +2022,11 @@ function getNutrition() {
                 nutrition
             );
 
+
             setBusy(
                 false
             );
+
 
             return;
 
@@ -1961,9 +2074,10 @@ function getNutrition() {
 
     }
 
-
     /* =====================================================
+
        24. INIT
+
     ====================================================== */
 
     function init() {
@@ -1991,12 +2105,55 @@ function getNutrition() {
 
     }
 
+    /* =====================================================
+
+       25. LIVE UPDATE
+
+       - storage:
+         đồng bộ khi Fitness Check thay đổi ở tab khác.
+
+       - sporthub:personal-plan-update:
+         đồng bộ ngay trong cùng tab.
+
+    ====================================================== */
+
+    window.addEventListener(
+        "storage",
+        event => {
+
+            if (
+                event.key === STORAGE.profile ||
+                event.key === STORAGE.health ||
+                event.key === STORAGE.nutrition
+            ) {
+
+                render();
+
+            }
+
+        }
+    );
+
+
+    window.addEventListener(
+        "sporthub:personal-plan-update",
+        () => {
+
+            render();
+
+        }
+    );
 
     /* =====================================================
-       25. PUBLIC API
+
+       26. PUBLIC API
+
     ====================================================== */
 
     return {
+
+        version:
+            "1.2",
 
         render,
 

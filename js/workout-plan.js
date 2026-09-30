@@ -1,49 +1,67 @@
 /* =========================================================
+
    SPORTHUB WORKOUT PLAN PAGE
+
    Version 1.3
 
    Dùng cho:
+
    - ke-hoach-tap-luyen.html
+
    - js/workout-session.js
+
    - js/exercise-media.js
 
    Nhiệm vụ:
+
    - Đọc dữ liệu đã lưu từ Fitness Check
+
    - Không chạy lại Health Engine / Workout Engine
+
    - Render tổng quan và lịch tập 7 ngày
+
    - Kiểm tra Safety Gate
+
    - Nhận diện video bài tập
+
    - Bắt đầu / tiếp tục Workout Session
+
 ========================================================= */
 
 window.SportHubWorkoutPlanPage = (() => {
 
     "use strict";
 
-
     /* =====================================================
+
        1. STORAGE
+
     ====================================================== */
 
     const STORAGE = {
 
         profile:
+
             "sporthub_fitness_profile",
 
         health:
+
             "sporthub_fitness_analysis",
 
         workout:
+
             "sporthub_workout_plan",
 
         activeSession:
+
             "sporthub_workout_active_session"
 
     };
 
-
     /* =====================================================
+
        2. DAY NAMES
+
     ====================================================== */
 
     const DAY_NAMES = [
@@ -64,133 +82,166 @@ window.SportHubWorkoutPlanPage = (() => {
 
     ];
 
-
     /* =====================================================
+
        3. GOAL NAMES
+
     ====================================================== */
 
     const GOAL_NAMES = {
 
         fatloss:
+
             "Giảm mỡ",
 
         muscle:
+
             "Tăng cơ",
 
         strength:
+
             "Tăng sức mạnh",
 
         endurance:
+
             "Tăng sức bền",
 
         fitness:
+
             "Cải thiện thể lực",
 
         mobility:
+
             "Tăng linh hoạt",
 
         maintenance:
+
             "Duy trì thể trạng"
 
     };
 
-
     /* =====================================================
+
        4. RECOVERY LABELS
+
     ====================================================== */
 
     const RECOVERY_LABELS = {
 
         normal:
+
             "Bình thường",
 
         caution:
+
             "Cần theo dõi",
 
         reduce:
+
             "Giảm khối lượng"
 
     };
 
-
     /* =====================================================
+
        5. SESSION TYPE NAMES
+
     ====================================================== */
 
     const SESSION_TYPE_NAMES = {
 
         Strength:
+
             "Sức mạnh",
 
         Cardio:
+
             "Cardio",
 
         Mobility:
+
             "Mobility",
 
         Recovery:
+
             "Phục hồi",
 
         "Full Body":
+
             "Toàn thân",
 
         Upper:
+
             "Thân trên",
 
         Lower:
+
             "Thân dưới"
 
     };
 
-
     /* =====================================================
+
        6. MEDIA ALIASES
+
     ====================================================== */
 
     const MEDIA_ALIASES = {
 
         pushup:
+
             "push-up",
 
         "push-up":
+
             "push-up",
 
         "knee-pushup":
+
             "knee-push-up",
 
         "dumbbell-row":
+
             "dumbbell-bent-over-row",
 
         "shoulder-press":
+
             "dumbbell-shoulder-press",
 
         "hip-thrust-glute-bridge":
+
             "glute-bridge",
 
         "hip-thrust":
+
             "glute-bridge"
 
     };
 
-
     /* =====================================================
+
        7. RUNTIME
+
     ====================================================== */
 
     let root =
+
         null;
 
-
     let eventsBound =
+
         false;
 
-
     /* =====================================================
+
        8. SAFE JSON
+
     ====================================================== */
 
     function safeParse(
+
         value
+
     ) {
 
         if (!value) {
@@ -199,11 +250,12 @@ window.SportHubWorkoutPlanPage = (() => {
 
         }
 
-
         try {
 
             return JSON.parse(
+
                 value
+
             );
 
         }
@@ -216,9 +268,10 @@ window.SportHubWorkoutPlanPage = (() => {
 
     }
 
-
     function readStorage(
+
         key
+
     ) {
 
         try {
@@ -226,7 +279,9 @@ window.SportHubWorkoutPlanPage = (() => {
             return safeParse(
 
                 localStorage.getItem(
+
                     key
+
                 )
 
             );
@@ -241,76 +296,112 @@ window.SportHubWorkoutPlanPage = (() => {
 
     }
 
-
     /* =====================================================
+
        9. HTML ESCAPE
+
     ====================================================== */
 
     function escapeHTML(
+
         value
+
     ) {
 
         return String(
+
             value ?? ""
+
         )
 
             .replace(
+
                 /&/g,
+
                 "&amp;"
+
             )
 
             .replace(
+
                 /</g,
+
                 "&lt;"
+
             )
 
             .replace(
+
                 />/g,
+
                 "&gt;"
+
             )
 
             .replace(
+
                 /"/g,
+
                 "&quot;"
+
             )
 
             .replace(
+
                 /'/g,
+
                 "&#039;"
+
             );
 
     }
 
-
     /* =====================================================
+
        10. SLUG
+
     ====================================================== */
 
     function slug(
+
         value
+
     ) {
 
         return String(
+
             value || ""
+
         )
 
             .normalize(
+
                 "NFD"
+
             )
 
             .replace(
+
                 /[\u0300-\u036f]/g,
+
                 ""
+
             )
 
             .replace(
+
                 /đ/g,
+
                 "d"
+
             )
 
             .replace(
+
                 /Đ/g,
+
                 "d"
+
             )
 
             .toLowerCase()
@@ -318,129 +409,169 @@ window.SportHubWorkoutPlanPage = (() => {
             .trim()
 
             .replace(
+
                 /[^a-z0-9]+/g,
+
                 "-"
+
             )
 
             .replace(
+
                 /^-+|-+$/g,
+
                 ""
+
             );
 
     }
 
-
     /* =====================================================
+
        11. MESSAGE
+
     ====================================================== */
 
     function notify(
+
         text
+
     ) {
 
         if (
+
             typeof window.toast ===
+
             "function"
+
         ) {
 
             window.toast(
+
                 text
+
             );
 
             return;
 
         }
 
-
         window.alert(
+
             text
+
         );
 
     }
 
-
 /* =====================================================
+
    12. STORAGE GETTERS
 
    Ưu tiên dùng SportHubPersonalPlan.
+
    Nếu personal-plan.js chưa load được
+
    thì fallback về localStorage cũ.
+
 ====================================================== */
 
 function getProfile() {
 
     if (
+
         window
+
             .SportHubPersonalPlan
+
             ?.getProfile
+
     ) {
 
         return window
+
             .SportHubPersonalPlan
+
             .getProfile();
 
     }
 
-
     return readStorage(
+
         STORAGE.profile
+
     );
 
 }
-
 
 function getHealth() {
 
     if (
+
         window
+
             .SportHubPersonalPlan
+
             ?.getHealth
+
     ) {
 
         return window
+
             .SportHubPersonalPlan
+
             .getHealth();
 
     }
 
-
     return readStorage(
+
         STORAGE.health
+
     );
 
 }
-
 
 function getWorkout() {
 
     if (
+
         window
+
             .SportHubPersonalPlan
+
             ?.getWorkout
+
     ) {
 
         return window
+
             .SportHubPersonalPlan
+
             .getWorkout();
 
     }
 
-
     return readStorage(
+
         STORAGE.workout
+
     );
 
 }
 
-
     /* =====================================================
+
        13. TODAY INDEX
 
        JS:
+
        0 = Chủ Nhật
 
        SPORTHUB:
+
        0 = Thứ Hai
+
     ====================================================== */
 
     function getTodayIndex() {
@@ -448,6 +579,7 @@ function getWorkout() {
         return (
 
             new Date()
+
                 .getDay()
 
             +
@@ -462,13 +594,16 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        14. ARIA BUSY
+
     ====================================================== */
 
     function setBusy(
+
         value
+
     ) {
 
         if (!root) {
@@ -477,32 +612,38 @@ function getWorkout() {
 
         }
 
-
         root.setAttribute(
 
             "aria-busy",
 
             value
+
                 ? "true"
+
                 : "false"
 
         );
 
     }
 
-
     /* =====================================================
+
        15. LABEL HELPERS
+
     ====================================================== */
 
     function getGoalName(
+
         goal
+
     ) {
 
         return (
 
             GOAL_NAMES[
+
                 goal
+
             ]
 
             ||
@@ -513,15 +654,18 @@ function getWorkout() {
 
     }
 
-
     function getRecoveryLabel(
+
         level
+
     ) {
 
         return (
 
             RECOVERY_LABELS[
+
                 level
+
             ]
 
             ||
@@ -532,15 +676,18 @@ function getWorkout() {
 
     }
 
-
     function getSessionTypeName(
+
         type
+
     ) {
 
         return (
 
             SESSION_TYPE_NAMES[
+
                 type
+
             ]
 
             ||
@@ -555,20 +702,26 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        16. SAFETY
+
     ====================================================== */
 
     function isSafetyBlocked(
+
         health,
+
         workout
+
     ) {
 
         return (
 
             health
+
                 ?.safety
+
                 ?.allowFullAutomation
 
             ===
@@ -582,6 +735,7 @@ function getWorkout() {
         (
 
             workout
+
                 ?.blocked
 
             ===
@@ -592,18 +746,24 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        17. SCHEDULE
+
     ====================================================== */
 
     function getSchedule(
+
         workout
+
     ) {
 
         return Array.isArray(
+
             workout
+
                 ?.schedule
+
         )
 
             ? workout.schedule
@@ -612,46 +772,62 @@ function getWorkout() {
 
     }
 
-
     function normalizeWeek(
+
         workout
+
     ) {
 
         const schedule =
-            getSchedule(
-                workout
-            );
 
+            getSchedule(
+
+                workout
+
+            );
 
         return Array.from(
 
             {
+
                 length:
+
                     7
+
             },
 
             (
+
                 _,
+
                 index
+
             ) => {
 
                 return (
 
                     schedule[
+
                         index
+
                     ]
 
                     ||
 
                     {
+
                         name:
+
                             "Phục hồi",
 
                         type:
+
                             "Recovery",
 
                         recommendations:
+
                             []
+
                     }
 
                 );
@@ -662,16 +838,20 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        18. COUNT TRAINING DAYS
+
     ====================================================== */
 
     function countTrainingDays(
+
         schedule
+
     ) {
 
         return schedule
+
             .filter(
 
                 item => {
@@ -683,12 +863,15 @@ function getWorkout() {
                         &&
 
                         item.type !==
+
                         "Recovery"
 
                         &&
 
                         Array.isArray(
+
                             item.exercises
+
                         )
 
                         &&
@@ -700,38 +883,50 @@ function getWorkout() {
                 }
 
             )
+
             .length;
 
     }
 
-
     /* =====================================================
+
        19. COUNT EXERCISES
+
     ====================================================== */
 
     function countExercises(
+
         schedule
+
     ) {
 
         return schedule
+
             .reduce(
 
                 (
+
                     total,
+
                     session
+
                 ) => {
 
                     if (
+
                         !Array.isArray(
+
                             session
+
                                 ?.exercises
+
                         )
+
                     ) {
 
                         return total;
 
                     }
-
 
                     return (
 
@@ -740,7 +935,9 @@ function getWorkout() {
                         +
 
                         session.exercises
+
                             .filter(Boolean)
+
                             .length
 
                     );
@@ -753,9 +950,10 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        20. SAVED SESSION
+
     ====================================================== */
 
     function hasSavedSession() {
@@ -763,8 +961,8 @@ function getWorkout() {
         const sessionAPI =
 
             window
-                .SportHubWorkoutSession;
 
+                .SportHubWorkoutSession;
 
         if (
 
@@ -773,6 +971,7 @@ function getWorkout() {
             &&
 
             typeof sessionAPI
+
                 .hasSavedSession
 
             ===
@@ -782,28 +981,33 @@ function getWorkout() {
         ) {
 
             return sessionAPI
+
                 .hasSavedSession();
 
         }
 
-
         return Boolean(
 
             readStorage(
+
                 STORAGE.activeSession
+
             )
 
         );
 
     }
 
-
     /* =====================================================
+
        21. LEGACY PLAN CHECK
+
     ====================================================== */
 
     function isLegacyPlan(
+
         workout
+
     ) {
 
         if (!workout) {
@@ -812,17 +1016,20 @@ function getWorkout() {
 
         }
 
-
         if (
 
             String(
+
                 workout.engine || ""
+
             )
 
                 .toLowerCase()
 
                 .includes(
+
                     "v2.0"
+
                 )
 
         ) {
@@ -831,11 +1038,12 @@ function getWorkout() {
 
         }
 
-
         const exercises =
 
             getSchedule(
+
                 workout
+
             )
 
                 .flatMap(
@@ -843,8 +1051,11 @@ function getWorkout() {
                     session => {
 
                         return Array.isArray(
+
                             session
+
                                 ?.exercises
+
                         )
 
                             ? session.exercises
@@ -855,45 +1066,52 @@ function getWorkout() {
 
                 );
 
-
         if (
+
             !exercises.length
+
         ) {
 
             return false;
 
         }
 
-
         return exercises.some(
 
             exercise =>
 
                 !exercise
+
                     ?.exerciseId
 
         );
 
     }
 
-
     /* =====================================================
+
        22. MEDIA KEY
 
        Hỗ trợ cả:
 
        bodyweight-squat
+
        bodyweightSquat
+
     ====================================================== */
 
     function normalizeMediaKey(
+
         value
+
     ) {
 
         const withWordBreaks =
 
             String(
+
                 value || ""
+
             )
 
                 .replace(
@@ -904,18 +1122,20 @@ function getWorkout() {
 
                 );
 
-
         const normalized =
 
             slug(
-                withWordBreaks
-            );
 
+                withWordBreaks
+
+            );
 
         return (
 
             MEDIA_ALIASES[
+
                 normalized
+
             ]
 
             ||
@@ -925,14 +1145,16 @@ function getWorkout() {
         );
 
     }
-
-
     /* =====================================================
+
        23. NORMALIZE MEDIA
+
     ====================================================== */
 
     function normalizeMediaEntry(
+
         found
+
     ) {
 
         if (!found) {
@@ -941,25 +1163,28 @@ function getWorkout() {
 
         }
 
-
         if (
+
             typeof found ===
+
             "string"
+
         ) {
 
             return {
 
                 video:
+
                     found
 
             };
 
         }
 
-
         if (
 
             typeof found ===
+
             "object"
 
             &&
@@ -972,19 +1197,22 @@ function getWorkout() {
 
         }
 
-
         return null;
 
     }
 
-
     /* =====================================================
+
        24. FIND MEDIA IN LIBRARY
+
     ====================================================== */
 
     function findMediaInLibrary(
+
         library,
+
         key
+
     ) {
 
         if (
@@ -994,6 +1222,7 @@ function getWorkout() {
             ||
 
             typeof library !==
+
             "object"
 
             ||
@@ -1006,17 +1235,17 @@ function getWorkout() {
 
         }
 
-
         const direct =
 
             normalizeMediaEntry(
 
                 library[
+
                     key
+
                 ]
 
             );
-
 
         if (direct) {
 
@@ -1024,11 +1253,12 @@ function getWorkout() {
 
         }
 
-
         const matchedKey =
 
             Object.keys(
+
                 library
+
             )
 
                 .find(
@@ -1038,7 +1268,9 @@ function getWorkout() {
                         return (
 
                             normalizeMediaKey(
+
                                 libraryKey
+
                             )
 
                             ===
@@ -1051,37 +1283,42 @@ function getWorkout() {
 
                 );
 
-
         if (!matchedKey) {
 
             return null;
 
         }
 
-
         return normalizeMediaEntry(
 
             library[
+
                 matchedKey
+
             ]
 
         );
 
     }
 
-
     /* =====================================================
+
        25. GET EXERCISE MEDIA
 
        Thứ tự ưu tiên:
 
        1. exercise.video
+
        2. exercise-media.js
+
        3. workout-session.js media registry
+
     ====================================================== */
 
     function getExerciseMedia(
+
         exercise
+
     ) {
 
         if (!exercise) {
@@ -1090,41 +1327,43 @@ function getWorkout() {
 
         }
 
-
         if (
+
             exercise.video
+
         ) {
 
             return {
 
                 video:
+
                     exercise.video
 
             };
 
         }
 
-
         const externalLibrary =
 
             window
+
                 .SportHubExerciseMedia
 
             ||
 
             {};
 
-
         const sessionLibrary =
 
             window
+
                 .SportHubWorkoutSession
+
                 ?.media
 
             ||
 
             {};
-
 
         const candidates = [
 
@@ -1137,17 +1376,23 @@ function getWorkout() {
         ]
 
             .filter(
+
                 Boolean
+
             )
 
             .map(
+
                 normalizeMediaKey
+
             );
 
-
         for (
+
             const key of
+
             candidates
+
         ) {
 
             const external =
@@ -1160,13 +1405,11 @@ function getWorkout() {
 
                 );
 
-
             if (external) {
 
                 return external;
 
             }
-
 
             const sessionMedia =
 
@@ -1178,7 +1421,6 @@ function getWorkout() {
 
                 );
 
-
             if (sessionMedia) {
 
                 return sessionMedia;
@@ -1187,31 +1429,36 @@ function getWorkout() {
 
         }
 
-
         return null;
 
     }
 
-
     /* =====================================================
+
        26. FORMAT SECONDS
+
     ====================================================== */
 
     function formatSeconds(
+
         seconds
+
     ) {
 
         const value =
 
             Number(
-                seconds
-            );
 
+                seconds
+
+            );
 
         if (
 
             !Number.isFinite(
+
                 value
+
             )
 
             ||
@@ -1224,7 +1471,6 @@ function getWorkout() {
 
         }
 
-
         if (
 
             value >= 60
@@ -1232,6 +1478,7 @@ function getWorkout() {
             &&
 
             value % 60 ===
+
             0
 
         ) {
@@ -1240,45 +1487,48 @@ function getWorkout() {
 
                 value / 60;
 
-
             return `${minutes} phút`;
 
         }
-
 
         return `${Math.round(value)} giây`;
 
     }
 
-
     /* =====================================================
+
        27. EXERCISE META
+
     ====================================================== */
 
     function getExerciseMeta(
+
         exercise
+
     ) {
 
         const parts =
-            [];
 
+            [];
 
         const sets =
 
             Number.parseInt(
 
                 exercise
+
                     ?.sets,
 
                 10
 
             );
 
-
         if (
 
             Number.isFinite(
+
                 sets
+
             )
 
             &&
@@ -1295,16 +1545,20 @@ function getWorkout() {
 
         }
 
-
         if (
+
             exercise
+
                 ?.reps
+
         ) {
 
             parts.push(
 
                 String(
+
                     exercise.reps
+
                 )
 
             );
@@ -1312,8 +1566,11 @@ function getWorkout() {
         }
 
         else if (
+
             exercise
+
                 ?.durationSeconds
+
         ) {
 
             const duration =
@@ -1321,25 +1578,29 @@ function getWorkout() {
                 formatSeconds(
 
                     exercise
+
                         .durationSeconds
 
                 );
 
-
             if (duration) {
 
                 parts.push(
+
                     duration
+
                 );
 
             }
 
         }
 
-
         if (
+
             exercise
+
                 ?.rest
+
         ) {
 
             parts.push(
@@ -1353,6 +1614,7 @@ function getWorkout() {
         else if (
 
             exercise
+
                 ?.restSeconds
 
             !==
@@ -1366,15 +1628,17 @@ function getWorkout() {
                 Number(
 
                     exercise
+
                         .restSeconds
 
                 );
 
-
             if (
 
                 Number.isFinite(
+
                     rest
+
                 )
 
                 &&
@@ -1393,67 +1657,80 @@ function getWorkout() {
 
         }
 
-
         return parts.join(
+
             " · "
+
         );
 
     }
 
-
     /* =====================================================
+
        28. SUMMARY
+
     ====================================================== */
 
     function buildSummaryHTML(
+
         profile,
+
         workout
+
     ) {
 
         const schedule =
 
             getSchedule(
-                workout
-            );
 
+                workout
+
+            );
 
         const trainingDays =
 
             countTrainingDays(
-                schedule
-            );
 
+                schedule
+
+            );
 
         const exerciseCount =
 
             countExercises(
-                schedule
-            );
 
+                schedule
+
+            );
 
         const split =
 
             workout
+
                 ?.strategy
+
                 ?.split
 
             ||
 
             "Theo kế hoạch";
 
-
         const recovery =
 
             workout
-                ?.recoveryAdjustment
-                ?.level;
 
+                ?.recoveryAdjustment
+
+                ?.level;
 
         return `
 
             <section
+
                 class="workout-plan-summary"
+
                 aria-labelledby="workoutDynamicSummaryTitle"
+
             >
 
                 <div class="workout-plan-summary-head">
@@ -1461,104 +1738,125 @@ function getWorkout() {
                     <div>
 
                         <span class="eyebrow">
+
                             TỔNG QUAN
+
                         </span>
 
                         <h2 id="workoutDynamicSummaryTitle">
+
                             Kế hoạch tập luyện của bạn
+
                         </h2>
 
                     </div>
 
-
                     <p>
 
                         Lịch bên dưới được đọc từ kết quả
+
                         Fitness Check gần nhất trên thiết bị này.
 
                     </p>
 
                 </div>
 
-
                 <div class="workout-plan-summary-grid">
-
 
                     <article class="workout-summary-card highlight">
 
                         <span>
+
                             Buổi tập / tuần
+
                         </span>
 
                         <strong>
+
                             ${trainingDays}
+
                         </strong>
 
                     </article>
 
-
                     <article class="workout-summary-card">
 
                         <span>
+
                             Cách chia lịch
+
                         </span>
 
                         <strong>
+
                             ${escapeHTML(split)}
+
                         </strong>
 
                     </article>
 
-
                     <article class="workout-summary-card">
 
                         <span>
+
                             Mục tiêu
+
                         </span>
 
                         <strong>
 
                             ${escapeHTML(
+
                                 getGoalName(
+
                                     profile
+
                                         ?.goal
+
                                         ?.primary
+
                                 )
+
                             )}
 
                         </strong>
 
                     </article>
-
 
                     <article class="workout-summary-card">
 
                         <span>
+
                             Phục hồi
+
                         </span>
 
                         <strong>
 
                             ${escapeHTML(
+
                                 getRecoveryLabel(
+
                                     recovery
+
                                 )
+
                             )}
 
                         </strong>
 
                     </article>
-
 
                 </div>
-
 
 <p class="workout-plan-summary-note">
 
     Tổng số lượt bài trong tuần:
 
     <strong>
+
         ${exerciseCount}
+
     </strong>
 
 </p>
@@ -1569,54 +1867,70 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        29. SAFETY NOTICE
+
     ====================================================== */
 
     function buildSafetyHTML(
+
         health,
+
         workout
+
     ) {
 
         if (
+
             isSafetyBlocked(
+
                 health,
+
                 workout
+
             )
+
         ) {
 
             const reason =
 
                 workout
+
                     ?.reason
 
                 ||
 
                 health
+
                     ?.safety
+
                     ?.message
 
                 ||
 
                 "Safety Gate hiện chưa cho phép chạy kế hoạch tập luyện tự động.";
 
-
             return `
 
                 <div class="workout-plan-notice stop">
 
                     <h3>
+
                         Kế hoạch tập đang được tạm khóa
+
                     </h3>
 
                     <p>
+
                         ${escapeHTML(reason)}
+
                     </p>
 
 <p class="workout-plan-notice-followup">
 
     Hãy xem lại kết quả Fitness Check
+
     trước khi bắt đầu buổi tập.
 
 </p>
@@ -1627,11 +1941,12 @@ function getWorkout() {
 
         }
 
-
         if (
 
             health
+
                 ?.safety
+
                 ?.level
 
             ===
@@ -1645,17 +1960,23 @@ function getWorkout() {
                 <div class="workout-plan-notice caution">
 
                     <h3>
+
                         Lưu ý trước khi tập
+
                     </h3>
 
                     <p>
 
                         Fitness Check đang có trạng thái
+
                         cần thận trọng.
 
                         Hãy giữ cường độ trong vùng kiểm soát
+
                         và dừng bài tập nếu xuất hiện
+
                         triệu chứng bất thường hoặc
+
                         triệu chứng tăng lên.
 
                     </p>
@@ -1666,24 +1987,28 @@ function getWorkout() {
 
         }
 
-
         return `
 
             <div class="workout-plan-notice">
 
                 <h3>
+
                     Kế hoạch tập đã sẵn sàng
+
                 </h3>
 
                 <p>
 
                     Kế hoạch được tạo từ dữ liệu
+
                     Fitness Check hiện có.
 
                     Đây không phải công cụ chẩn đoán y khoa.
 
                     Dừng bài tập nếu xuất hiện đau sắc,
+
                     chóng mặt, khó thở bất thường
+
                     hoặc triệu chứng đáng lo ngại.
 
                 </p>
@@ -1694,60 +2019,78 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        30. RECOVERY NOTICE
+
     ====================================================== */
 
     function buildRecoveryHTML(
+
         workout
+
     ) {
 
         const recovery =
 
             workout
+
                 ?.recoveryAdjustment;
 
-
         if (
+
             !recovery
+
                 ?.message
+
         ) {
 
             return "";
 
         }
 
-
         const className =
 
             [
+
                 "reduce",
+
                 "caution"
+
             ]
+
                 .includes(
+
                     recovery.level
+
                 )
 
                 ? "caution"
 
                 : "";
 
-
         return `
 
             <div
+
                 class="workout-plan-notice ${className}"
+
             >
 
                 <h3>
+
                     Điều chỉnh theo khả năng phục hồi
+
                 </h3>
 
                 <p>
+
                     ${escapeHTML(
+
                         recovery.message
+
                     )}
+
                 </p>
 
             </div>
@@ -1756,52 +2099,68 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        31. LEGACY PLAN NOTICE
+
     ====================================================== */
 
     function buildLegacyHTML(
+
         workout
+
     ) {
 
         if (
+
             !isLegacyPlan(
+
                 workout
+
             )
+
         ) {
 
             return "";
 
         }
 
-
         return `
 
             <div class="workout-plan-notice caution">
 
                 <h3>
+
                     Bạn đang xem kế hoạch đã tạo trước đó
+
                 </h3>
 
                 <p>
 
                     SPORTHUB đã cập nhật hệ thống bài tập
+
                     và Workout Session.
 
                     Kế hoạch hiện tại vẫn có thể xem,
+
                     nhưng bạn nên thực hiện lại Fitness Check
+
                     để tạo kế hoạch mới đồng bộ tốt hơn
+
                     với exercise ID, timer và video.
 
                 </p>
 
-
                 <a
+
                     class="workout-plan-cta"
-                    href="health-check.html"
+
+                    href="/shop-the-thao-v2/health-check.html"
+
                 >
+
                     Làm lại Fitness Check
+
                 </a>
 
             </div>
@@ -1810,46 +2169,58 @@ function getWorkout() {
 
     }
 
-
     /* =====================================================
+
        32. RESUME SESSION
+
     ====================================================== */
 
 function buildResumeHTML() {
 
     if (
+
         !hasSavedSession()
+
     ) {
 
         return "";
 
     }
 
-
     return `
 
         <div class="workout-plan-notice resume">
 
             <h3>
+
                 Bạn có một buổi tập đang dang dở
+
             </h3>
 
             <p>
 
                 Tiến độ buổi tập trước đã được lưu
+
                 trên trình duyệt này.
 
                 Bạn có thể tiếp tục
+
                 từ vị trí đã dừng.
 
             </p>
 
             <button
+
                 type="button"
+
                 class="workout-start-btn workout-resume-btn"
+
                 data-workout-action="resume"
+
             >
+
                 ▶ TIẾP TỤC BUỔI TẬP
+
             </button>
 
         </div>
@@ -1858,62 +2229,74 @@ function buildResumeHTML() {
 
 }
     /* =====================================================
+
        33. EXERCISE ROW
+
     ====================================================== */
 
     function buildExerciseHTML(
+
         exercise,
+
         index
+
     ) {
 
         const media =
 
             getExerciseMedia(
-                exercise
-            );
 
+                exercise
+
+            );
 
         const meta =
 
             getExerciseMeta(
-                exercise
-            );
 
+                exercise
+
+            );
 
         const name =
 
             exercise
+
                 ?.name
 
             ||
 
             "Bài tập";
 
-
         return `
 
             <div class="workout-plan-exercise">
 
-
                 <div class="workout-plan-exercise-number">
 
                     ${String(
+
                         index + 1
+
                     )
+
                         .padStart(
+
                             2,
+
                             "0"
+
                         )}
 
                 </div>
 
-
                 <div class="workout-plan-exercise-info">
 
                     <strong>
-                        ${escapeHTML(name)}
-                    </strong>
 
+                        ${escapeHTML(name)}
+
+                    </strong>
 
                     ${
 
@@ -1922,7 +2305,9 @@ function buildResumeHTML() {
                             ? `
 
                                 <span>
+
                                     ${escapeHTML(meta)}
+
                                 </span>
 
                             `
@@ -1931,18 +2316,22 @@ function buildResumeHTML() {
 
                     }
 
-
                     ${
 
                         exercise
+
                             ?.rpe
 
                             ? `
 
                                 <span>
+
                                     ${escapeHTML(
+
                                         exercise.rpe
+
                                     )}
+
                                 </span>
 
                             `
@@ -1953,19 +2342,24 @@ function buildResumeHTML() {
 
                 </div>
 
-
                 ${
 
                     media
+
                         ?.video
 
                         ? `
 
                             <span
+
                                 class="workout-plan-exercise-video"
+
                                 title="Bài tập có video hướng dẫn trong Workout Session"
+
                             >
+
                                 ▶ Video
+
                             </span>
 
                         `
@@ -1973,16 +2367,20 @@ function buildResumeHTML() {
                         : `
 
 <span
+
     class="workout-plan-exercise-video is-missing"
+
     title="Chưa có video tương ứng"
+
 >
+
     Hướng dẫn
+
 </span>
 
                         `
 
                 }
-
 
             </div>
 
@@ -1990,45 +2388,63 @@ function buildResumeHTML() {
 
     }
 
-
     /* =====================================================
+
        34. RECOVERY DAY
+
     ====================================================== */
 
     function buildRecoveryDayHTML(
+
         session,
+
         dayIndex,
+
         today
+
     ) {
 
         const recommendations =
 
             Array.isArray(
+
                 session
+
                     ?.recommendations
+
             )
 
                 ? session
+
                     .recommendations
+
                     .filter(Boolean)
 
                 : [];
 
-
         return `
 
             <article
-                class="
-                    workout-plan-day
-                    is-recovery
-                    ${
-                        today
-                            ? "is-today"
-                            : ""
-                    }
-                "
-            >
 
+                class="
+
+                    workout-plan-day
+
+                    is-recovery
+
+                    ${
+
+                        today
+
+                            ? "is-today"
+
+                            : ""
+
+                    }
+
+                "
+
+            >
 
                 <div class="workout-plan-day-head">
 
@@ -2037,53 +2453,66 @@ function buildResumeHTML() {
                         <span class="workout-plan-day-label">
 
                             ${escapeHTML(
+
                                 DAY_NAMES[
+
                                     dayIndex
+
                                 ]
+
                             )}
 
                             ${
+
                                 today
+
                                     ? " · HÔM NAY"
+
                                     : ""
+
                             }
 
                         </span>
 
-
                         <h3>
 
                             ${escapeHTML(
+
                                 session
+
                                     ?.name
+
                                 ||
+
                                 "Phục hồi"
+
                             )}
 
                         </h3>
 
                     </div>
 
-
                     <span class="workout-plan-day-type">
+
                         Phục hồi
+
                     </span>
 
                 </div>
-
 
                 <div class="workout-recovery-content">
 
                     <p>
 
                         Ngày này không có Workout Session
+
                         bắt buộc.
 
                         Ưu tiên nghỉ ngơi và vận động nhẹ
+
                         nếu cảm thấy phù hợp.
 
                     </p>
-
 
                     ${
 
@@ -2117,9 +2546,7 @@ function buildResumeHTML() {
 
                     }
 
-
                 </div>
-
 
             </article>
 
@@ -2127,129 +2554,166 @@ function buildResumeHTML() {
 
     }
 
-
     /* =====================================================
+
        35. TRAINING DAY
+
     ====================================================== */
 
     function buildTrainingDayHTML(
+
         session,
+
         dayIndex,
+
         today,
+
         blocked
+
     ) {
 
         const exercises =
 
             Array.isArray(
+
                 session
+
                     ?.exercises
+
             )
 
                 ? session
+
                     .exercises
+
                     .filter(Boolean)
 
                 : [];
 
-
         const duration =
 
             Number(
-                session
-                    ?.duration
-            );
 
+                session
+
+                    ?.duration
+
+            );
 
         const intensity =
 
             session
+
                 ?.intensity
 
             ||
 
             exercises[
+
                 0
+
             ]
+
                 ?.rpe
 
             ||
 
             "Theo kế hoạch";
 
-
         return `
 
             <article
+
                 class="
+
                     workout-plan-day
+
                     ${
+
                         today
+
                             ? "is-today"
+
                             : ""
+
                     }
+
                 "
+
             >
 
-
                 <div class="workout-plan-day-head">
-
 
                     <div>
 
                         <span class="workout-plan-day-label">
 
                             ${escapeHTML(
+
                                 DAY_NAMES[
+
                                     dayIndex
+
                                 ]
+
                             )}
 
                             ${
+
                                 today
+
                                     ? " · HÔM NAY"
+
                                     : ""
+
                             }
 
                         </span>
 
-
                         <h3>
 
                             ${escapeHTML(
+
                                 session
+
                                     ?.name
+
                                 ||
+
                                 "Buổi tập"
+
                             )}
 
                         </h3>
 
                     </div>
 
-
                     <span class="workout-plan-day-type">
 
                         ${escapeHTML(
+
                             getSessionTypeName(
+
                                 session
+
                                     ?.type
+
                             )
+
                         )}
 
                     </span>
 
-
                 </div>
 
-
                 <div class="workout-plan-day-info">
-
 
                     <div>
 
                         <span>
+
                             Thời lượng
+
                         </span>
 
                         <strong>
@@ -2257,7 +2721,9 @@ function buildResumeHTML() {
                             ${
 
                                 Number.isFinite(
+
                                     duration
+
                                 )
 
                                 &&
@@ -2274,74 +2740,90 @@ function buildResumeHTML() {
 
                     </div>
 
-
                     <div>
 
                         <span>
+
                             Số bài
+
                         </span>
 
                         <strong>
+
                             ${exercises.length} bài
+
                         </strong>
 
                     </div>
 
-
                     <div>
 
                         <span>
+
                             Loại
+
                         </span>
 
                         <strong>
 
                             ${escapeHTML(
+
                                 getSessionTypeName(
+
                                     session
+
                                         ?.type
+
                                 )
+
                             )}
 
                         </strong>
 
                     </div>
-
 
                     <div>
 
                         <span>
+
                             Cường độ
+
                         </span>
 
                         <strong>
+
                             ${escapeHTML(
+
                                 intensity
+
                             )}
+
                         </strong>
 
                     </div>
-
 
                 </div>
 
-
                 <div class="workout-plan-exercises">
 
-
                     <div class="workout-plan-exercises-title">
-                        Danh sách bài tập
-                    </div>
 
+                        Danh sách bài tập
+
+                    </div>
 
                     ${
 
                         exercises.length
 
                             ? exercises
+
                                 .map(
+
                                     buildExerciseHTML
+
                                 )
+
                                 .join("")
 
                             : `
@@ -2349,6 +2831,7 @@ function buildResumeHTML() {
 <p class="workout-plan-empty-exercises">
 
     Buổi tập này chưa có
+
     danh sách bài tập.
 
 </p>
@@ -2357,17 +2840,18 @@ function buildResumeHTML() {
 
                     }
 
-
                 </div>
-
 
                 <div class="workout-plan-actions">
 
-
                     <button
+
                         type="button"
+
                         class="workout-start-btn"
+
                         data-workout-action="start"
+
                         data-day-index="${dayIndex}"
 
                         ${
@@ -2383,15 +2867,14 @@ function buildResumeHTML() {
                                 : ""
 
                         }
+
                     >
 
                         ▶ BẮT ĐẦU TẬP LUYỆN
 
                     </button>
 
-
                 </div>
-
 
             </article>
 
@@ -2399,15 +2882,20 @@ function buildResumeHTML() {
 
     }
 
-
     /* =====================================================
+
        36. DAY
+
     ====================================================== */
 
     function buildDayHTML(
+
         session,
+
         dayIndex,
+
         blocked
+
     ) {
 
         const today =
@@ -2418,7 +2906,6 @@ function buildResumeHTML() {
 
             dayIndex;
 
-
         if (
 
             !session
@@ -2426,6 +2913,7 @@ function buildResumeHTML() {
             ||
 
             session.type ===
+
             "Recovery"
 
         ) {
@@ -2437,14 +2925,19 @@ function buildResumeHTML() {
                 ||
 
                 {
+
                     name:
+
                         "Phục hồi",
 
                     type:
+
                         "Recovery",
 
                     recommendations:
+
                         []
+
                 },
 
                 dayIndex,
@@ -2454,7 +2947,6 @@ function buildResumeHTML() {
             );
 
         }
-
 
         return buildTrainingDayHTML(
 
@@ -2470,67 +2962,77 @@ function buildResumeHTML() {
 
     }
 
-
     /* =====================================================
+
        37. WEEK
+
     ====================================================== */
 
     function buildWeekHTML(
+
         workout,
+
         health
+
     ) {
 
         const week =
 
             normalizeWeek(
-                workout
-            );
 
+                workout
+
+            );
 
         const blocked =
 
             isSafetyBlocked(
-                health,
-                workout
-            );
 
+                health,
+
+                workout
+
+            );
 
         return `
 
             <section
+
                 aria-labelledby="workoutWeekTitle"
+
             >
 
-
                 <div class="workout-week-head">
-
 
                     <div>
 
                         <span class="eyebrow">
+
                             KẾ HOẠCH TẬP
+
                         </span>
 
                         <h2 id="workoutWeekTitle">
+
                             Lịch 7 ngày
+
                         </h2>
 
                     </div>
 
-
                     <p>
 
                         Chọn một ngày tập
+
                         để bắt đầu Workout Session.
 
                         Hôm nay được đánh dấu
-bằng viền lime.
+
+                        bằng viền lime.
 
                     </p>
 
-
                 </div>
-
 
                 <div class="workout-plan-grid">
 
@@ -2541,8 +3043,11 @@ bằng viền lime.
                             .map(
 
                                 (
+
                                     session,
+
                                     index
+
                                 ) => {
 
                                     return buildDayHTML(
@@ -2565,27 +3070,29 @@ bằng viền lime.
 
                 </div>
 
-
             </section>
 
         `;
 
     }
 
-
     /* =====================================================
+
        38. DYNAMIC STRATEGY
+
     ====================================================== */
 
     function buildDynamicStrategyHTML(
+
         workout
+
     ) {
 
         const strategy =
 
             workout
-                ?.strategy;
 
+                ?.strategy;
 
         if (!strategy) {
 
@@ -2593,24 +3100,27 @@ bằng viền lime.
 
         }
 
-
         return `
 
             <section
+
                 class="workout-strategy"
+
                 aria-labelledby="workoutStrategyDynamicTitle"
+
             >
 
-
                 <span class="eyebrow">
+
                     CHIẾN LƯỢC
+
                 </span>
 
-
                 <h2 id="workoutStrategyDynamicTitle">
-                    Vì sao lịch được chia như vậy?
-                </h2>
 
+                    Vì sao lịch được chia như vậy?
+
+                </h2>
 
                 <p>
 
@@ -2626,14 +3136,14 @@ bằng viền lime.
 
                 </p>
 
-
                 <div class="workout-strategy-grid">
-
 
                     <article class="workout-strategy-card">
 
                         <strong>
+
                             Split
+
                         </strong>
 
                         <p>
@@ -2652,11 +3162,12 @@ bằng viền lime.
 
                     </article>
 
-
                     <article class="workout-strategy-card">
 
                         <strong>
+
                             Tăng tiến
+
                         </strong>
 
                         <p>
@@ -2668,7 +3179,9 @@ bằng viền lime.
                                 ||
 
                                 workout
+
                                     ?.rules
+
                                     ?.progression
 
                                 ||
@@ -2681,11 +3194,12 @@ bằng viền lime.
 
                     </article>
 
-
                     <article class="workout-strategy-card">
 
                         <strong>
+
                             Phục hồi
+
                         </strong>
 
                         <p>
@@ -2697,7 +3211,9 @@ bằng viền lime.
                                 ||
 
                                 workout
+
                                     ?.recoveryAdjustment
+
                                     ?.message
 
                                 ||
@@ -2710,11 +3226,12 @@ bằng viền lime.
 
                     </article>
 
-
                     <article class="workout-strategy-card">
 
                         <strong>
+
                             Cường độ
+
                         </strong>
 
                         <p>
@@ -2733,9 +3250,7 @@ bằng viền lime.
 
                     </article>
 
-
                 </div>
-
 
             </section>
 
@@ -2743,9 +3258,10 @@ bằng viền lime.
 
     }
 
-
     /* =====================================================
+
        39. NO PLAN
+
     ====================================================== */
 
     function renderNoPlan() {
@@ -2754,84 +3270,105 @@ bằng viền lime.
 
             <div class="workout-plan-state">
 
-
                 <div
+
                     class="workout-plan-state-icon"
+
                     aria-hidden="true"
+
                 >
+
                     🏋
+
                 </div>
 
-
                 <h2>
-                    Chưa có kế hoạch tập luyện
-                </h2>
 
+                    Chưa có kế hoạch tập luyện
+
+                </h2>
 
                 <p>
 
                     Hãy hoàn thành Fitness Check
+
                     để SPORTHUB tạo lịch tập
+
                     dựa trên mục tiêu,
+
                     kinh nghiệm,
+
                     số buổi,
+
                     dụng cụ
+
                     và khả năng phục hồi.
 
                 </p>
 
-
                 <a
-                    class="workout-plan-cta"
-                    href="health-check.html"
-                >
-                    Thực hiện Fitness Check
-                </a>
 
+                    class="workout-plan-cta"
+
+                    href="/shop-the-thao-v2/health-check.html"
+
+                >
+
+                    Thực hiện Fitness Check
+
+                </a>
 
             </div>
 
         `;
 
     }
-
-
     /* =====================================================
+
        40. INVALID PLAN
+
     ====================================================== */
 
     function renderInvalidPlan(
+
         workout
+
     ) {
 
         root.innerHTML = `
 
             <div class="workout-plan-state">
 
-
                 <div
+
                     class="workout-plan-state-icon"
+
                     aria-hidden="true"
+
                 >
+
                     ⚠
+
                 </div>
 
-
                 <h2>
-                    Kế hoạch tập chưa sẵn sàng
-                </h2>
 
+                    Kế hoạch tập chưa sẵn sàng
+
+                </h2>
 
                 <p>
 
                     ${escapeHTML(
 
                         workout
+
                             ?.reason
 
                         ||
 
                         workout
+
                             ?.error
 
                         ||
@@ -2842,14 +3379,17 @@ bằng viền lime.
 
                 </p>
 
-
                 <a
-                    class="workout-plan-cta"
-                    href="health-check.html"
-                >
-                    Quay lại Fitness Check
-                </a>
 
+                    class="workout-plan-cta"
+
+                    href="/shop-the-thao-v2/health-check.html"
+
+                >
+
+                    Quay lại Fitness Check
+
+                </a>
 
             </div>
 
@@ -2857,58 +3397,74 @@ bằng viền lime.
 
     }
 
-
     /* =====================================================
+
        41. BLOCKED PLAN
+
     ====================================================== */
 
     function renderBlockedPlan(
+
         profile,
+
         health,
+
         workout
+
     ) {
 
         root.innerHTML = `
 
             ${buildSummaryHTML(
-                profile,
-                workout
-            )}
 
+                profile,
+
+                workout
+
+            )}
 
             ${buildSafetyHTML(
-                health,
-                workout
-            )}
 
+                health,
+
+                workout
+
+            )}
 
             <div class="workout-plan-state">
 
-
                 <div
+
                     class="workout-plan-state-icon"
+
                     aria-hidden="true"
+
                 >
+
                     ⛔
+
                 </div>
 
-
                 <h2>
-                    Chưa thể bắt đầu Workout Session
-                </h2>
 
+                    Chưa thể bắt đầu Workout Session
+
+                </h2>
 
                 <p>
 
                     ${escapeHTML(
 
                         workout
+
                             ?.reason
 
                         ||
 
                         health
+
                             ?.safety
+
                             ?.message
 
                         ||
@@ -2919,14 +3475,17 @@ bằng viền lime.
 
                 </p>
 
-
                 <a
-                    class="workout-plan-cta"
-                    href="health-check.html"
-                >
-                    Xem lại Fitness Check
-                </a>
 
+                    class="workout-plan-cta"
+
+                    href="/shop-the-thao-v2/health-check.html"
+
+                >
+
+                    Xem lại Fitness Check
+
+                </a>
 
             </div>
 
@@ -2934,9 +3493,10 @@ bằng viền lime.
 
     }
 
-
     /* =====================================================
+
        42. MAIN RENDER
+
     ====================================================== */
 
     function render() {
@@ -2944,9 +3504,10 @@ bằng viền lime.
         root =
 
             document.getElementById(
-                "workoutPlanApp"
-            );
 
+                "workoutPlanApp"
+
+            );
 
         if (!root) {
 
@@ -2954,72 +3515,82 @@ bằng viền lime.
 
         }
 
-
         setBusy(
-            true
-        );
 
+            true
+
+        );
 
         const profile =
 
             getProfile();
 
-
         const health =
 
             getHealth();
-
 
         const workout =
 
             getWorkout();
 
-
         if (
+
             !workout
+
         ) {
 
             renderNoPlan();
 
             setBusy(
+
                 false
+
             );
 
             return;
 
         }
 
-
         if (
 
             workout.success ===
+
             false
 
             &&
 
             workout.blocked !==
+
             true
 
         ) {
 
             renderInvalidPlan(
+
                 workout
+
             );
 
             setBusy(
+
                 false
+
             );
 
             return;
 
         }
 
-
         if (
+
             isSafetyBlocked(
+
                 health,
+
                 workout
+
             )
+
         ) {
 
             renderBlockedPlan(
@@ -3032,190 +3603,250 @@ bằng viền lime.
 
             );
 
-
             setBusy(
-                false
-            );
 
+                false
+
+            );
 
             return;
 
         }
 
-
         root.innerHTML = `
 
             ${buildSummaryHTML(
-                profile,
-                workout
-            )}
 
+                profile,
+
+                workout
+
+            )}
 
             ${buildResumeHTML()}
 
-
             ${buildLegacyHTML(
-                workout
-            )}
 
+                workout
+
+            )}
 
             ${buildSafetyHTML(
-                health,
-                workout
-            )}
 
+                health,
+
+                workout
+
+            )}
 
             ${buildRecoveryHTML(
-                workout
-            )}
 
+                workout
+
+            )}
 
             ${buildWeekHTML(
+
                 workout,
+
                 health
+
             )}
 
-
             ${buildDynamicStrategyHTML(
+
                 workout
+
             )}
 
         `;
 
-
         setBusy(
+
             false
+
         );
 
     }
 
-
     /* =====================================================
+
        43. START DAY
+
     ====================================================== */
 
 function startDay(
+
     dayIndex
+
 ) {
 
     const workout =
+
         getWorkout();
 
     const health =
+
         getHealth();
 
-
     if (
+
         isSafetyBlocked(
+
             health,
+
             workout
+
         )
+
     ) {
 
         notify(
+
             "Safety Gate hiện chưa cho phép bắt đầu Workout Session."
+
         );
 
         return false;
 
     }
 
-
     const sessionAPI =
-        window
-            .SportHubWorkoutSession;
 
+        window
+
+            .SportHubWorkoutSession;
 
     if (!sessionAPI) {
 
         notify(
+
             "Không tìm thấy workout-session.js."
+
         );
 
         return false;
 
     }
 
-
     if (
+
         typeof sessionAPI
+
             .startDay
+
         !==
+
         "function"
+
     ) {
 
         notify(
+
             "Workout Session chưa sẵn sàng."
+
         );
 
         return false;
 
     }
-
 
     const index =
+
         Number(
+
             dayIndex
+
         );
 
-
     if (
+
         !Number.isInteger(
+
             index
+
         )
+
         ||
+
         index < 0
+
         ||
+
         index > 6
+
     ) {
 
         notify(
+
             "Ngày tập không hợp lệ."
+
         );
 
         return false;
 
     }
-
 
     const day =
+
         normalizeWeek(
+
             workout
+
         )[
+
             index
+
         ];
 
-
     if (
+
         !day
+
         ||
+
         day.type ===
+
         "Recovery"
+
         ||
+
         !Array.isArray(
+
             day.exercises
+
         )
+
         ||
+
         day.exercises.length ===
+
         0
+
     ) {
 
         notify(
+
             "Ngày này không có buổi tập để bắt đầu."
+
         );
 
         return false;
 
     }
 
-
     if (
+
         hasSavedSession()
+
     ) {
 
         const confirmed =
+
             window.confirm(
+
                 "Bạn đang có một buổi tập chưa hoàn thành. Nếu bắt đầu buổi tập mới, tiến độ buổi tập cũ có thể bị thay thế. Bạn vẫn muốn bắt đầu buổi tập mới?"
+
             );
 
         if (!confirmed) {
@@ -3224,61 +3855,94 @@ function startDay(
 
         }
 
+        try {
+
+            localStorage.removeItem(
+                STORAGE.activeSession
+            );
+
+        }
+
+        catch (error) {
+
+            notify(
+                "Không thể thay thế buổi tập đang lưu trên trình duyệt này."
+            );
+
+            return false;
+
+        }
+
     }
 
-
     return sessionAPI
+
         .startDay(
+
             index
+
         );
 
 }
+
     /* =====================================================
+
        44. RESUME
+
     ====================================================== */
 
 function resumeSaved() {
 
     const sessionAPI =
-        window
-            .SportHubWorkoutSession;
 
+        window
+
+            .SportHubWorkoutSession;
 
     if (!sessionAPI) {
 
         notify(
+
             "Không tìm thấy workout-session.js."
+
         );
 
         return false;
 
     }
 
-
     if (
+
         typeof sessionAPI
+
             .resumeSaved
 
         !==
 
         "function"
+
     ) {
 
         notify(
+
             "Không thể khôi phục buổi tập đã lưu."
+
         );
 
         return false;
 
     }
 
-
     if (
+
         !hasSavedSession()
+
     ) {
 
         notify(
+
             "Không tìm thấy buổi tập đang dang dở."
+
         );
 
         render();
@@ -3287,11 +3951,11 @@ function resumeSaved() {
 
     }
 
-
     const success =
-        sessionAPI
-            .resumeSaved();
 
+        sessionAPI
+
+            .resumeSaved();
 
     if (!success) {
 
@@ -3307,27 +3971,31 @@ function resumeSaved() {
 
     }
 
-
     return success;
 
 }
 
-
     /* =====================================================
+
        45. CLICK HANDLER
+
     ====================================================== */
 
     function handleClick(
+
         event
+
     ) {
 
         const button =
 
             event.target
-                .closest(
-                    "[data-workout-action]"
-                );
 
+                .closest(
+
+                    "[data-workout-action]"
+
+                );
 
         if (
 
@@ -3336,8 +4004,11 @@ function resumeSaved() {
             ||
 
             !root
+
                 ?.contains(
+
                     button
+
                 )
 
         ) {
@@ -3346,17 +4017,20 @@ function resumeSaved() {
 
         }
 
-
         const action =
 
             button
+
                 .dataset
+
                 .workoutAction;
 
-
         if (
+
             action ===
+
             "start"
+
         ) {
 
             startDay(
@@ -3364,22 +4038,25 @@ function resumeSaved() {
                 Number(
 
                     button
+
                         .dataset
+
                         .dayIndex
 
                 )
 
             );
 
-
             return;
 
         }
 
-
         if (
+
             action ===
+
             "resume"
+
         ) {
 
             resumeSaved();
@@ -3388,45 +4065,56 @@ function resumeSaved() {
 
     }
 
-
     /* =====================================================
+
        46. SESSION EVENTS
+
     ====================================================== */
+
 function bindSessionEvents() {
 
     if (
+
         eventsBound
+
     ) {
 
         return;
 
     }
 
-
     eventsBound =
+
         true;
 
-
     window.addEventListener(
+
         "sporthub:workout-complete",
+
         render
+
     );
 
-
     window.addEventListener(
+
         "sporthub:workout-stop",
+
         render
+
     );
 
-
     window.addEventListener(
+
         "sporthub:personal-plan-update",
+
         render
+
     );
 
-
     window.addEventListener(
+
         "storage",
+
         event => {
 
             const watchedKeys = [
@@ -3441,13 +4129,18 @@ function bindSessionEvents() {
 
             ];
 
-
             if (
+
                 event.key
+
                 &&
+
                 watchedKeys.includes(
+
                     event.key
+
                 )
+
             ) {
 
                 render();
@@ -3455,11 +4148,15 @@ function bindSessionEvents() {
             }
 
         }
+
     );
 
 }
+
     /* =====================================================
+
        47. INIT
+
     ====================================================== */
 
     function init() {
@@ -3467,16 +4164,16 @@ function bindSessionEvents() {
         root =
 
             document.getElementById(
-                "workoutPlanApp"
-            );
 
+                "workoutPlanApp"
+
+            );
 
         if (!root) {
 
             return;
 
         }
-
 
         root.addEventListener(
 
@@ -3486,22 +4183,24 @@ function bindSessionEvents() {
 
         );
 
-
         bindSessionEvents();
-
 
         render();
 
     }
 
-
     /* =====================================================
+
        48. DOM READY
+
     ====================================================== */
 
     if (
+
         document.readyState ===
+
         "loading"
+
     ) {
 
         document.addEventListener(
@@ -3511,8 +4210,11 @@ function bindSessionEvents() {
             init,
 
             {
+
                 once:
+
                     true
+
             }
 
         );
@@ -3525,35 +4227,45 @@ function bindSessionEvents() {
 
     }
 
-
     /* =====================================================
+
        49. PUBLIC API
+
     ====================================================== */
 
     return {
 
+        version:
+            "1.3",
+
         render:
+
             render,
 
         startDay:
+
             startDay,
 
         resumeSaved:
+
             resumeSaved,
 
         getWorkout:
+
             getWorkout,
 
         getHealth:
+
             getHealth,
 
         getProfile:
+
             getProfile,
 
         getExerciseMedia:
+
             getExerciseMedia
 
     };
-
 
 })();

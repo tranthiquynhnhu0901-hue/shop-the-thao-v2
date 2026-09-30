@@ -1,15 +1,11 @@
 <!doctype html>
 <html lang="vi">
-
 <head>
-
     <meta charset="utf-8">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1"
     >
-
 
     <!-- =====================================================
          SEO
@@ -36,7 +32,7 @@
 
     <link
         rel="canonical"
-        href="https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html"
+        href="https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html"
     >
 
 
@@ -71,7 +67,7 @@
 
     <meta
         property="og:url"
-        content="https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html"
+        content="https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html"
     >
 
     <meta
@@ -121,8 +117,8 @@
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html#webpage",
-                "url": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html",
+                "@id": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html#webpage",
+                "url": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html",
                 "name": "Fitness Check – Phân tích thể trạng & kế hoạch Fitness",
                 "description": "Thực hiện Fitness Check để phân tích thể trạng, vận động, mục tiêu, dinh dưỡng và phục hồi, từ đó định hướng tập luyện.",
                 "isPartOf": {
@@ -132,18 +128,18 @@
                     "url": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/"
                 },
                 "mainEntity": {
-                    "@id": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html#application"
+                    "@id": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html#application"
                 },
                 "breadcrumb": {
-                    "@id": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html#breadcrumb"
+                    "@id": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html#breadcrumb"
                 },
                 "inLanguage": "vi-VN"
             },
             {
                 "@type": "WebApplication",
-                "@id": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html#application",
+                "@id": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html#application",
                 "name": "SPORTHUB Fitness Check",
-                "url": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html",
+                "url": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html",
                 "applicationCategory": "HealthApplication",
                 "operatingSystem": "Web",
                 "description": "Công cụ Fitness Check hỗ trợ phân tích thể trạng, mức vận động, mục tiêu, điều kiện tập luyện, dinh dưỡng và phục hồi để định hướng kế hoạch thể chất.",
@@ -156,7 +152,7 @@
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html#breadcrumb",
+                "@id": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
@@ -168,7 +164,7 @@
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Fitness Check",
-                        "item": "https://tranthiquynhnhu0901-hue.github.io/shopthethao/health-check.html"
+                        "item": "https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html"
                     }
                 ]
             }
@@ -188,6 +184,8 @@
         /* =====================================================
            FITNESS PAGE V6.2
            RED / WHITE / BLACK
+
+           GIỮ NGUYÊN DESIGN ĐANG HOẠT ĐỘNG
         ====================================================== */
 
         .fitness-hero {
@@ -206,7 +204,7 @@
                     rgba(5,5,6,.72) 50%,
                     rgba(5,5,6,.20) 100%
                 ),
-                url("images/banners/bn03-fitness-check.webp")
+                url("/shopthethao/images/banners/bn03-fitness-check.webp")
                 center / cover
                 no-repeat !important;
 
@@ -613,6 +611,124 @@
 
 
 
+        /* RESULT ACTIONS
+           DÙNG CHO health-check.js BẢN CUỐI
+        */
+
+        .fitness-result-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 34px;
+
+        }
+
+
+        .fitness-result-primary,
+        .fitness-result-secondary {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding:
+                13px 18px;
+
+            border-radius:
+                9px;
+
+            font: inherit;
+
+            font-weight: 900;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+        }
+
+
+        .fitness-result-primary {
+
+            border:
+                1px solid #e10600;
+
+            background:
+                #e10600;
+
+            color:
+                #fff;
+
+        }
+
+
+        .fitness-result-primary:hover {
+
+            border-color:
+                #ff1d16;
+
+            background:
+                #ff1d16;
+
+            color:
+                #fff;
+
+        }
+
+
+        .fitness-result-secondary {
+
+            border:
+                1px solid #62626a;
+
+            background:
+                transparent;
+
+            color:
+                #fff;
+
+        }
+
+
+        .fitness-result-secondary:hover {
+
+            border-color:
+                #fff;
+
+            background:
+                #fff;
+
+            color:
+                #09090b;
+
+        }
+
+
+        .fitness-result-group {
+
+            margin-top:
+                45px;
+
+        }
+
+
+        .fitness-result-group h2 {
+
+            margin:
+                8px 0 20px;
+
+        }
+
+
+
         /* MOBILE */
 
         @media (max-width:650px) {
@@ -657,6 +773,15 @@
 
             }
 
+
+            .fitness-result-primary,
+            .fitness-result-secondary {
+
+                width:
+                    100%;
+
+            }
+
         }
 
     </style>
@@ -675,40 +800,43 @@
 
     <div class="container nav">
 
+
         <a
             class="logo"
-            href="./"
+            href="/shopthethao/"
+            aria-label="SPORTHUB - Trang chủ"
         >
             SPORT<span>HUB</span>
         </a>
 
 
-        <nav>
+        <nav aria-label="Điều hướng chính">
 
-            <a href="./">
+            <a href="/shopthethao/">
                 Trang chủ
             </a>
 
-            <a href="gioi-thieu/">
+            <a href="/shopthethao/gioi-thieu/">
                 Giới thiệu
             </a>
 
-            <a href="shop.html">
+            <a href="/shopthethao/shop.html">
                 Sản phẩm
             </a>
 
             <a
                 class="active"
-                href="health-check.html"
+                href="/shop-the-thao-v2/health-check.html"
+                aria-current="page"
             >
                 Fitness Check
             </a>
 
-            <a href="blog.html">
+            <a href="/shopthethao/blog.html">
                 Blog
             </a>
 
-            <a href="lien-he/">
+            <a href="/shopthethao/lien-he/">
                 Liên hệ
             </a>
 
@@ -717,7 +845,8 @@
 
         <a
             class="cart-link"
-            href="cart.html"
+            href="/shopthethao/cart.html"
+            aria-label="Mở giỏ hàng SPORTHUB"
         >
             🛒
             <span class="cart-count">
@@ -989,22 +1118,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="chest"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="chest"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1018,22 +1154,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="faint"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="faint"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1046,22 +1189,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="breath"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="breath"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1074,22 +1224,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="injury"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="injury"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1144,22 +1301,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="medical"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="medical"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1172,22 +1336,29 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="surgery"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="surgery"
                             value="no"
                             checked
                         >
+
                         Không
+
                     </label>
 
                 </div>
@@ -1200,31 +1371,42 @@
                     </p>
 
                     <label>
+
                         <input
                             type="radio"
                             name="pregnancy"
                             value="yes"
                         >
+
                         Có
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="pregnancy"
                             value="no"
                         >
+
                         Không
+
                     </label>
 
+
                     <label>
+
                         <input
                             type="radio"
                             name="pregnancy"
                             value="na"
                             checked
                         >
+
                         Không áp dụng
+
                     </label>
 
                 </div>
@@ -1778,81 +1960,110 @@
                 </div>
 
 
-<div class="field">
+                <div class="field">
 
-    <label>
-        Dụng cụ có thể sử dụng
-    </label>
+                    <label>
+                        Dụng cụ có thể sử dụng
+                    </label>
 
-    <div class="equipment-grid">
+                    <div class="equipment-grid">
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="bodyweight"
-                checked
-            >
-            Bodyweight
-        </label>
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="dumbbell"
-            >
-            Tạ đơn
-        </label>
+                        <label>
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="barbell"
-            >
-            Barbell
-        </label>
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="bodyweight"
+                                checked
+                            >
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="resistance-band"
-            >
-            Dây kháng lực
-        </label>
+                            Bodyweight
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="jump-rope"
-            >
-            Dây nhảy
-        </label>
+                        </label>
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="machines"
-            >
-            Máy gym
-        </label>
 
-        <label>
-            <input
-                class="equipment-item"
-                type="checkbox"
-                value="cardio-machine"
-            >
-            Máy cardio
-        </label>
+                        <label>
 
-    </div>
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="dumbbell"
+                            >
 
-</div>
+                            Tạ đơn
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="barbell"
+                            >
+
+                            Barbell
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="resistance-band"
+                            >
+
+                            Dây kháng lực
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="jump-rope"
+                            >
+
+                            Dây nhảy
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="machines"
+                            >
+
+                            Máy gym
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                class="equipment-item"
+                                type="checkbox"
+                                value="cardio-machine"
+                            >
+
+                            Máy cardio
+
+                        </label>
+
+
+                    </div>
+
+                </div>
 
 
                 <div class="field">
@@ -2211,18 +2422,37 @@
                                 1 - Rất thấp
                             </option>
 
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="2">
+                                2
+                            </option>
+
+                            <option value="3">
+                                3
+                            </option>
+
+                            <option value="4">
+                                4
+                            </option>
 
                             <option value="5">
                                 5 - Trung bình
                             </option>
 
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            <option value="6">
+                                6
+                            </option>
+
+                            <option value="7">
+                                7
+                            </option>
+
+                            <option value="8">
+                                8
+                            </option>
+
+                            <option value="9">
+                                9
+                            </option>
 
                             <option value="10">
                                 10 - Rất tốt
@@ -2289,18 +2519,37 @@
                                 1 - Rất thấp
                             </option>
 
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="2">
+                                2
+                            </option>
+
+                            <option value="3">
+                                3
+                            </option>
+
+                            <option value="4">
+                                4
+                            </option>
 
                             <option value="5">
                                 5 - Trung bình
                             </option>
 
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            <option value="6">
+                                6
+                            </option>
+
+                            <option value="7">
+                                7
+                            </option>
+
+                            <option value="8">
+                                8
+                            </option>
+
+                            <option value="9">
+                                9
+                            </option>
 
                             <option value="10">
                                 10 - Rất cao
@@ -2327,18 +2576,37 @@
                                 1 - Hầu như không mệt
                             </option>
 
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="2">
+                                2
+                            </option>
+
+                            <option value="3">
+                                3
+                            </option>
+
+                            <option value="4">
+                                4
+                            </option>
 
                             <option value="5">
                                 5 - Trung bình
                             </option>
 
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            <option value="6">
+                                6
+                            </option>
+
+                            <option value="7">
+                                7
+                            </option>
+
+                            <option value="8">
+                                8
+                            </option>
+
+                            <option value="9">
+                                9
+                            </option>
 
                             <option value="10">
                                 10 - Rất mệt
@@ -2422,7 +2690,6 @@
 
             <div class="fitness-controls">
 
-
                 <button
                     id="back"
                     class="fitness-back-btn"
@@ -2432,7 +2699,6 @@
                     ← Quay lại
                 </button>
 
-
                 <button
                     id="next"
                     class="btn-primary"
@@ -2441,7 +2707,6 @@
                 >
                     Tiếp tục →
                 </button>
-
 
             </div>
 
@@ -2456,24 +2721,19 @@
 
         <aside class="fitness-aside">
 
-
             <span class="eyebrow">
                 SPORTHUB COACH
             </span>
-
 
             <h2>
                 Từ dữ liệu đến kế hoạch cá nhân
             </h2>
 
-
             <p style="color:var(--muted)">
-
                 Hệ thống kết hợp dữ liệu thể trạng,
                 vận động, mục tiêu, tập luyện,
                 dinh dưỡng và phục hồi để xây dựng
                 kế hoạch phù hợp hơn với từng người.
-
             </p>
 
 
@@ -2559,9 +2819,9 @@
 
             <p>
                 Sản phẩm thể thao,
-                kiến thức tập luyện
-                và Fitness Check
-                trên cùng một nền tảng.
+                kiến thức tập luyện,
+                Fitness Check và kế hoạch cá nhân
+                trong cùng hệ sinh thái SPORTHUB.
             </p>
 
         </div>
@@ -2573,19 +2833,19 @@
                 Khám phá
             </b>
 
-            <a href="./">
+            <a href="/shopthethao/">
                 Trang chủ
             </a>
 
-            <a href="shop.html">
+            <a href="/shopthethao/shop.html">
                 Sản phẩm
             </a>
 
-            <a href="blog.html">
+            <a href="/shopthethao/blog.html">
                 Blog
             </a>
 
-            <a href="gioi-thieu/">
+            <a href="/shopthethao/gioi-thieu/">
                 Giới thiệu
             </a>
 
@@ -2598,15 +2858,19 @@
                 Hỗ trợ
             </b>
 
-            <a href="health-check.html">
+            <a href="/shop-the-thao-v2/health-check.html">
                 Fitness Check
             </a>
 
-            <a href="lien-he/">
+            <a href="/shop-the-thao-v2/">
+                Kế hoạch cá nhân
+            </a>
+
+            <a href="/shopthethao/lien-he/">
                 Liên hệ
             </a>
 
-            <a href="cart.html">
+            <a href="/shopthethao/cart.html">
                 Giỏ hàng
             </a>
 
@@ -2621,7 +2885,7 @@
 
 <!-- =====================================================
      JAVASCRIPT
-     GIỮ NGUYÊN ENGINE + ĐỔI VERSION CHỐNG CACHE
+     ENGINE FITNESS + LIÊN KẾT V1 / V2
 ===================================================== -->
 
 <script src="js/image-factory.js?v=6.2"></script>
@@ -2651,7 +2915,7 @@
 
 <script src="js/nutrition-engine.js?v=6.2"></script>
 
-<script src="js/health-check.js?v=6.2"></script>
+<script src="js/health-check.js?v=6.10"></script>
 
 
 <!-- =====================================================

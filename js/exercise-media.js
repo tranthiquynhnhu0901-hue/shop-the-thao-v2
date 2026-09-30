@@ -1,12 +1,13 @@
 /* =========================================================
    SPORTHUB EXERCISE MEDIA LIBRARY
-   Version 1.0
+   Version 1.1
 
    Video library cho Workout Session.
 
    Quy ước:
    - Key dùng slug chuẩn.
    - Video nằm trong images/exercises/
+   - Đường dẫn được resolve từ các trang trong repo V2.
    - Không chứa logic set / reps / timer.
 ========================================================= */
 
