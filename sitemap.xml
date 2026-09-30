@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- =====================================================
+         SPORTHUB V2
+         FITNESS CHECK & PERSONAL PLAN
+
+         Sitemap này chỉ chứa các URL chính thức
+         thuộc repo /shop-the-thao-v2/.
+    ====================================================== -->
+
+    <!-- PERSONAL PLAN HUB -->
+
+    <url>
+        <loc>https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/</loc>
+    </url>
+
+
+    <!-- FITNESS CHECK -->
+
+    <url>
+        <loc>https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/health-check.html</loc>
+    </url>
+
+
+    <!-- HEALTH PLAN -->
+
+    <url>
+        <loc>https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/ke-hoach-suc-khoe.html</loc>
+    </url>
+
+
+    <!-- WORKOUT PLAN -->
+
+    <url>
+        <loc>https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/ke-hoach-tap-luyen.html</loc>
+    </url>
+
+
+    <!-- NUTRITION PLAN -->
+
+    <url>
+        <loc>https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/ke-hoach-dinh-duong.html</loc>
+    </url>
+
+</urlset>
