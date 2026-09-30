@@ -10,151 +10,338 @@
     >
 
     <title>
-        SPORTHUB | Chuyển đến website chính
+        Kế hoạch cá nhân | SPORTHUB
     </title>
 
     <meta
         name="description"
-        content="SPORTHUB Fitness và Personal Plan đã được tích hợp vào website SPORTHUB chính."
+        content="Xem kế hoạch sức khỏe, tập luyện và dinh dưỡng được tạo từ Fitness Check SPORTHUB."
     >
 
-    <!--
-        Repo V2 hiện chỉ được dùng để lưu tài nguyên
-        như video hướng dẫn bài tập.
-
-        Không cho Google index trang root V2
-        để tránh trùng website với V1.
-    -->
     <meta
         name="robots"
-        content="noindex, follow"
+        content="index, follow"
     >
 
-    <!-- Website SPORTHUB chính -->
     <link
         rel="canonical"
-        href="https://tranthiquynhnhu0901-hue.github.io/shopthethao/"
+        href="https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/"
     >
 
-    <!--
-        Fallback redirect nếu JavaScript bị tắt.
-    -->
     <meta
-        http-equiv="refresh"
-        content="0; url=https://tranthiquynhnhu0901-hue.github.io/shopthethao/"
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:locale"
+        content="vi_VN"
+    >
+
+    <meta
+        property="og:site_name"
+        content="SPORTHUB"
+    >
+
+    <meta
+        property="og:title"
+        content="Kế hoạch cá nhân | SPORTHUB"
+    >
+
+    <meta
+        property="og:description"
+        content="Theo dõi kế hoạch sức khỏe, tập luyện và dinh dưỡng từ Fitness Check SPORTHUB."
+    >
+
+    <meta
+        property="og:url"
+        content="https://tranthiquynhnhu0901-hue.github.io/shop-the-thao-v2/"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css?v=6.9"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/personal-plan.css?v=1.2"
     >
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            min-height: 100%;
-        }
-
-        body {
+        .v2-home {
             min-height: 100vh;
-
-            display: grid;
-            place-items: center;
-
-            padding: 24px;
-
-            background: #061016;
-            color: #ffffff;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+            background: #f4f6f7;
         }
 
-        .redirect-card {
-            width: min(
-                620px,
-                100%
-            );
+        .v2-home-hero {
+            padding: 82px 0 64px;
 
-            padding: 34px;
-
-            border: 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .12
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(6,16,22,.98),
+                    rgba(6,16,22,.88)
                 );
 
-            border-radius: 18px;
-
-            background: #0d1b22;
-
-            text-align: center;
-
-            box-shadow:
-                0 24px 70px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .28
-                );
+            color: #fff;
         }
 
-        .logo {
-            margin-bottom: 20px;
-
-            font-size: 34px;
-            line-height: 1;
-
-            font-weight: 900;
-            letter-spacing: -.04em;
+        .v2-home-hero-inner {
+            max-width: 850px;
         }
 
-        .logo span {
+        .v2-home-hero .eyebrow {
             color: #c8ff00;
         }
 
-        h1 {
-            margin: 0 0 12px;
+        .v2-home-hero h1 {
+            margin: 10px 0 18px;
+
+            color: #fff;
 
             font-size:
                 clamp(
-                    26px,
-                    5vw,
-                    40px
+                    42px,
+                    7vw,
+                    76px
                 );
 
-            line-height: 1.15;
+            line-height: 1;
+
+            font-weight: 900;
         }
 
-        p {
+        .v2-home-hero p {
+            max-width: 720px;
+
+            color: #cbd3d7;
+
+            line-height: 1.8;
+        }
+
+        .v2-home-main {
+            padding: 52px 0 80px;
+        }
+
+        .v2-home-heading {
+            max-width: 800px;
+            margin-bottom: 28px;
+        }
+
+        .v2-home-heading h2 {
+            margin: 8px 0 10px;
+
+            color: #061016;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    46px
+                );
+
+            line-height: 1.1;
+        }
+
+        .v2-home-heading p {
             margin: 0;
 
-            color: #c7d0d5;
+            color: #68767d;
 
-            font-size: 15px;
             line-height: 1.75;
         }
 
-        a {
+        .v2-plan-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(0,1fr)
+                );
+
+            gap: 18px;
+        }
+
+        .v2-plan-card {
+            display: flex;
+            flex-direction: column;
+
+            min-height: 310px;
+
+            padding: 26px;
+
+            border:
+                1px solid
+                #dfe5e8;
+
+            border-radius: 18px;
+
+            background: #fff;
+
+            box-shadow:
+                0 12px 34px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .045
+                );
+        }
+
+        .v2-plan-status {
+            align-self: flex-start;
+
+            display: inline-flex;
+
+            padding:
+                7px
+                11px;
+
+            border:
+                1px solid
+                #dfe5e8;
+
+            border-radius: 999px;
+
+            background: #f4f6f7;
+
+            color: #68767d;
+
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .v2-plan-status.ready {
+            border-color:
+                rgba(
+                    151,
+                    197,
+                    0,
+                    .45
+                );
+
+            background:
+                rgba(
+                    200,
+                    255,
+                    0,
+                    .15
+                );
+
+            color: #587100;
+        }
+
+        .v2-plan-status.caution {
+            border-color:
+                rgba(
+                    245,
+                    158,
+                    11,
+                    .45
+                );
+
+            background:
+                rgba(
+                    245,
+                    158,
+                    11,
+                    .10
+                );
+
+            color: #9a6200;
+        }
+
+        .v2-plan-card h2 {
+            margin: 14px 0 10px;
+
+            color: #061016;
+
+            font-size: 26px;
+        }
+
+        .v2-plan-card p {
+            margin: 0 0 22px;
+
+            color: #68767d;
+
+            line-height: 1.7;
+        }
+
+        .v2-plan-card a {
             display: inline-flex;
 
             align-items: center;
             justify-content: center;
 
-            margin-top: 24px;
+            margin-top: auto;
 
             min-height: 48px;
 
             padding:
                 12px
-                20px;
+                17px;
 
-            border-radius: 10px;
+            border:
+                1px solid
+                #061016;
+
+            border-radius: 9px;
+
+            background: #061016;
+            color: #fff;
+
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .v2-plan-card a:hover {
+            border-color: #c8ff00;
+
+            background: #c8ff00;
+            color: #061016;
+        }
+
+        .v2-check-box {
+            margin-top: 28px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background: #061016;
+            color: #fff;
+        }
+
+        .v2-check-box .eyebrow {
+            color: #c8ff00;
+        }
+
+        .v2-check-box h2 {
+            margin: 8px 0 10px;
+
+            color: #fff;
+        }
+
+        .v2-check-box p {
+            margin: 0;
+
+            color: #cbd3d7;
+
+            line-height: 1.7;
+        }
+
+        .v2-check-box a {
+            display: inline-flex;
+
+            margin-top: 18px;
+
+            padding:
+                12px
+                18px;
+
+            border-radius: 9px;
 
             background: #c8ff00;
             color: #061016;
@@ -163,67 +350,615 @@
             text-decoration: none;
         }
 
-        a:hover {
-            background: #d8ff4a;
+        .v2-no-data {
+            display: none;
+
+            margin-bottom: 28px;
+
+            padding: 22px;
+
+            border:
+                1px solid
+                #dfe5e8;
+
+            border-radius: 16px;
+
+            background: #fff;
+        }
+
+        .v2-no-data.active {
+            display: block;
+        }
+
+        .v2-no-data h2 {
+            margin: 0 0 8px;
+
+            color: #061016;
+        }
+
+        .v2-no-data p {
+            margin: 0;
+
+            color: #68767d;
+
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+
+            .v2-plan-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
-
-    <script>
-        (() => {
-
-            "use strict";
-
-            const MAIN_SITE =
-                "https://tranthiquynhnhu0901-hue.github.io/shopthethao/";
-
-
-            /*
-                replace() giúp URL V2 không nằm lại
-                trong lịch sử Back của trình duyệt.
-            */
-            window.location.replace(
-                MAIN_SITE
-            );
-
-        })();
-    </script>
 </head>
 
 
-<body>
+<body class="v2-home">
 
-    <main class="redirect-card">
+<header class="header">
 
-        <div
-            class="logo"
-            aria-label="SPORTHUB"
-        >
-            SPORT<span>HUB</span>
-        </div>
-
-        <h1>
-            Đang chuyển đến SPORTHUB
-        </h1>
-
-        <p>
-            Fitness Check và Kế hoạch cá nhân
-            hiện được sử dụng trên website
-            SPORTHUB chính.
-        </p>
-
-        <p>
-            Nếu trình duyệt không tự chuyển trang,
-            hãy sử dụng nút bên dưới.
-        </p>
+    <div class="container nav">
 
         <a
-            href="https://tranthiquynhnhu0901-hue.github.io/shopthethao/"
+            class="logo"
+            href="./"
+            aria-label="SPORTHUB Fitness"
         >
-            MỞ SPORTHUB
+            SPORT<span>HUB</span>
         </a>
 
-    </main>
+
+        <nav aria-label="Điều hướng Fitness">
+
+            <a
+                class="active"
+                href="./"
+            >
+                Kế hoạch cá nhân
+            </a>
+
+            <a href="health-check.html">
+                Fitness Check
+            </a>
+
+            <a href="ke-hoach-suc-khoe.html">
+                Sức khỏe
+            </a>
+
+            <a href="ke-hoach-tap-luyen.html">
+                Tập luyện
+            </a>
+
+            <a href="ke-hoach-dinh-duong.html">
+                Dinh dưỡng
+            </a>
+
+        </nav>
+
+
+        <a
+            class="cart-link"
+            href="/shopthethao/"
+            aria-label="Website SPORTHUB chính"
+        >
+            🏠
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="v2-home-hero">
+
+    <div class="container">
+
+        <div class="v2-home-hero-inner">
+
+            <span class="eyebrow">
+                SPORTHUB FITNESS
+            </span>
+
+            <h1>
+                KẾ HOẠCH CÁ NHÂN
+            </h1>
+
+            <p>
+                Kết quả Fitness Check được sử dụng để xây dựng
+                ba phần kế hoạch gồm sức khỏe, tập luyện
+                và dinh dưỡng.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="v2-home-main">
+
+    <div class="container">
+
+
+        <div
+            id="noFitnessData"
+            class="v2-no-data"
+        >
+
+            <h2>
+                Chưa có dữ liệu Fitness Check
+            </h2>
+
+            <p>
+                Bạn cần hoàn thành Fitness Check trước
+                để SPORTHUB tạo kế hoạch sức khỏe,
+                tập luyện và dinh dưỡng.
+            </p>
+
+        </div>
+
+
+        <section class="v2-home-heading">
+
+            <span class="eyebrow">
+                PERSONAL PLAN
+            </span>
+
+            <h2>
+                Kế hoạch của bạn
+            </h2>
+
+            <p>
+                Chọn từng phần để xem kết quả chi tiết
+                đã được tạo từ Fitness Check.
+            </p>
+
+        </section>
+
+
+        <div class="v2-plan-grid">
+
+
+            <article class="v2-plan-card">
+
+                <span
+                    id="healthStatus"
+                    class="v2-plan-status"
+                >
+                    Đang kiểm tra
+                </span>
+
+                <h2>
+                    Kế hoạch sức khỏe
+                </h2>
+
+                <p>
+                    Xem Safety Check, BMI, RMR,
+                    TDEE, mục tiêu năng lượng,
+                    macro và khả năng phục hồi.
+                </p>
+
+                <a href="ke-hoach-suc-khoe.html">
+                    XEM SỨC KHỎE
+                </a>
+
+            </article>
+
+
+            <article class="v2-plan-card">
+
+                <span
+                    id="workoutStatus"
+                    class="v2-plan-status"
+                >
+                    Đang kiểm tra
+                </span>
+
+                <h2>
+                    Kế hoạch tập luyện
+                </h2>
+
+                <p>
+                    Xem lịch tập 7 ngày,
+                    danh sách bài tập,
+                    video và Workout Session.
+                </p>
+
+                <a href="ke-hoach-tap-luyen.html">
+                    XEM TẬP LUYỆN
+                </a>
+
+            </article>
+
+
+            <article class="v2-plan-card">
+
+                <span
+                    id="nutritionStatus"
+                    class="v2-plan-status"
+                >
+                    Đang kiểm tra
+                </span>
+
+                <h2>
+                    Kế hoạch dinh dưỡng
+                </h2>
+
+                <p>
+                    Xem mức năng lượng,
+                    macro, thực đơn 7 ngày,
+                    ăn ngoài và danh sách thực phẩm.
+                </p>
+
+                <a href="ke-hoach-dinh-duong.html">
+                    XEM DINH DƯỠNG
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+        <section class="v2-check-box">
+
+            <span class="eyebrow">
+                FITNESS CHECK
+            </span>
+
+            <h2>
+                Dữ liệu đang sử dụng
+            </h2>
+
+            <p id="fitnessInfo">
+                Đang đọc dữ liệu Fitness Check...
+            </p>
+
+            <a
+                id="fitnessCheckLink"
+                href="health-check.html"
+            >
+                MỞ FITNESS CHECK
+            </a>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<script src="js/main.js?v=6.9"></script>
+
+<script src="js/personal-plan.js?v=1.0"></script>
+
+
+<script>
+(() => {
+
+    "use strict";
+
+
+    const api =
+        window.SportHubPersonalPlan;
+
+
+    if (!api) {
+
+        console.warn(
+            "SportHubPersonalPlan chưa được tải."
+        );
+
+        return;
+
+    }
+
+
+    function setStatus(
+        id,
+        text,
+        state
+    ) {
+
+        const element =
+            document.getElementById(
+                id
+            );
+
+
+        if (!element) {
+            return;
+        }
+
+
+        element.textContent =
+            text;
+
+
+        element.className =
+            "v2-plan-status";
+
+
+        if (state) {
+
+            element
+                .classList
+                .add(
+                    state
+                );
+
+        }
+
+    }
+
+
+    function render() {
+
+        const status =
+            api.getStatus();
+
+
+        const profile =
+            api.getProfile();
+
+
+        const noData =
+            document.getElementById(
+                "noFitnessData"
+            );
+
+
+        const info =
+            document.getElementById(
+                "fitnessInfo"
+            );
+
+
+        const checkLink =
+            document.getElementById(
+                "fitnessCheckLink"
+            );
+
+
+        if (
+            !status.hasProfile &&
+            !status.hasHealth &&
+            !status.hasWorkout &&
+            !status.hasNutrition
+        ) {
+
+            noData
+                ?.classList
+                .add(
+                    "active"
+                );
+
+        }
+
+        else {
+
+            noData
+                ?.classList
+                .remove(
+                    "active"
+                );
+
+        }
+
+
+        if (
+            status.healthSuccess
+        ) {
+
+            setStatus(
+                "healthStatus",
+                "Đã sẵn sàng",
+                "ready"
+            );
+
+        }
+
+        else if (
+            status.hasHealth
+        ) {
+
+            setStatus(
+                "healthStatus",
+                "Cần kiểm tra",
+                "caution"
+            );
+
+        }
+
+        else {
+
+            setStatus(
+                "healthStatus",
+                "Chưa có dữ liệu",
+                ""
+            );
+
+        }
+
+
+        if (
+            status.safetyBlocked ||
+            status.workoutBlocked
+        ) {
+
+            setStatus(
+                "workoutStatus",
+                "Đang giới hạn",
+                "caution"
+            );
+
+        }
+
+        else if (
+            status.workoutSuccess
+        ) {
+
+            setStatus(
+                "workoutStatus",
+                "Đã sẵn sàng",
+                "ready"
+            );
+
+        }
+
+        else if (
+            status.hasWorkout
+        ) {
+
+            setStatus(
+                "workoutStatus",
+                "Có dữ liệu",
+                "caution"
+            );
+
+        }
+
+        else {
+
+            setStatus(
+                "workoutStatus",
+                "Chưa có dữ liệu",
+                ""
+            );
+
+        }
+
+
+        if (
+            status.safetyBlocked ||
+            status.nutritionBlocked
+        ) {
+
+            setStatus(
+                "nutritionStatus",
+                "Đang giới hạn",
+                "caution"
+            );
+
+        }
+
+        else if (
+            status.nutritionSuccess
+        ) {
+
+            setStatus(
+                "nutritionStatus",
+                "Đã sẵn sàng",
+                "ready"
+            );
+
+        }
+
+        else if (
+            status.hasNutrition
+        ) {
+
+            setStatus(
+                "nutritionStatus",
+                "Có dữ liệu",
+                "caution"
+            );
+
+        }
+
+        else {
+
+            setStatus(
+                "nutritionStatus",
+                "Chưa có dữ liệu",
+                ""
+            );
+
+        }
+
+
+        if (
+            profile &&
+            profile.createdAt
+        ) {
+
+            const date =
+                new Date(
+                    profile.createdAt
+                );
+
+
+            if (
+                !Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                info.textContent =
+                    "Fitness Check gần nhất: "
+                    +
+                    new Intl.DateTimeFormat(
+                        "vi-VN",
+                        {
+                            dateStyle:
+                                "medium"
+                        }
+                    )
+                    .format(
+                        date
+                    )
+                    +
+                    ".";
+
+            }
+
+            else {
+
+                info.textContent =
+                    "SPORTHUB đang sử dụng dữ liệu Fitness Check đã lưu.";
+
+            }
+
+
+            checkLink.textContent =
+                "KIỂM TRA LẠI";
+
+        }
+
+        else {
+
+            info.textContent =
+                "Bạn chưa có kết quả Fitness Check trên thiết bị này.";
+
+
+            checkLink.textContent =
+                "THỰC HIỆN FITNESS CHECK";
+
+        }
+
+    }
+
+
+    render();
+
+
+    window.addEventListener(
+        "sporthub:personal-plan-update",
+        render
+    );
+
+
+    window.addEventListener(
+        "storage",
+        render
+    );
+
+})();
+</script>
 
 </body>
-
 </html>
